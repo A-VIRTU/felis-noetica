@@ -235,8 +235,9 @@ figcaption em{font-style:italic;}
 .kote{display:flex;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid var(--linka);align-items:flex-start;}
 .kote:last-child{border-bottom:none;}
 
-.kote-foto{flex:0 0 92px;}
-.kote-foto .misto{aspect-ratio:1/1;padding:.4rem;}
+.kote-foto{flex:0 0 92px;aspect-ratio:1/1;}
+.kote-foto img{width:100%;height:100%;object-fit:cover;border-radius:3px;}
+.kote-foto .misto{width:100%;height:100%;padding:.4rem;}
 .kote-foto .misto span{font-size:.58rem;letter-spacing:.04em;}
 
 .kote-text{flex:1;min-width:0;}
@@ -252,7 +253,7 @@ figcaption em{font-style:italic;}
 
 @media (max-width:34rem){
   .kote{gap:.85rem;}
-  .kote-foto{flex:0 0 74px;}
+  .kote-foto{flex:0 0 74px;aspect-ratio:1/1;}
 }
 
 /* ---------- Lightbox & Zvětšování na celou obrazovku ---------- */
