@@ -15,6 +15,34 @@
 <link rel="alternate" hreflang="en" href="https://felisnoetica.cz/en.html">
 <link rel="alternate" hreflang="x-default" href="https://felisnoetica.cz/">
 
+<script>
+  (function() {
+    if (sessionStorage.getItem('lang-selected')) return;
+    var urlParams = new URLSearchParams(window.location.search);
+    var langParam = urlParams.get('lang');
+    if (langParam) {
+      sessionStorage.setItem('lang-selected', langParam);
+      return;
+    }
+    if (document.referrer && document.referrer.indexOf(window.location.hostname) !== -1) {
+      sessionStorage.setItem('lang-selected', 'cs');
+      return;
+    }
+    var langs = navigator.languages || [navigator.language || navigator.userLanguage];
+    var isCzechOrSlovakOrPolish = false;
+    for (var i = 0; i < langs.length; i++) {
+      var l = langs[i].toLowerCase();
+      if (l.indexOf('cs') === 0 || l.indexOf('sk') === 0 || l.indexOf('pl') === 0) {
+        isCzechOrSlovakOrPolish = true;
+        break;
+      }
+    }
+    if (!isCzechOrSlovakOrPolish) {
+      window.location.replace('en.html');
+    }
+  })();
+</script>
+
 <!-- Open Graph / Facebook / LinkedIn / Messaging -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://felisnoetica.cz/">
@@ -440,7 +468,7 @@
     <p class="mail"><a href="mailto:info@felisnoetica.cz">info@felisnoetica.cz</a><br><a href="tel:+420604761154">604 761 154</a></p>
     <p>Viktor Lošťák · Brno a Runářov</p>
     <p class="odkaz-dal"><a href="chov.html">Testy, linie a chovatelské údaje →</a></p>
-    <p class="odkaz-dal" style="margin-top:.5rem"><a href="en.html">English</a></p>
+    <p class="odkaz-dal" style="margin-top:.5rem"><a href="en.html?lang=en">English</a></p>
     <p class="uredni">
       Felis Noetica, CZ — chovná stanice registrovaná u FIFe, reg. č. 7944.<br>
       Chovatel Viktor Lošťák, člen Českého svazu chovatelů č. 30214.<br><br>
