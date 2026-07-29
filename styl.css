@@ -93,7 +93,7 @@ a:focus-visible{outline:2px solid var(--trava);outline-offset:3px;border-radius:
 
 .teze{
   font-family:"Newsreader",serif;font-weight:300;font-size:1.8rem;
-  line-height:1.35;text-align:center;margin:2.5rem auto 0;max-width:26rem;
+  line-height:1.35;text-align:left;margin:2.5rem 0 0;
 }
 
 /* ---------- návěští a nadpisy ---------- */
@@ -188,14 +188,14 @@ figcaption em{font-style:italic;}
 
 .vyzva{
   border-top:1px solid var(--linka);border-bottom:1px solid var(--linka);
-  padding:2.25rem 0;margin:2.5rem 0 0;text-align:center;
+  padding:2.25rem 0;margin:2.5rem 0 0;text-align:left;
 }
 .vyzva p{margin-bottom:.75rem;}
 .vyzva .mail{font-family:"Newsreader",serif;font-size:1.35rem;}
 
 /* ---------- pata ---------- */
 
-.pata{padding:3.5rem 0 4.5rem;text-align:center;border-top:1px solid var(--linka);margin-top:4rem;}
+.pata{padding:3.5rem 0 4.5rem;text-align:left;border-top:1px solid var(--linka);margin-top:4rem;}
 .pata p{font-size:.92rem;color:var(--text-tichy);line-height:1.7;}
 .pata .mail{font-family:"Newsreader",serif;font-size:1.3rem;color:var(--text);}
 .uredni{font-size:.8rem;color:var(--text-tichy);line-height:1.7;margin-top:2rem;}
@@ -326,8 +326,9 @@ figcaption em{font-style:italic;}
 
 .lightbox-caption {
   margin-top: 1.25rem;
-  text-align: center;
+  text-align: left;
   color: var(--papir);
+  width: 100%;
   max-width: 44rem;
   font-size: 1.05rem;
   line-height: 1.6;
