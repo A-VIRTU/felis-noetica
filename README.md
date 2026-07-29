@@ -24,6 +24,7 @@ felis-noetica/
 ├── chov.html                   # Popis chovatelského přístupu, etiky a péče
 ├── en.html                     # Anglická verze webové prezentace
 ├── styl.css                    # Kaskádové styly (CSS)
+├── skript.js                  # Interaktivní skript pro Lightbox obrázků a Fullscreen videa
 ├── README.md                   # Tento průvodce repozitářem
 ├── assets/                     # Multimediální podklady (obrázky a videa)
 │   ├── images/                 # Grafika a loga (logo.png, logo-znacka.png)
