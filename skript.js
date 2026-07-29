@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
       fig.classList.add('lightbox-trigger');
       fig.addEventListener('click', () => {
         const captionHtml = caption ? caption.innerHTML : '';
-        openLightbox(img.src, img.alt, captionHtml);
+        const fullSrc = fig.getAttribute('data-full') || img.src;
+        openLightbox(fullSrc, img.alt, captionHtml);
       });
     } else if (misto && !video) {
       fig.classList.add('lightbox-trigger');
