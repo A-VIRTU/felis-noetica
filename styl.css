@@ -439,13 +439,4 @@ figcaption em{font-style:italic;}
   .lightbox-next { right: 0.5rem; width: 42px; height: 42px; font-size: 1.4rem; }
 }
 
-@media (min-width: 40rem) {
-  .foto-siroka, .vrh-foto, .video-siroka {
-    width: calc(100vw - 3rem);
-    max-width: var(--sirka-foto);
-    margin-left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
 
