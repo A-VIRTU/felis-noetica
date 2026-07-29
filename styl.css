@@ -195,7 +195,7 @@ figcaption em{font-style:italic;}
 
 /* ---------- pata ---------- */
 
-.pata{padding:3.5rem 0 4.5rem;text-align:left;border-top:1px solid var(--linka);margin-top:4rem;}
+.pata{padding:3.5rem 0 4.5rem;text-align:center;border-top:1px solid var(--linka);margin-top:4rem;}
 .pata p{font-size:.92rem;color:var(--text-tichy);line-height:1.7;}
 .pata .mail{font-family:"Newsreader",serif;font-size:1.3rem;color:var(--text);}
 .uredni{font-size:.8rem;color:var(--text-tichy);line-height:1.7;margin-top:2rem;}
