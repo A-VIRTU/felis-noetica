@@ -188,7 +188,7 @@ figcaption em{font-style:italic;}
 
 .vyzva{
   border-top:1px solid var(--linka);border-bottom:1px solid var(--linka);
-  padding:2.25rem 0;margin:2.5rem 0 0;text-align:left;
+  padding:2.25rem 0;margin:2.5rem 0 0;text-align:center;
 }
 .vyzva p{margin-bottom:.75rem;}
 .vyzva .mail{font-family:"Newsreader",serif;font-size:1.35rem;}
