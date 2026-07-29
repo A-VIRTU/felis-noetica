@@ -24,9 +24,10 @@ felis-noetica/
 ├── chov.html                   # Popis chovatelského přístupu, etiky a péče
 ├── en.html                     # Anglická verze webové prezentace
 ├── styl.css                    # Kaskádové styly (CSS)
-├── logo.png                    # Oficiální logo Felis Noetica
-├── logo-znacka.png             # Grafická značka / symbol
 ├── README.md                   # Tento průvodce repozitářem
+├── assets/                     # Multimediální podklady (obrázky a videa)
+│   ├── images/                 # Grafika a loga (logo.png, logo-znacka.png)
+│   └── videos/                 # Videa (liska-a-kocka-runarov.mp4)
 └── docs/                       # Metodická, genetická a chovatelská dokumentace
     ├── Felis_Noetica_kontext.md # Úplný předávací kontext projektu, rodokmeny a pravidla
     ├── FIFe_pravidla_vytah.md  # Analýza a výtah z chovatelských řádů FIFe a outcrossu EUR

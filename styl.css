@@ -26,7 +26,8 @@ body{
   font-feature-settings:"onum" 1;
 }
 
-img{max-width:100%;height:auto;display:block;}
+img,video{max-width:100%;height:auto;display:block;}
+video{border:1px solid var(--linka);background:#000;border-radius:2px;}
 
 a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--trava);}
 a:hover{color:var(--trava);}
