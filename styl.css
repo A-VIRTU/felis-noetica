@@ -1,0 +1,255 @@
+/* Felis Noetica — sdílený styl */
+
+:root{
+  --papir:#F7F6F3;
+  --papir-tmavsi:#EEECE6;
+  --text:#2E2B27;
+  --text-tichy:#6F6A61;
+  --trava:#8C8556;
+  --linka:#DED9D0;
+  --sirka:37rem;
+  --sirka-foto:52rem;
+  --mezera:2.75rem;
+}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+
+body{
+  margin:0;
+  background:var(--papir);
+  color:var(--text);
+  font-family:"Petrona",Georgia,serif;
+  font-weight:300;
+  font-size:1.1875rem;
+  line-height:1.75;
+  font-feature-settings:"onum" 1;
+}
+
+img{max-width:100%;height:auto;display:block;}
+
+a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--trava);}
+a:hover{color:var(--trava);}
+a:focus-visible{outline:2px solid var(--trava);outline-offset:3px;border-radius:2px;}
+
+/* ---------- struktura ---------- */
+
+/* šířka a boční odsazení — jen dlouhý zápis, aby nekolidoval se svislým */
+.obal{
+  max-width:var(--sirka);
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:1.5rem;
+  padding-right:1.5rem;
+}
+
+.obal-siroky{max-width:var(--sirka-foto);}
+
+/* svislý rytmus — jednotný, bez pravidel na sousedy */
+.blok{
+  padding-top:var(--mezera);
+  padding-bottom:var(--mezera);
+}
+
+.prouzek{
+  background:var(--papir-tmavsi);
+  padding-top:var(--mezera);
+  padding-bottom:var(--mezera);
+  margin-top:0;
+  margin-bottom:0;
+}
+
+/* ---------- hlavička ---------- */
+
+.hlavicka{padding:3.5rem 0 2rem;text-align:center;}
+
+.znak{width:150px;margin:0 auto 1.75rem;opacity:.92;}
+
+/* uzavírací značka nad patou */
+.znacka{
+  padding-top:var(--mezera);
+  padding-bottom:calc(var(--mezera) / 2);
+  text-align:center;
+}
+.znacka img{
+  width:290px;
+  margin-left:auto;
+  margin-right:auto;
+  opacity:.5;
+}
+
+.jmeno-stanice{
+  font-family:"Newsreader",serif;font-weight:400;font-size:1.85rem;
+  letter-spacing:.07em;text-transform:uppercase;margin:0 0 .6rem;line-height:1.2;
+}
+
+.podtitul{
+  font-family:"Newsreader",serif;font-style:italic;font-weight:300;
+  font-size:1.05rem;color:var(--text-tichy);margin:0;line-height:1.55;
+}
+
+/* ---------- teze ---------- */
+
+.teze{
+  font-family:"Newsreader",serif;font-weight:300;font-size:1.8rem;
+  line-height:1.35;text-align:center;margin:2.5rem auto 0;max-width:26rem;
+}
+
+/* ---------- návěští a nadpisy ---------- */
+
+.navesti{
+  font-family:"Newsreader",serif;font-size:.7rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--trava);display:block;margin:0 0 .85rem;
+}
+
+h2{
+  font-family:"Newsreader",serif;font-weight:400;font-size:1.5rem;
+  letter-spacing:.01em;margin:0 0 1.35rem;line-height:1.3;
+}
+
+h3{
+  font-family:"Newsreader",serif;font-weight:400;font-size:1.55rem;
+  margin:0 0 .3rem;line-height:1.25;
+}
+
+.role{
+  font-family:"Newsreader",serif;font-size:.72rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--text-tichy);margin:0 0 1.5rem;display:block;
+}
+
+p{margin:0 0 1.2rem;}
+p:last-child{margin-bottom:0;}
+
+.duraz{font-family:"Newsreader",serif;font-size:1.25rem;line-height:1.5;font-style:italic;}
+
+/* ---------- kočky ---------- */
+
+.kocka{padding:2.75rem 0;border-top:1px solid var(--linka);}
+.kocka:first-of-type{border-top:none;padding-top:0;}
+.kocka .role{margin:0 0 1.2rem;}
+
+/* ---------- fotografie ---------- */
+
+figure{margin:0 0 1.35rem;}
+.foto-siroka{margin-top:var(--mezera);margin-bottom:var(--mezera);}
+
+.misto{
+  background:var(--papir-tmavsi);border:1px dashed var(--linka);
+  aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+  padding:1.5rem;text-align:center;
+}
+.foto-siroka .misto{aspect-ratio:16/9;}
+.prouzek .misto{background:var(--papir);}
+
+.misto span{
+  font-family:"Newsreader",serif;font-size:.78rem;letter-spacing:.06em;
+  color:var(--text-tichy);line-height:1.6;
+}
+
+figcaption{margin-top:.65rem;font-size:.9rem;line-height:1.55;color:var(--text-tichy);}
+
+figcaption .datum{
+  font-family:"Newsreader",serif;font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--trava);display:block;margin-bottom:.15rem;
+}
+
+figcaption em{font-style:italic;}
+
+/* ---------- seznamy a tabulky ---------- */
+
+.cenik{margin:1.75rem 0 1.35rem;border-top:1px solid var(--linka);}
+
+.polozka{
+  display:flex;justify-content:space-between;align-items:baseline;gap:1.5rem;
+  padding:.8rem 0;border-bottom:1px solid var(--linka);
+}
+.polozka span:first-child{flex:1;}
+.polozka .cena{font-family:"Newsreader",serif;font-size:1.05rem;white-space:nowrap;}
+
+.stul{margin:1.5rem 0 0;padding:0;list-style:none;font-family:"Newsreader",serif;font-size:1rem;}
+.stul li{display:flex;align-items:baseline;gap:.6rem;padding:.35rem 0;}
+.stul li::after{content:"";flex:1;border-bottom:1px dotted var(--linka);order:2;}
+.stul li span{order:3;color:var(--text-tichy);font-size:.85rem;white-space:nowrap;}
+.stul li em{order:1;font-style:normal;}
+
+.zaznam{padding:1.5rem 0;border-top:1px solid var(--linka);}
+.zaznam:first-of-type{border-top:none;}
+.zaznam h3{font-size:1.2rem;margin-bottom:.5rem;}
+.zaznam dl{margin:0;font-size:.94rem;line-height:1.65;}
+.zaznam dt{
+  font-family:"Newsreader",serif;font-size:.68rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-tichy);margin-top:.6rem;
+}
+.zaznam dd{margin:0;}
+.zaznam .kod{font-size:.82rem;color:var(--text-tichy);word-break:break-all;}
+
+/* ---------- výzva ---------- */
+
+.vyzva{
+  border-top:1px solid var(--linka);border-bottom:1px solid var(--linka);
+  padding:2.25rem 0;margin:2.5rem 0 0;text-align:center;
+}
+.vyzva p{margin-bottom:.75rem;}
+.vyzva .mail{font-family:"Newsreader",serif;font-size:1.35rem;}
+
+/* ---------- pata ---------- */
+
+.pata{padding:3.5rem 0 4.5rem;text-align:center;border-top:1px solid var(--linka);margin-top:4rem;}
+.pata p{font-size:.92rem;color:var(--text-tichy);line-height:1.7;}
+.pata .mail{font-family:"Newsreader",serif;font-size:1.3rem;color:var(--text);}
+.uredni{font-size:.8rem;color:var(--text-tichy);line-height:1.7;margin-top:2rem;}
+.odkaz-dal{margin-top:1.75rem;font-size:.95rem;}
+
+/* ---------- animace ---------- */
+
+.jev{opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease;}
+.jev.videt{opacity:1;transform:none;}
+
+@media (prefers-reduced-motion:reduce){
+  .jev{opacity:1;transform:none;transition:none;}
+  *{scroll-behavior:auto !important;}
+}
+
+/* ---------- mobil ---------- */
+
+@media (max-width:34rem){
+  body{font-size:1.09rem;}
+  .teze{font-size:1.45rem;}
+  .jmeno-stanice{font-size:1.45rem;}
+  :root{--mezera:2rem;}
+  .polozka{flex-direction:column;gap:.1rem;}
+  .znak{width:118px;}
+  .znacka img{width:215px;}
+}
+
+/* ---------- aktuální koťata ---------- */
+
+.vrh{margin:0 0 2.5rem;}
+.vrh-hlava{
+  font-family:"Newsreader",serif;font-size:1.15rem;
+  padding-bottom:.5rem;border-bottom:1px solid var(--linka);margin:0 0 .35rem;
+}
+.vrh-info{font-size:.9rem;color:var(--text-tichy);margin:0 0 1.5rem;}
+
+.kote{display:flex;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid var(--linka);align-items:flex-start;}
+.kote:last-child{border-bottom:none;}
+
+.kote-foto{flex:0 0 92px;}
+.kote-foto .misto{aspect-ratio:1/1;padding:.4rem;}
+.kote-foto .misto span{font-size:.58rem;letter-spacing:.04em;}
+
+.kote-text{flex:1;min-width:0;}
+.kote-jmeno{font-family:"Newsreader",serif;font-size:1.2rem;line-height:1.3;margin:0 0 .1rem;}
+.kote-po{font-size:.9rem;line-height:1.5;color:var(--text-tichy);margin:0 0 .4rem;}
+
+.stav{
+  font-family:"Newsreader",serif;font-size:.68rem;letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.stav-volne{color:var(--trava);}
+.stav-jine{color:var(--text-tichy);}
+
+@media (max-width:34rem){
+  .kote{gap:.85rem;}
+  .kote-foto{flex:0 0 74px;}
+}
