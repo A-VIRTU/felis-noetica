@@ -255,21 +255,35 @@
     font-size: 13pt;
     font-style: italic;
     color: var(--text-tichy);
-    margin: 15px 0 5px;
+    margin: 10px 0 3px;
   }
 
   .jmeno-zviratko {
     font-size: 26pt;
     font-weight: 500;
     color: var(--akcent);
-    margin: 5px 0;
+    margin: 3px 0;
   }
 
   .formalni-jmeno {
     font-size: 11pt;
     font-style: italic;
     color: var(--text-hlavni);
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+  }
+
+  /* Unikátní grafická pečeť jedince */
+  .unikatni-grafika-obal {
+    text-align: center;
+    margin: 8px 0;
+  }
+  .emblem-img {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    border: 2px solid var(--zlatavost);
+    box-shadow: 0 4px 14px rgba(139, 115, 85, 0.22);
+    object-fit: cover;
   }
 
   .udaje-mriezk {
@@ -282,13 +296,13 @@
     border-radius: 4px;
     border: 1px solid var(--linka);
     font-size: 9.5pt;
-    margin: 12px 0;
+    margin: 10px 0;
   }
 
   .udaj-polozka strong { color: var(--akcent); }
 
   .vyznam-box {
-    margin: 12px 0;
+    margin: 10px 0;
     padding: 12px;
     border-left: 3px solid var(--akcent);
     text-align: left;
@@ -305,15 +319,15 @@
 
   /* Spodní zápatí certifikátu: Podpis vlevo + QR kód vpravo */
   .certifikat-dole-obal {
-    margin-top: 15px;
-    padding-top: 10px;
+    margin-top: 10px;
+    padding-top: 8px;
   }
 
   .podpisy-mriezka {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 
   .podpis-line {
@@ -524,6 +538,11 @@
         <div class="certifikujese">Tímto se oficiálně osvědčuje původ a jméno jedince</div>
         <div class="jmeno-zviratko">Zen</div>
         <div class="formalni-jmeno">Zen of Felis Noetica</div>
+      </div>
+
+      <!-- UNIKÁTNÍ ULEČENÁ GRAFICKÁ PEČEŤ JEDINCE -->
+      <div class="unikatni-grafika-obal">
+        <img src="emblem_zen.jpg" alt="Unikátní zosobňující pečeť jedince: Zen" class="emblem-img">
       </div>
 
       <div class="udaje-mriezk">
