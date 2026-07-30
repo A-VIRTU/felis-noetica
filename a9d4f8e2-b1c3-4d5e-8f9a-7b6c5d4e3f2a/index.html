@@ -34,11 +34,11 @@
   /* Rozcestník a hlavička hubu */
   .hub-container {
     max-width: 210mm;
-    margin: 30px auto 20px;
+    margin: 35px auto 25px;
     background-color: var(--bg-papir);
-    padding: 30px 35px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    padding: 35px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.07);
     border: 1px solid var(--zlatavost);
   }
 
@@ -50,15 +50,15 @@
   }
 
   .hub-logo {
-    width: 130px;
-    opacity: 0.75;
-    margin-bottom: 10px;
+    width: 140px;
+    opacity: 0.8;
+    margin-bottom: 12px;
   }
 
   .jmeno-stanice {
     font-family: "Newsreader", serif;
     font-weight: 400;
-    font-size: 2rem;
+    font-size: 2.1rem;
     letter-spacing: .07em;
     text-transform: uppercase;
     margin: 0 0 .2rem;
@@ -69,7 +69,7 @@
     font-family: "Newsreader", serif;
     font-style: italic;
     font-weight: 300;
-    font-size: 1.1rem;
+    font-size: 1.12rem;
     color: var(--text-tichy);
     margin: 0 0 15px;
   }
@@ -77,7 +77,7 @@
   .hub-karta {
     background-color: #F8F5EE;
     border: 1px solid var(--linka);
-    padding: 15px 20px;
+    padding: 16px 24px;
     border-radius: 6px;
     display: inline-block;
     margin-top: 10px;
@@ -85,8 +85,8 @@
   }
 
   .hub-id {
-    font-size: 9pt;
-    letter-spacing: 0.1em;
+    font-size: 9.5pt;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--akcent);
     font-weight: 500;
@@ -94,22 +94,22 @@
   }
 
   .hub-jmeno {
-    font-size: 20pt;
+    font-size: 22pt;
     font-weight: 500;
     color: var(--text-hlavni);
-    margin: 2px 0 4px;
+    margin: 3px 0 5px;
   }
 
   .hub-detail {
-    font-size: 10pt;
+    font-size: 10.5pt;
     color: var(--text-tichy);
     margin: 0;
   }
 
   .hub-sekce-nadpis {
-    font-size: 14pt;
+    font-size: 15pt;
     color: var(--akcent);
-    margin: 25px 0 15px;
+    margin: 25px 0 18px;
     font-weight: 400;
     text-align: center;
   }
@@ -118,7 +118,7 @@
   .ke-stazeni-mriezka {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 16px;
   }
 
   .karta-download {
@@ -127,35 +127,36 @@
     justify-content: space-between;
     background-color: #FFFDF9;
     border: 1px solid var(--linka);
-    padding: 16px 20px;
-    border-radius: 6px;
+    padding: 18px 24px;
+    border-radius: 8px;
     text-decoration: none;
     color: var(--text-hlavni);
-    transition: all 0.2s ease;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .karta-download:hover {
     border-color: var(--akcent);
-    box-shadow: 0 2px 8px rgba(139, 115, 85, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(139, 115, 85, 0.18);
     background-color: #FFF;
   }
 
   .karta-left {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
   }
 
   .karta-ikona {
-    font-size: 26pt;
+    font-size: 28pt;
     line-height: 1;
   }
 
   .karta-text strong {
     display: block;
-    font-size: 12pt;
+    font-size: 12.5pt;
     color: var(--text-hlavni);
-    margin-bottom: 2px;
+    margin-bottom: 3px;
   }
 
   .karta-text span {
@@ -166,11 +167,16 @@
   .karta-tlacitko {
     background-color: var(--akcent);
     color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 9px 18px;
+    border-radius: 5px;
     font-size: 9.5pt;
     font-weight: 500;
     white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+
+  .karta-download:hover .karta-tlacitko {
+    background-color: #725D44;
   }
 
   .zip-karta {
@@ -180,6 +186,10 @@
 
   .zip-karta .karta-tlacitko {
     background-color: var(--zelena-ok);
+  }
+
+  .zip-karta:hover .karta-tlacitko {
+    background-color: #23542B;
   }
 
   @media print {
@@ -249,7 +259,7 @@
   }
 
   .jmeno-zviratko {
-    font-size: 24pt;
+    font-size: 26pt;
     font-weight: 500;
     color: var(--akcent);
     margin: 5px 0;
