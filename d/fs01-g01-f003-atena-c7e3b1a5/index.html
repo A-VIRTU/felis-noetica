@@ -31,53 +31,159 @@
     -webkit-print-color-adjust: exact;
   }
 
-  /* Lišta pro majitele */
-  .tisk-bar {
-    background-color: var(--text-hlavni);
-    color: #FFF;
+  /* Rozcestník a hlavička hubu */
+  .hub-container {
+    max-width: 210mm;
+    margin: 30px auto 20px;
+    background-color: var(--bg-papir);
+    padding: 30px 35px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid var(--zlatavost);
+  }
+
+  .hub-header {
     text-align: center;
-    padding: 12px;
-    font-family: sans-serif;
-    font-size: 13px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border-bottom: 1px solid var(--linka);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
   }
-  .tisk-bar button {
-    background-color: #555;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    margin-left: 8px;
-    font-size: 13px;
+
+  .hub-logo {
+    width: 130px;
+    opacity: 0.75;
+    margin-bottom: 10px;
   }
-  .tisk-bar a.btn-zip {
-    background-color: var(--zelena-ok);
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-weight: 600;
-    margin-left: 12px;
+
+  .jmeno-stanice {
+    font-family: "Newsreader", serif;
+    font-weight: 400;
+    font-size: 2rem;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    margin: 0 0 .2rem;
+    color: var(--text-hlavni);
+  }
+
+  .podtitul {
+    font-family: "Newsreader", serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: var(--text-tichy);
+    margin: 0 0 15px;
+  }
+
+  .hub-karta {
+    background-color: #F8F5EE;
+    border: 1px solid var(--linka);
+    padding: 15px 20px;
+    border-radius: 6px;
     display: inline-block;
+    margin-top: 10px;
+    text-align: center;
   }
-  .tisk-bar a.btn-genomia {
+
+  .hub-id {
+    font-size: 9pt;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--akcent);
+    font-weight: 500;
+    display: block;
+  }
+
+  .hub-jmeno {
+    font-size: 20pt;
+    font-weight: 500;
+    color: var(--text-hlavni);
+    margin: 2px 0 4px;
+  }
+
+  .hub-detail {
+    font-size: 10pt;
+    color: var(--text-tichy);
+    margin: 0;
+  }
+
+  .hub-sekce-nadpis {
+    font-size: 14pt;
+    color: var(--akcent);
+    margin: 25px 0 15px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  /* Mřížka souborů ke stažení */
+  .ke-stazeni-mriezka {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .karta-download {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFDF9;
+    border: 1px solid var(--linka);
+    padding: 16px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-hlavni);
+    transition: all 0.2s ease;
+  }
+
+  .karta-download:hover {
+    border-color: var(--akcent);
+    box-shadow: 0 2px 8px rgba(139, 115, 85, 0.15);
+    background-color: #FFF;
+  }
+
+  .karta-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .karta-ikona {
+    font-size: 26pt;
+    line-height: 1;
+  }
+
+  .karta-text strong {
+    display: block;
+    font-size: 12pt;
+    color: var(--text-hlavni);
+    margin-bottom: 2px;
+  }
+
+  .karta-text span {
+    font-size: 9.5pt;
+    color: var(--text-tichy);
+  }
+
+  .karta-tlacitko {
     background-color: var(--akcent);
     color: white;
-    text-decoration: none;
     padding: 8px 16px;
     border-radius: 4px;
-    font-weight: 600;
-    margin-left: 8px;
-    display: inline-block;
+    font-size: 9.5pt;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .zip-karta {
+    border: 2px solid var(--zelena-ok);
+    background-color: #F4F9F5;
+  }
+
+  .zip-karta .karta-tlacitko {
+    background-color: var(--zelena-ok);
   }
 
   @media print {
-    .tisk-bar { display: none; }
+    .hub-container { display: none; }
     body { background: none; }
     .strana {
       margin: 0;
@@ -103,7 +209,6 @@
     justify-content: space-between;
   }
 
-  /* Hlavička & Zápatí na stranách */
   .zapatie {
     border-top: 1px solid var(--linka);
     padding-top: 8px;
@@ -114,7 +219,7 @@
     color: var(--text-tichy);
   }
 
-  /* Certifikát (Strana 1) */
+  /* Certifikát */
   .certifikat-obal {
     border: 2px solid var(--akcent);
     padding: 16mm 12mm;
@@ -134,27 +239,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-
-  .jmeno-stanice {
-    font-family: "Newsreader", serif;
-    font-weight: 400;
-    font-size: 1.85rem;
-    letter-spacing: .07em;
-    text-transform: uppercase;
-    margin: 0 0 .3rem;
-    line-height: 1.2;
-    color: var(--text-hlavni);
-  }
-
-  .podtitul {
-    font-family: "Newsreader", serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 1.05rem;
-    color: var(--text-tichy);
-    margin: 0;
-    line-height: 1.55;
   }
 
   .certifikujese {
@@ -191,9 +275,7 @@
     margin: 12px 0;
   }
 
-  .udaj-polozka strong {
-    color: var(--akcent);
-  }
+  .udaj-polozka strong { color: var(--akcent); }
 
   .vyznam-box {
     margin: 12px 0;
@@ -226,7 +308,6 @@
     padding-top: 4px;
   }
 
-  /* Obecný text E-booku */
   h2.kapitola-nadpis {
     font-size: 16pt;
     font-weight: 400;
@@ -258,13 +339,8 @@
     margin: 15px 0;
   }
 
-  .vyzva-box h3 {
-    margin: 0 0 6px;
-    font-size: 11.5pt;
-    color: var(--akcent);
-  }
+  .vyzva-box h3 { margin: 0 0 6px; font-size: 11.5pt; color: var(--akcent); }
 
-  /* Tabulka Genomia */
   .genomia-table {
     width: 100%;
     border-collapse: collapse;
@@ -276,17 +352,9 @@
     padding: 6px 10px;
     text-align: left;
   }
-  .genomia-table th {
-    background-color: #F6F2EA;
-    color: var(--akcent);
-    font-weight: 500;
-  }
-  .status-ok {
-    color: var(--zelena-ok);
-    font-weight: 500;
-  }
+  .genomia-table th { background-color: #F6F2EA; color: var(--akcent); font-weight: 500; }
+  .status-ok { color: var(--zelena-ok); font-weight: 500; }
 
-  /* Strana 6 - Tiráž & Kontakty */
   .tiraz-obal {
     display: flex;
     flex-direction: column;
@@ -297,28 +365,10 @@
     padding: 40px 20px;
   }
 
-  .znacka {
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  .znacka img {
-    width: 180px;
-    margin: 0 auto 1.25rem;
-    opacity: 0.7;
-  }
-
-  .tiraz-kontakty {
-    font-size: 12pt;
-    margin: 25px 0;
-    line-height: 1.85;
-  }
-
-  .tiraz-kontakty a {
-    color: var(--akcent);
-    text-decoration: none;
-  }
-
+  .znacka { margin-bottom: 30px; text-align: center; }
+  .znacka img { width: 180px; margin: 0 auto 1.25rem; opacity: 0.7; }
+  .tiraz-kontakty { font-size: 12pt; margin: 25px 0; line-height: 1.85; }
+  .tiraz-kontakty a { color: var(--akcent); text-decoration: none; }
   .uredni-tiraz {
     font-size: 8.5pt;
     color: var(--text-tichy);
@@ -332,11 +382,59 @@
 </head>
 <body>
 
-<div class="tisk-bar">
-  🔒 Dokumentace pro <strong>FS01-G01-F003 Aténa of Felis Noetica</strong>
-  <a href="Atena_Felis_Noetica_Komplet.zip" download class="btn-zip">📦 Stáhnout balíček (ZIP)</a>
-  <a href="Genomia_Testy_Matka_Sipka.pdf" target="_blank" class="btn-genomia">📄 Testy Genomia (PDF)</a>
-  <button onclick="window.print()">🖨️ Vytisknout E-book</button>
+<!-- ================= LANDING HUB / SEZNAM K DOKUMENTŮM ================= -->
+<div class="hub-container">
+  <div class="hub-header">
+    <img src="https://felisnoetica.cz/assets/images/logo-znacka.png" alt="Felis Noetica logo" class="hub-logo">
+    <p class="jmeno-stanice">Felis Noetica</p>
+    <p class="podtitul">INTELLIGENTIA ET CONCORDIA</p>
+    
+    <div class="hub-karta">
+      <span class="hub-id">Master ID: FS01-G01-F003</span>
+      <h1 class="hub-jmeno">Aténa of Felis Noetica</h1>
+      <p class="hub-detail">Tříbarevná kočka (♀) · Narozená 8. července 2025 · Matka: Šipka</p>
+    </div>
+  </div>
+
+  <h2 class="hub-sekce-nadpis">📥 Soubory ke stažení</h2>
+
+  <div class="ke-stazeni-mriezka">
+    <!-- KARTA 1: VŠECHNO V ZIPU -->
+    <a href="Atena_Felis_Noetica_Komplet.zip" download class="karta-download zip-karta">
+      <div class="karta-left">
+        <div class="karta-ikona">📦</div>
+        <div class="karta-text">
+          <strong>Kompletní balíček (ZIP)</strong>
+          <span>Stáhnout všechny dokumenty, testy i smlouvu v jednom ZIP archivu</span>
+        </div>
+      </div>
+      <div class="karta-tlacitko">Stáhnout kompletní ZIP</div>
+    </a>
+
+    <!-- KARTA 2: GENOMIA TESTY MATKY -->
+    <a href="Genomia_Testy_Matka_Sipka.pdf" target="_blank" class="karta-download">
+      <div class="karta-left">
+        <div class="karta-ikona">🔬</div>
+        <div class="karta-text">
+          <strong>Genetický protokol Genomia (PDF)</strong>
+          <span>Kompletní oficiální certifikát matky Šipky z akreditované laboratoře Genomia s.r.o.</span>
+        </div>
+      </div>
+      <div class="karta-tlacitko">Otevřít PDF</div>
+    </a>
+
+    <!-- KARTA 3: ELEKTRONICKÝ PRŮVODCE A PROHLÍŽEČ -->
+    <div onclick="window.print()" class="karta-download" style="cursor: pointer;">
+      <div class="karta-left">
+        <div class="karta-ikona">📘</div>
+        <div class="karta-text">
+          <strong>E-book &amp; Průvodce chovem (Tisk do PDF)</strong>
+          <span>Vytisknout nebo uložit do PDF kompletní 6-stránkový průvodce, certifikát a smlouvu</span>
+        </div>
+      </div>
+      <div class="karta-tlacitko">🖨️ Vytisknout / Uložit PDF</div>
+    </div>
+  </div>
 </div>
 
 <!-- ================= STRANA 1: CERTIFIKÁT JMÉNA A PŮVODU ================= -->
