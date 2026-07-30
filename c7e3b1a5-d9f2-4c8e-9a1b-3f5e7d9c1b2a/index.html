@@ -203,10 +203,10 @@
     }
   }
 
-  /* Tisková strana A4 */
+  /* Tisková strana A4 - obecná */
   .strana {
     width: 210mm;
-    min-height: 297mm;
+    height: 297mm;
     margin: 20px auto;
     background-color: var(--bg-papir);
     padding: 22mm 18mm 20mm 18mm;
@@ -219,6 +219,24 @@
     justify-content: space-between;
   }
 
+  /* Samostatná úvodní strana pouze s autorským obrázkem pozadí */
+  .strana-titulni-grafika {
+    background-image: url('bg_certifikat.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+
+  /* Druhá strana s textem certifikátu - přesně podle vašeho zadání */
+  #strana-certifikat {
+    background-image: url('bg_certifikat.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 24mm 16mm 24mm 16mm;
+  }
+
   .zapatie {
     border-top: 1px solid var(--linka);
     padding-top: 8px;
@@ -229,85 +247,68 @@
     color: var(--text-tichy);
   }
 
-  /* Certifikát */
-  .certifikat-obal {
-    border: 2px solid var(--akcent);
-    padding: 16mm 12mm;
+  /* Vnitřní textový rám bez borderu s poloprůhledným pergamenovým podkladem */
+  .certifikat-vnitrni-ram {
+    border: none;
+    padding: 20px 24px;
+    width: 100%;
     height: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    background-color: #FFFDF9;
-    position: relative;
-  }
-
-  .certifikat-vnitrni-ram {
-    border: 1px solid var(--zlatavost);
-    padding: 15px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-color: rgba(253, 251, 247, 0.85);
+    border-radius: 4px;
+    box-shadow: inset 0 0 35px rgba(248, 245, 238, 0.5);
+    box-sizing: border-box;
   }
 
   .certifikujese {
     font-size: 13pt;
     font-style: italic;
     color: var(--text-tichy);
-    margin: 10px 0 3px;
+    margin: 12px 0 4px;
   }
 
   .jmeno-zviratko {
-    font-size: 26pt;
+    font-size: 28pt;
     font-weight: 500;
     color: var(--akcent);
-    margin: 3px 0;
+    margin: 4px 0;
+    letter-spacing: 0.02em;
   }
 
   .formalni-jmeno {
-    font-size: 11pt;
+    font-size: 11.5pt;
     font-style: italic;
     color: var(--text-hlavni);
-    margin-bottom: 10px;
-  }
-
-  /* Unikátní grafická pečeť jedince */
-  .unikatni-grafika-obal {
-    text-align: center;
-    margin: 8px 0;
-  }
-  .emblem-img {
-    width: 115px;
-    height: 115px;
-    border-radius: 50%;
-    border: 2px solid var(--zlatavost);
-    box-shadow: 0 4px 14px rgba(139, 115, 85, 0.22);
-    object-fit: cover;
+    margin-bottom: 16px;
   }
 
   .udaje-mriezk {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 12px;
     text-align: left;
-    background-color: #F8F5EE;
-    padding: 12px 18px;
+    background-color: rgba(248, 245, 238, 0.9);
+    padding: 14px 20px;
     border-radius: 4px;
     border: 1px solid var(--linka);
     font-size: 9.5pt;
-    margin: 10px 0;
+    margin: 14px 0;
   }
 
   .udaj-polozka strong { color: var(--akcent); }
 
   .vyznam-box {
-    margin: 10px 0;
-    padding: 12px;
+    margin: 14px 0;
+    padding: 14px 18px;
     border-left: 3px solid var(--akcent);
     text-align: left;
     font-size: 9.5pt;
-    background-color: #FAF7F2;
+    line-height: 1.6;
+    background-color: rgba(250, 247, 242, 0.92);
   }
 
   .vyznam-nadpis {
@@ -319,15 +320,15 @@
 
   /* Spodní zápatí certifikátu: Podpis vlevo + QR kód vpravo */
   .certifikat-dole-obal {
-    margin-top: 10px;
-    padding-top: 8px;
+    margin-top: 14px;
+    padding-top: 10px;
   }
 
   .podpisy-mriezka {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   .podpis-line {
@@ -516,7 +517,7 @@
         <div class="karta-ikona">📘</div>
         <div class="karta-text">
           <strong>E-book &amp; Průvodce chovem (Tisk do PDF)</strong>
-          <span>Vytisknout nebo uložit do PDF kompletní 6-stránkový průvodce, certifikát a smlouvu</span>
+          <span>Vytisknout nebo uložit do PDF kompletní průvodce, certifikát a smlouvu</span>
         </div>
       </div>
       <div class="karta-tlacitko">🖨️ Vytisknout / Uložit PDF</div>
@@ -524,68 +525,60 @@
   </div>
 </div>
 
-<!-- ================= STRANA 1: CERTIFIKÁT JMÉNA A PŮVODU ================= -->
-<div class="strana">
-  <div class="certifikat-obal">
-    <div class="certifikat-vnitrni-ram">
-      <div>
-        <p class="jmeno-stanice">Felis Noetica</p>
-        <p class="podtitul">INTELLIGENTIA ET CONCORDIA</p>
-        <p style="font-size: 8.5pt; color: var(--text-tichy); margin-top: 6px;">Chovná stanice evropských krátkosrstých koček (FIFe reg. č. 7944)</p>
-      </div>
+<!-- ================= STRANA 1: SAMOSTATNÁ ÚVODNÍ GRAFIKA CERTIFIKÁTU (ČISTÉ POZADÍ BEZ TEXTU) ================= -->
+<div class="strana strana-titulni-grafika"></div>
 
-      <div>
-        <div class="certifikujese">Tímto se oficiálně osvědčuje původ a jméno jedince</div>
-        <div class="jmeno-zviratko">Aténa</div>
-        <div class="formalni-jmeno">Aténa of Felis Noetica</div>
-      </div>
+<!-- ================= STRANA 2: CERTIFIKÁT JMÉNA A PŮVODU (IDENTIFIKÁTOR #strana-certifikat S PADDINGEM 24MM 16MM A BEZ BORDERU) ================= -->
+<div id="strana-certifikat" class="strana">
+  <div class="certifikat-vnitrni-ram">
+    <div>
+      <p class="jmeno-stanice">Felis Noetica</p>
+      <p class="podtitul">INTELLIGENTIA ET CONCORDIA</p>
+      <p style="font-size: 8.5pt; color: var(--text-tichy); margin-top: 4px;">Chovná stanice evropských krátkosrstých koček (FIFe reg. č. 7944)</p>
+    </div>
 
-      <!-- UNIKÁTNÍ ULEČENÁ GRAFICKÁ PEČEŤ JEDINCE -->
-      <div class="unikatni-grafika-obal">
-        <img src="emblem_atena.jpg" alt="Unikátní zosobňující pečeť jedince: Aténa" class="emblem-img">
-      </div>
+    <div>
+      <div class="certifikujese">Tímto se oficiálně osvědčuje původ a jméno jedince</div>
+      <div class="jmeno-zviratko">Aténa</div>
+      <div class="formalni-jmeno">Aténa of Felis Noetica</div>
+    </div>
 
-      <div class="udaje-mriezk">
-        <div class="udaj-polozka"><strong>ID:</strong> FS01-G01-F003</div>
-        <div class="udaj-polozka"><strong>Pohlaví:</strong> Kočka (♀)</div>
-        <div class="udaj-polozka"><strong>Datum narození:</strong> 8. července 2025</div>
-        <div class="udaj-polozka"><strong>Zbarvení:</strong> Tříbarevná s bílou (O/o S/s)</div>
-        <div class="udaj-polozka"><strong>Matka:</strong> Šipka (G1, O/o s/s)</div>
-        <div class="udaj-polozka"><strong>Otec:</strong> Kocour z Runářova (G1, S/s)</div>
-      </div>
+    <div class="udaje-mriezk">
+      <div class="udaj-polozka"><strong>ID:</strong> FS01-G01-F003</div>
+      <div class="udaj-polozka"><strong>Pohlaví:</strong> Kočka (♀)</div>
+      <div class="udaj-polozka"><strong>Datum narození:</strong> 8. července 2025</div>
+      <div class="udaj-polozka"><strong>Zbarvení:</strong> Tříbarevná s bílou (O/o S/s)</div>
+      <div class="udaj-polozka"><strong>Matka:</strong> Šipka (G1, O/o s/s)</div>
+      <div class="udaj-polozka"><strong>Otec:</strong> Kocour z Runářova (G1, S/s)</div>
+    </div>
 
-      <div class="vyznam-box">
-        <div class="vyznam-nadpis">🏛️ Význam a inspirace jména: Aténa (Pallas Athéné)</div>
-        Jméno <strong>Aténa</strong> odkazuje na <strong>Pallas Athénu</strong> – řeckou bohyni moudrosti, rozvahy, chytrosti a ušlechtilé síly. Vyznačuje se vynikající pozorovatelskou schopností a bystrou myslí.
-      </div>
+    <div class="vyznam-box">
+      <div class="vyznam-nadpis">🏛️ Význam a inspirace jména: Aténa (Pallas Athéné)</div>
+      Jméno <strong>Aténa</strong> odkazuje na <strong>Pallas Athénu</strong> – řeckou bohyni moudrosti, rozvahy, chytrosti a ušlechtilé síly. Vyznačuje se vynikající pozorovatelskou schopností a bystrou myslí.
+    </div>
 
-      <!-- SPODNÍ BLOK: PODPIS VLEVO, QR KÓD VPRAVO, REGISTRACE DOLE -->
-      <div class="certifikat-dole-obal">
-        <div class="podpisy-mriezka">
-          <div class="podpis-line">
-            <strong>Viktor Lošťák</strong><br>
-            Chovatel / Felis Noetica
-          </div>
-
-          <div class="qr-blok-pravo">
-            <img src="qr_kod.png" alt="QR kód Atény" class="qr-img">
-            <span>Digitální rodokmen a ověření původu</span>
-          </div>
+    <!-- SPODNÍ BLOK: PODPIS VLEVO, QR KÓD VPRAVO, REGISTRACE DOLE -->
+    <div class="certifikat-dole-obal">
+      <div class="podpisy-mriezka">
+        <div class="podpis-line">
+          <strong>Viktor Lošťák</strong><br>
+          Chovatel / Felis Noetica
         </div>
 
-        <div class="certifikat-registrace">
-          FIFe reg. č. 7944 &nbsp;·&nbsp; ČSCH reg. č. 30214
+        <div class="qr-blok-pravo">
+          <img src="qr_kod.png" alt="QR kód Atény" class="qr-img">
+          <span>Digitální rodokmen a ověření původu</span>
         </div>
+      </div>
+
+      <div class="certifikat-registrace">
+        FIFe reg. č. 7944 &nbsp;·&nbsp; ČSCH reg. č. 30214
       </div>
     </div>
   </div>
-  <div class="zapatie">
-    <span>Felis Noetica, CZ — Certifikát jména a původu (FS01-G01-F003)</span>
-    <span>Strana 1</span>
-  </div>
 </div>
 
-<!-- ================= STRANA 2: POTVRZENÍ O DAROVÁNÍ ================= -->
+<!-- ================= STRANA 3: POTVRZENÍ O DAROVÁNÍ ================= -->
 <div class="strana">
   <div>
     <span class="navesti">Doklad o předání</span>
@@ -604,7 +597,7 @@
     <p><strong>Prohlášení účastníků:</strong></p>
     <ol>
       <li>Dárce prohlašuje, že kotě pochází z jeho chovného programu, bylo předáno zdravé a plně socializované.</li>
-      <li>Obdarovaný prohlašuje, že kotě převzalo do své péče a zavazuje se k zajištění kvalitních životních podmínek a láskyplného domova.</li>
+      <li>Obdarovaný prohlašuje, že kotě převzal do své péče a zavazuje se k zajištění kvalitních životních podmínek a láskyplného domova.</li>
       <li>K předání došlo neformálně v roce 2025 ještě před oficiální registrací chovné stanice Felis Noetica, CZ (reg. č. 7944 u FIFe). Toto potvrzení slouží jako doklad o změně vlastnictví.</li>
     </ol>
 
@@ -615,11 +608,11 @@
   </div>
   <div class="zapatie">
     <span>Felis Noetica, CZ — Potvrzení o darování (FS01-G01-F003)</span>
-    <span>Strana 2</span>
+    <span>Strana 3</span>
   </div>
 </div>
 
-<!-- ================= STRANA 3: METODIKA ALL-GOOD & PŘÍBĚH ================= -->
+<!-- ================= STRANA 4: METODIKA ALL-GOOD & PŘÍBĚH ================= -->
 <div class="strana">
   <div>
     <span class="navesti">Kapitola 1</span>
@@ -638,11 +631,11 @@
   </div>
   <div class="zapatie">
     <span>Felis Noetica, CZ — Metodika „All-Good“ a příběh</span>
-    <span>Strana 3</span>
+    <span>Strana 4</span>
   </div>
 </div>
 
-<!-- ================= STRANA 4: SROZUMITELNÁ INTERPRETACE GENETICKÝCH TESTŮ MATKY ================= -->
+<!-- ================= STRANA 5: SROZUMITELNÁ INTERPRETACE GENETICKÝCH TESTŮ MATKY ================= -->
 <div class="strana">
   <div>
     <span class="navesti">Genetika a zdraví</span>
@@ -687,11 +680,11 @@
   </div>
   <div class="zapatie">
     <span>Felis Noetica, CZ — Interpretace genetických testů matky (FS01-G01-F003)</span>
-    <span>Strana 4</span>
+    <span>Strana 5</span>
   </div>
 </div>
 
-<!-- ================= STRANA 5: PŘÍBĚHY MAJITELŮ, VÝZKUM A VĚDECKÁ VÝŽIVA ================= -->
+<!-- ================= STRANA 6: PŘÍBĚHY MAJITELŮ, VÝZKUM A VĚDECKÁ VÝŽIVA ================= -->
 <div class="strana">
   <div>
     <span class="navesti">Kapitola 2</span>
@@ -718,11 +711,11 @@
   </div>
   <div class="zapatie">
     <span>Felis Noetica, CZ — Příběhy & Výživa (FS01-G01-F003)</span>
-    <span>Strana 5</span>
+    <span>Strana 6</span>
   </div>
 </div>
 
-<!-- ================= STRANA 6: ZÁVĚREČNÁ TIRÁŽ & KONTAKTY ================= -->
+<!-- ================= STRANA 7: ZÁVĚREČNÁ TIRÁŽ & KONTAKTY ================= -->
 <div class="strana">
   <div class="tiraz-obal">
     <div class="znacka">
@@ -755,7 +748,7 @@
   </div>
   <div class="zapatie">
     <span>Felis Noetica, CZ — Závěrečná tiráž (FS01-G01-F003)</span>
-    <span>Strana 6</span>
+    <span>Strana 7</span>
   </div>
 </div>
 
