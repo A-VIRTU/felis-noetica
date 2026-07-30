@@ -303,47 +303,60 @@
     margin-bottom: 4px;
   }
 
-  .podpisy {
-    display: flex;
-    justify-content: space-between;
+  /* Spodní zápatí certifikátu: Podpis vlevo + QR kód vpravo */
+  .certifikat-dole-obal {
     margin-top: 15px;
-    padding-top: 12px;
-    font-size: 9pt;
+    padding-top: 10px;
+  }
+
+  .podpisy-mriezka {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 15px;
   }
 
   .podpis-line {
     border-top: 1px dashed var(--text-tichy);
-    width: 180px;
+    width: 200px;
     text-align: center;
-    padding-top: 4px;
+    padding-top: 5px;
+    font-size: 9pt;
   }
 
-  .qr-blok-certifikat {
-    margin-top: 15px;
+  .qr-blok-pravo {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    border-top: 1px solid var(--linka);
-    padding-top: 12px;
+    gap: 10px;
+    text-align: left;
   }
+
   .qr-img {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     border: 1px solid var(--zlatavost);
     border-radius: 4px;
-    padding: 3px;
+    padding: 2px;
     background-color: #FFFDF9;
   }
-  .qr-blok-certifikat span {
+
+  .qr-blok-pravo span {
     font-size: 8pt;
     color: var(--text-tichy);
     font-style: italic;
-    max-width: 150px;
-    text-align: left;
-    line-height: 1.4;
+    max-width: 140px;
+    line-height: 1.35;
   }
 
+  .certifikat-registrace {
+    border-top: 1px solid var(--linka);
+    padding-top: 8px;
+    font-size: 8.5pt;
+    color: var(--text-tichy);
+    letter-spacing: 0.05em;
+  }
+
+  /* Styl pro QR kód v tiráži */
   .qr-blok-tiraz {
     margin-top: 18px;
     text-align: center;
@@ -516,15 +529,23 @@
         Jméno <strong>Aténa</strong> odkazuje na <strong>Pallas Athénu</strong> – řeckou bohyni moudrosti, rozvahy, chytrosti a ušlechtilé síly. Vyznačuje se vynikající pozorovatelskou schopností a bystrou myslí.
       </div>
 
-      <div class="podpisy">
-        <div class="podpis-line"><strong>Viktor Lošťák</strong><br>Chovatel / Felis Noetica</div>
-        <div class="podpis-line"><strong>FIFe reg. č. 7944</strong><br>ČSCH reg. č. 30214</div>
-      </div>
+      <!-- SPODNÍ BLOK: PODPIS VLEVO, QR KÓD VPRAVO, REGISTRACE DOLE -->
+      <div class="certifikat-dole-obal">
+        <div class="podpisy-mriezka">
+          <div class="podpis-line">
+            <strong>Viktor Lošťák</strong><br>
+            Chovatel / Felis Noetica
+          </div>
 
-      <!-- QR KÓD NA TITULNÍ STRANĚ CERTIFIKÁTU -->
-      <div class="qr-blok-certifikat">
-        <img src="qr_kod.png" alt="QR kód Atény" class="qr-img">
-        <span>Digitální rodokmen a ověření původu jedince</span>
+          <div class="qr-blok-pravo">
+            <img src="qr_kod.png" alt="QR kód Atény" class="qr-img">
+            <span>Digitální rodokmen a ověření původu</span>
+          </div>
+        </div>
+
+        <div class="certifikat-registrace">
+          FIFe reg. č. 7944 &nbsp;·&nbsp; ČSCH reg. č. 30214
+        </div>
       </div>
     </div>
   </div>
