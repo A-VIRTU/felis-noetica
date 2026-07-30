@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Rozpoznání 36-znakového UUID/GUID v kořenové URL (např. felisnoetica.cz/a9d4f8e2-b1c3-4d5e-8f9a-7b6c5d4e3f2a)
+  RewriteRule ^([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})/?$ d/index.php?t=$1 [L,QSA]
+</IfModule>
