@@ -1,0 +1,12 @@
+{
+  "zen-a9d4f8e2": {
+    "master_id": "FS01-G01-M001",
+    "name": "Zen",
+    "target": "fs01-g01-m001-zen-a9d4f8e2"
+  },
+  "atena-c7e3b1a5": {
+    "master_id": "FS01-G01-F003",
+    "name": "Aténa",
+    "target": "fs01-g01-f003-atena-c7e3b1a5"
+  }
+}
