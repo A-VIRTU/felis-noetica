@@ -31,7 +31,7 @@
     -webkit-print-color-adjust: exact;
   }
 
-  /* Tiskové tlačítko pro majitele */
+  /* Lišta pro majitele */
   .tisk-bar {
     background-color: var(--text-hlavni);
     color: #FFF;
@@ -45,17 +45,36 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
   .tisk-bar button {
-    background-color: var(--akcent);
+    background-color: #555;
     color: white;
     border: none;
-    padding: 8px 18px;
+    padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
     font-weight: 600;
-    margin-left: 15px;
+    margin-left: 8px;
     font-size: 13px;
   }
-  .tisk-bar button:hover { background-color: var(--zlatavost); }
+  .tisk-bar a.btn-zip {
+    background-color: var(--zelena-ok);
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-left: 12px;
+    display: inline-block;
+  }
+  .tisk-bar a.btn-genomia {
+    background-color: var(--akcent);
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-left: 8px;
+    display: inline-block;
+  }
 
   @media print {
     .tisk-bar { display: none; }
@@ -160,7 +179,7 @@
   }
 
   .udaje-mriezk {
-    display grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     text-align: left;
@@ -314,8 +333,10 @@
 <body>
 
 <div class="tisk-bar">
-  🔒 Dokumentační centrum jedince: <strong>FS01-G01-F003 Aténa of Felis Noetica</strong>
-  <button onclick="window.print()">🖨️ Vytisknout / Uložit do PDF</button>
+  🔒 Dokumentace pro <strong>FS01-G01-F003 Aténa of Felis Noetica</strong>
+  <a href="Atena_Felis_Noetica_Komplet.zip" download class="btn-zip">📦 Stáhnout balíček (ZIP)</a>
+  <a href="Genomia_Testy_Matka_Sipka.pdf" target="_blank" class="btn-genomia">📄 Testy Genomia (PDF)</a>
+  <button onclick="window.print()">🖨️ Vytisknout E-book</button>
 </div>
 
 <!-- ================= STRANA 1: CERTIFIKÁT JMÉNA A PŮVODU ================= -->
@@ -424,7 +445,7 @@
     <span class="navesti">Genetika a zdraví</span>
     <h2 class="kapitola-nadpis">Srozumitelná interpretace testů matky (Šipka)</h2>
 
-    <p style="font-size: 8.5pt; color: var(--text-tichy); margin-bottom: 12px;"><em>Poznámka k dokumentaci: Kompletní, nedotčený oficiální certifikát z akreditované laboratoře Genomia s.r.o. (protokol č. 321882 / 25-35103, mikročip <code>203098100606951</code>) vám předáváme v plném znění jako samostatný dokument `Genomia_Sipka.pdf`. Níže uvádíme srozumitelnou interpretaci těchto výsledků pro vás a vaše koťátko:</em></p>
+    <p style="font-size: 8.5pt; color: var(--text-tichy); margin-bottom: 12px;"><em>Poznámka k dokumentaci: Kompletní, nedotčený oficiální certifikát z akreditované laboratoře Genomia s.r.o. (protokol č. 321882 / 25-35103, mikročip <code>203098100606951</code>) vám předáváme v plném znění jako samostatný dokument <a href="Genomia_Testy_Matka_Sipka.pdf" target="_blank" style="color: var(--akcent); font-weight: 500;">Genomia_Testy_Matka_Sipka.pdf</a>. Níže uvádíme srozumitelnou interpretaci těchto výsledků pro vás a vaše koťátko:</em></p>
 
     <h3 style="font-size: 10.5pt; color: var(--akcent); margin-top: 10px; margin-bottom: 4px;">1. Imunitní bezpečnost a krevní skupina (CMAH)</h3>
     <p style="font-size: 9.5pt; margin-bottom: 8px;"><strong>Výsledek: Genotyp N/b (Krevní skupina A, nosič alely b).</strong> Krevní skupina A je v kočičí populaci nejběžnější a serologicky nejbezpečnější. Matka typu A nemůže vyvolat imunitní konflikt krevních skupin u koťat, což zaručilo bezpečný start do života a silnou imunitu.</p>
