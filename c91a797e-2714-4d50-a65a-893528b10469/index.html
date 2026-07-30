@@ -13,7 +13,7 @@
     --text-tichy: #6B655D;
     --akcent: #8B7355;
     --zlatavost: #B89768;
-    --bg-papir: #FDFBF7;
+    --bg-papir: #FFFFFF;
     --linka: #E8E2D8;
     --zelena-ok: #2E6B38;
   }
@@ -35,7 +35,7 @@
   .hub-container {
     max-width: 210mm;
     margin: 35px auto 25px;
-    background-color: var(--bg-papir);
+    background-color: #FDFBF7;
     padding: 35px 40px;
     border-radius: 10px;
     box-shadow: 0 6px 25px rgba(0,0,0,0.07);
@@ -219,12 +219,13 @@
     justify-content: space-between;
   }
 
-  /* Samostatná úvodní strana pouze s autorským obrázkem pozadí */
+  /* Samostatná úvodní strana pouze s autorským čárovým obrázkem na čistě bílém podkladu */
   .strana-titulni-grafika {
     background-image: url('bg_certifikat.jpg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #FFFFFF;
     padding: 0;
   }
 
@@ -234,6 +235,7 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #FFFFFF;
     padding: 24mm 16mm 24mm 16mm;
   }
 
@@ -247,7 +249,7 @@
     color: var(--text-tichy);
   }
 
-  /* Vnitřní textový rám bez borderu s poloprůhledným pergamenovým podkladem */
+  /* Vnitřní textový rám bez borderu s čistě bílým krytím pro 100% čitelnost */
   .certifikat-vnitrni-ram {
     border: none;
     padding: 20px 24px;
@@ -258,9 +260,9 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    background-color: rgba(253, 251, 247, 0.85);
+    background-color: rgba(255, 255, 255, 0.88);
     border-radius: 4px;
-    box-shadow: inset 0 0 35px rgba(248, 245, 238, 0.5);
+    box-shadow: inset 0 0 35px rgba(255, 255, 255, 0.6);
     box-sizing: border-box;
   }
 
@@ -525,7 +527,7 @@
   </div>
 </div>
 
-<!-- ================= STRANA 1: SAMOSTATNÁ ÚVODNÍ GRAFIKA CERTIFIKÁTU (ČISTÉ POZADÍ BEZ TEXTU) ================= -->
+<!-- ================= STRANA 1: SAMOSTATNÁ ÚVODNÍ GRAFIKA CERTIFIKÁTU (ČISTÁ ČÁROVÁ GRAFIKA NA ČISTĚ BÍLÉM PODKLADU) ================= -->
 <div class="strana strana-titulni-grafika"></div>
 
 <!-- ================= STRANA 2: CERTIFIKÁT JMÉNA A PŮVODU ================= -->
@@ -621,7 +623,7 @@
     <p>V našem chovném programu <strong>Felis Noetica</strong> uplatňujeme a důsledně doporučujeme <strong>metodiku „All-Good“ (výhradně pozitivní přístup)</strong>:</p>
 
     <ul>
-      <li><strong>Zásada nulové negativity:</strong> Kočky z této linie byly generačně selektovány na vysokou empatii, inteligenci a důvěru k člověku. V jejich výchově <strong>nikdy nepoužíváme tresty, křik, zastrašování ani negativní podněty</strong>. Jakýkoliv nátlak u vnímavé kočky vyvolává zbytečnou úzkost a ničí budovaný vztah.</li>
+      <li><strong>Zásada nulové negativity:</strong> Kočky z této linie byly generačně selektovány na vysokou empatii, inteligenci a důvěru k človeku. V jejich výchově <strong>nikdy nepoužíváme tresty, křik, zastrašování ani negativní podněty</strong>. Jakýkoliv nátlak u vnímavé kočky vyvolává zbytečnou úzkost a ničí budovaný vztah.</li>
       <li><strong>Pozitivní posilování:</strong> Všechna koťata jsou zvyklá na to, že kontakt s člověkem přináší výhradně bezpečí, vlídnost a odměnu. Žádoucí chování upevňujeme pochvalou, pamlskem a klidným hlasem.</li>
       <li><strong>Přesměrování pozornosti:</strong> Pokud kotě dělá něco nevhodného, nikdy ho netrestáme. V klidu ho přesměrujeme na vhodné místo (škrabadlo) a tam ho odměníme.</li>
     </ul>
