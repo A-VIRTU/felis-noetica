@@ -306,8 +306,8 @@
   .podpisy {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
-    padding-top: 15px;
+    margin-top: 15px;
+    padding-top: 12px;
     font-size: 9pt;
   }
 
@@ -316,6 +316,47 @@
     width: 180px;
     text-align: center;
     padding-top: 4px;
+  }
+
+  /* Styl pro QR kód na certifikátu */
+  .qr-blok-certifikat {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border-top: 1px solid var(--linka);
+    padding-top: 12px;
+  }
+  .qr-img {
+    width: 65px;
+    height: 65px;
+    border: 1px solid var(--zlatavost);
+    border-radius: 4px;
+    padding: 3px;
+    background-color: #FFFDF9;
+  }
+  .qr-blok-certifikat span {
+    font-size: 8pt;
+    color: var(--text-tichy);
+    font-style: italic;
+    max-width: 150px;
+    text-align: left;
+    line-height: 1.4;
+  }
+
+  /* Styl pro QR kód v tiráži */
+  .qr-blok-tiraz {
+    margin-top: 18px;
+    text-align: center;
+  }
+  .qr-img-tiraz {
+    width: 75px;
+    height: 75px;
+    border: 1px solid var(--linka);
+    border-radius: 4px;
+    padding: 4px;
+    background-color: #FFF;
   }
 
   h2.kapitola-nadpis {
@@ -375,17 +416,17 @@
     padding: 40px 20px;
   }
 
-  .znacka { margin-bottom: 30px; text-align: center; }
-  .znacka img { width: 180px; margin: 0 auto 1.25rem; opacity: 0.7; }
-  .tiraz-kontakty { font-size: 12pt; margin: 25px 0; line-height: 1.85; }
+  .znacka { margin-bottom: 25px; text-align: center; }
+  .znacka img { width: 170px; margin: 0 auto 1.2rem; opacity: 0.75; }
+  .tiraz-kontakty { font-size: 12pt; margin: 20px 0 15px; line-height: 1.85; }
   .tiraz-kontakty a { color: var(--akcent); text-decoration: none; }
   .uredni-tiraz {
     font-size: 8.5pt;
     color: var(--text-tichy);
     line-height: 1.7;
-    margin-top: 30px;
+    margin-top: 20px;
     border-top: 1px solid var(--linka);
-    padding-top: 20px;
+    padding-top: 18px;
     max-width: 480px;
   }
 </style>
@@ -480,6 +521,12 @@
       <div class="podpisy">
         <div class="podpis-line"><strong>Viktor Lošťák</strong><br>Chovatel / Felis Noetica</div>
         <div class="podpis-line"><strong>FIFe reg. č. 7944</strong><br>ČSCH reg. č. 30214</div>
+      </div>
+
+      <!-- QR KÓD NA TITULNÍ STRANĚ CERTIFIKÁTU -->
+      <div class="qr-blok-certifikat">
+        <img src="qr_kod.png" alt="QR kód Atény" class="qr-img">
+        <span>Digitální rodokmen a ověření původu jedince</span>
       </div>
     </div>
   </div>
@@ -636,6 +683,12 @@
       <a href="mailto:info@felisnoetica.cz">info@felisnoetica.cz</a><br>
       <a href="tel:+420604761154">+420 604 761 154</a></p>
       <p style="color: var(--text-tichy); font-size: 10.5pt; margin-top: 10px;">Viktor Lošťák · Brno a Runářov, Česká republika</p>
+    </div>
+
+    <!-- QR KÓD V TIRÁŽI ZÁVĚREČNÉ STRANY -->
+    <div class="qr-blok-tiraz">
+      <img src="qr_kod.png" alt="QR kód Atény pro stažení" class="qr-img-tiraz">
+      <p style="font-size: 8.5pt; color: var(--text-tichy); margin-top: 5px;">Naskenujte pro stažení kompletní dokumentace a testů Genomia</p>
     </div>
 
     <div class="uredni-tiraz">
