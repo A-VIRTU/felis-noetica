@@ -78,6 +78,20 @@ a:focus-visible{outline:2px solid var(--trava);outline-offset:3px;border-radius:
   margin-right:auto;
   opacity:.5;
 }
+.znacka-nazev{
+  font-family:"Newsreader",serif;
+  font-size:1.05rem;
+  margin:.6rem 0 .15rem;
+  color:var(--text-hlavni);
+}
+.znacka-motto{
+  font-family:"Newsreader",serif;
+  font-size:.88rem;
+  font-style:italic;
+  letter-spacing:.06em;
+  color:var(--text-tichy);
+  margin:0;
+}
 
 .jmeno-stanice{
   font-family:"Newsreader",serif;font-weight:400;font-size:1.85rem;
