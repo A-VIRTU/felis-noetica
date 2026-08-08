@@ -1,18 +1,17 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "felis-noetica",
   "compatibility_date": "2026-08-08",
-  "observability": {
-    "enabled": true
-  },
   "assets": {
     "directory": ".",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none",
     "exclude": [
+      ".git",
       ".git/**",
-      ".github/**"
+      ".github",
+      ".github/**",
+      "node_modules",
+      "node_modules/**"
     ]
-  },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ]
+  }
 }
