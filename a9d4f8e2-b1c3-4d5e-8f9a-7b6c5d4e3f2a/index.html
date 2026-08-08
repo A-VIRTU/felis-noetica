@@ -349,11 +349,24 @@
   }
 
   .podpis-line {
+    position: relative;
     border-top: 1px dashed var(--text-tichy);
     width: 200px;
     text-align: center;
     padding-top: 5px;
     font-size: 9pt;
+  }
+
+  .podpis-grafika-img {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 52px;
+    width: auto;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 12;
   }
 
   .qr-blok-pravo {
@@ -579,6 +592,7 @@
     <div class="certifikat-dole-obal">
       <div class="podpisy-mriezka">
         <div class="podpis-line">
+          <img src="podpis.png" alt="Podpis Viktor Lošťák" class="podpis-grafika-img">
           <strong>Viktor Lošťák</strong><br>
           Chovatel / Felis Noetica
         </div>
