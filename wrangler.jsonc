@@ -2,13 +2,10 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "felis-noetica",
   "compatibility_date": "2026-08-08",
-  "observability": {
-    "enabled": true
+  "build": {
+    "command": "node build.js"
   },
   "assets": {
     "directory": "public"
-  },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ]
+  }
 }
