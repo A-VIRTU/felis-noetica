@@ -1,7 +1,3 @@
-.git
-.git/**
-.github
-.github/**
 node_modules
-node_modules/**
+public
 .wrangler
