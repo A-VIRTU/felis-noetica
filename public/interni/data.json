@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T12:57:47.271Z",
+ "vygenerovano": "2026-08-09T13:52:30.209Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -13,7 +13,7 @@
    "otec": null,
    "verejne": false,
    "stranka": null,
-   "pocet_assetu": 11
+   "pocet_assetu": 12
   },
   {
    "id": "FS01-G00-M001",
@@ -42,7 +42,7 @@
    "otec": null,
    "verejne": true,
    "stranka": "/e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b/",
-   "pocet_assetu": 6
+   "pocet_assetu": 7
   },
   {
    "id": "FS01-G01-F004",
@@ -72,7 +72,7 @@
    "otec": null,
    "verejne": true,
    "stranka": "/f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c/",
-   "pocet_assetu": 11
+   "pocet_assetu": 12
   },
   {
    "id": "FS01-G01-M001",
@@ -177,7 +177,7 @@
    "otec": "FS01-G01-M002",
    "verejne": true,
    "stranka": "/c91a797e-2714-4d50-a65a-893528b10469/",
-   "pocet_assetu": 7
+   "pocet_assetu": 8
   },
   {
    "id": "FS01-G02-M004",
@@ -222,7 +222,7 @@
    "otec": "FS01-G00-M001",
    "verejne": true,
    "stranka": "/b8c9694e-91a9-4a5e-986b-add58cedd104/",
-   "pocet_assetu": 3
+   "pocet_assetu": 5
   }
  ],
  "vrhy": [
@@ -601,6 +601,40 @@
    "zdroj": "data\\assety\\genomia-321880-sofie.yaml"
   },
   {
+   "soubor": "dokumenty/Genomia_Testy_Matka_Sipka.pdf",
+   "typ": "dokument",
+   "datum": "2026-03-11",
+   "misto": "Plzeň",
+   "zvirata": [
+    "FS01-G00-F001",
+    "FS01-G01-F003",
+    "FS01-G01-F005",
+    "FS01-G02-M006",
+    "FS01-G02-M003"
+   ],
+   "hlavni": null,
+   "tagy": [
+    "genomia"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/Genomia_Testy_Matka_Sipka.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Potvrzení identity zakladatelky chovu Šipky (Genomia)",
+     "text": "DNA profil a certifikát o původu matky rodokmenu"
+    },
+    "en": {
+     "navesti": "Foundation dam identity verification (Genomia)",
+     "text": "DNA profile and certificate of foundation dam Šipka"
+    },
+    "fr": {
+     "navesti": "Vérification d'identité de la mère fondatrice (Genomia)",
+     "text": "Profil ADN et certificat de la mère fondatrice Šipka"
+    }
+   },
+   "zdroj": "data\\assety\\genomia-sipka.yaml"
+  },
+  {
    "soubor": "foto/IMG_20250805_091744.jpg",
    "typ": "foto",
    "datum": "2025-08-05",
@@ -692,6 +726,36 @@
     }
    },
    "zdroj": "data\\assety\\pafnuc-detail.yaml"
+  },
+  {
+   "soubor": "dokumenty/FS01-G02-M006_Penrose_Certificate_of_Honorary_Godparenthood.pdf",
+   "typ": "dokument",
+   "datum": "2026-08-08",
+   "misto": "Brno",
+   "zvirata": [
+    "FS01-G02-M006"
+   ],
+   "hlavni": "FS01-G02-M006",
+   "tagy": [
+    "certifikat"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/FS01-G02-M006_Penrose_Certificate_of_Honorary_Godparenthood.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Certifikát čestného kmotrovství (PDF)",
+     "text": "Oficiální tiskový certifikát pro sira Rogera Penrose"
+    },
+    "en": {
+     "navesti": "Certificate of Honorary Godparenthood (PDF)",
+     "text": "Official PDF certificate for Sir Roger Penrose"
+    },
+    "fr": {
+     "navesti": "Certificat de parrainage d'honneur (PDF)",
+     "text": "Certificat PDF officiel pour Sir Roger Penrose"
+    }
+   },
+   "zdroj": "data\\assety\\penrose-certifikat-pdf.yaml"
   },
   {
    "soubor": "foto/penrose-detail.jpg",
@@ -1439,6 +1503,7 @@
   }
  ],
  "tagy": [
+  "certifikat",
   "detail",
   "drevnik",
   "genetika",

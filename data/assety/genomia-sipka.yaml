@@ -1,0 +1,26 @@
+soubor: dokumenty/Genomia_Testy_Matka_Sipka.pdf
+typ: dokument
+datum: '2026-03-11'
+misto: Plzeň
+pomer: null
+zvirata:
+  - FS01-G00-F001 Šipka
+  - FS01-G01-F003 Sofie
+  - FS01-G01-F005 Sibyla
+  - FS01-G02-M006 Penrose
+  - FS01-G02-M003 Alain
+hlavni: null
+tagy:
+  - genomia
+viditelnost: verejne
+token: genomia-sipka-pdf-2026
+popisky:
+  cs:
+    navesti: Potvrzení identity zakladatelky chovu Šipky (Genomia)
+    text: DNA profil a certifikát o původu matky rodokmenu
+  en:
+    navesti: Foundation dam identity verification (Genomia)
+    text: DNA profile and certificate of foundation dam Šipka
+  fr:
+    navesti: Vérification d'identité de la mère fondatrice (Genomia)
+    text: Profil ADN et certificat de la mère fondatrice Šipka
