@@ -413,14 +413,14 @@ body {
 }
 
 .foto-kolecko {
-  width: 130px;
-  height: 130px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  border: 3px solid var(--zlatavost);
+  border: 2px solid var(--zlatavost);
   box-shadow: 0 4px 15px rgba(0,0,0,0.12);
   overflow: hidden;
   display: inline-block;
-  margin: 6px auto;
+  margin: 2px auto;
 }
 .foto-kolecko img {
   width: 100%;
