@@ -1,0 +1,21 @@
+soubor: foto/2025-12-31_sipka_silvestr_2025_teletnik_v_runarove.jpg
+typ: foto
+datum: '2025-12-31'
+misto: Runářov
+pomer: null
+zvirata:
+  - FS01-G00-F001 Šipka
+hlavni: FS01-G00-F001 Šipka
+tagy:
+  - sipka
+  - runarov
+  - teletnik
+viditelnost: verejne
+token: photo-sipka-2025-12-31
+popisky:
+  cs:
+    navesti: 31. prosince 2025
+    text: Šipka, Silvestr 2025, Teletník v Runářově
+  en:
+    navesti: 31 December 2025
+    text: Šipka, New Year's Eve 2025, Teletník in Runářov

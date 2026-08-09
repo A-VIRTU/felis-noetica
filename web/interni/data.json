@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T19:16:09.410Z",
+ "vygenerovano": "2026-08-09T19:23:12.979Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -13,7 +13,7 @@
    "otec": null,
    "verejne": false,
    "stranka": null,
-   "pocet_assetu": 13
+   "pocet_assetu": 14
   },
   {
    "id": "FS01-G00-M001",
@@ -252,6 +252,34 @@
   }
  ],
  "assety": [
+  {
+   "soubor": "foto/2025-12-31_sipka_silvestr_2025_teletnik_v_runarove.jpg",
+   "typ": "foto",
+   "datum": "2025-12-31",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [
+    "sipka",
+    "runarov",
+    "teletnik"
+   ],
+   "verejne": true,
+   "url": "/media/foto/2025-12-31_sipka_silvestr_2025_teletnik_v_runarove.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "31. prosince 2025",
+     "text": "Šipka, Silvestr 2025, Teletník v Runářově"
+    },
+    "en": {
+     "navesti": "31 December 2025",
+     "text": "Šipka, New Year's Eve 2025, Teletník in Runářov"
+    }
+   },
+   "zdroj": "data\\assety\\2025-12-31-sipka-silvestr-2025-teletnik-v-runarove.yaml"
+  },
   {
    "soubor": "foto/2026-07-31_sibylin-vrh-matka-a-kote.jpg",
    "typ": "foto",
@@ -1837,7 +1865,10 @@
   "kamera",
   "kote",
   "liska",
+  "runarov",
+  "sipka",
   "skupina",
+  "teletnik",
   "vaha",
   "vrh",
   "zprava"
