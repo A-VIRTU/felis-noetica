@@ -76,6 +76,13 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
     [t.otec, zvire.otec ? rodic(zvirata, zvire.otec) : T(zvire.otec_neznamy, jazyk)],
   ].filter(([, v]) => v);
 
+  const vyznamRaw = T(zvire.vyznam, jazyk)
+    || (zvire.kmotr && T(zvire.kmotr.vyznam, jazyk))
+    || T(zvire.pojmenovan_po, jazyk);
+  const vyznamNadpisText = (zvire.kmotr && (T(zvire.kmotr.osloveni, jazyk) || zvire.kmotr.jmeno))
+    ? `${E(t.vyznamNadpis)}: ${E(T(zvire.kmotr.osloveni, jazyk) || zvire.kmotr.jmeno)}`
+    : (T(zvire.pojmenovan_po, jazyk) ? `${E(t.vyznamNadpis)}: ${E(T(zvire.pojmenovan_po, jazyk))}` : E(t.vyznamNadpis));
+
   return `<!DOCTYPE html>
 <html lang="${jazyk}" class="notranslate" translate="no">
 <head>
@@ -118,9 +125,9 @@ ${zvire.formalni_jmeno ? `      <div class="formalni-jmeno">${E(zvire.formalni_j
       ${udaje.map(([n, v]) => `<div class="udaj-polozka"><strong>${E(n)}:</strong> ${E(v)}</div>`).join('\n      ')}
     </div>
 
-${kmotrovsky && T(k.vyznam, jazyk) ? `    <div class="vyznam-box">
-      <div class="vyznam-nadpis">${E(t.vyznamNadpis)}: ${E(T(k.osloveni, jazyk) || k.jmeno)}</div>
-      ${E(T(k.vyznam, jazyk).trim())}
+${vyznamRaw ? `    <div class="vyznam-box">
+      <div class="vyznam-nadpis">${vyznamNadpisText}</div>
+      ${E(vyznamRaw.trim())}
     </div>` : ''}
 
     <div class="certifikat-dole-obal">
