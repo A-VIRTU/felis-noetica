@@ -179,7 +179,14 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
       const rok = (datumNar || '').slice(0, 4);
       if (rok) {
         const rJazyky = (r.certifikat && r.certifikat.jazyky) || (r.soukroma_stranka && r.soukroma_stranka.jazyky) || ['cs', 'en'];
-        const targetLang = (j && j !== 'cs' && rJazyky.includes(j)) ? `${j}/` : '';
+        let targetLang = '';
+        if (j !== 'cs') {
+          if (rJazyky.includes(j)) {
+            targetLang = `${j}/`;
+          } else if (rJazyky.includes('en')) {
+            targetLang = 'en/';
+          }
+        }
         const parentUrl = `/kotata/${rok}/${slugJmena(r.jmeno)}/${targetLang}`;
         return `${E(label)}: <a href="${E(parentUrl)}" style="color:inherit; text-decoration:none;">${E(jmeno)}</a>`;
       }
