@@ -133,7 +133,7 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
   const { karty, fotky } = polozky({ zvire, assety, jazyk: j, url, majitel });
 
   const prepinac = jazyky.length > 1
-    ? `<p class="prepinac" style="margin:0 0 15px 0; font-size:0.9rem; text-align:right; color:var(--text-tichy);">${jazyky.map((x) => {
+    ? `<p class="prepinac notranslate" translate="no" style="margin:0 0 15px 0; font-size:0.9rem; text-align:right; color:var(--text-tichy);">${jazyky.map((x) => {
         const linkRel = (x === j) ? null : (x === jazyky[0] ? '../' : (j === jazyky[0] ? `${x}/` : `../${x}/`));
         if (x === j) return `<strong>${E(NAZVY_JAZYKU[x] || x)}</strong>`;
         return `<a href="${E(linkRel)}" onclick="sessionStorage.setItem('lang-selected','${x}')" style="color:var(--akcent); text-decoration:none;">${E(NAZVY_JAZYKU[x] || x)}</a>`;
@@ -178,8 +178,9 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
       const datumNar = r.narozeni || '';
       const rok = (datumNar || '').slice(0, 4);
       if (rok) {
-        const langPath = (j && j !== 'cs') ? `${j}/` : '';
-        const parentUrl = `/kotata/${rok}/${slugJmena(r.jmeno)}/${langPath}`;
+        const rJazyky = (r.certifikat && r.certifikat.jazyky) || (r.soukroma_stranka && r.soukroma_stranka.jazyky) || ['cs', 'en'];
+        const targetLang = (j && j !== 'cs' && rJazyky.includes(j)) ? `${j}/` : '';
+        const parentUrl = `/kotata/${rok}/${slugJmena(r.jmeno)}/${targetLang}`;
         return `${E(label)}: <a href="${E(parentUrl)}" style="color:inherit; text-decoration:none;">${E(jmeno)}</a>`;
       }
     }

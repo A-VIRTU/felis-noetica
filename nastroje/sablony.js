@@ -109,7 +109,7 @@ function stranakMajitele({ zvire, jazyk, assety, zvirata, url, kontakt, jazyky =
   const s = SLOVNIK[j] || SLOVNIK.cs;
   // přepínač jazyků: první jazyk sedí na /<uuid>/, další na /<uuid>/<jazyk>/
   const prepinac = jazyky.length > 1
-    ? `<p class="odkaz-dal">${jazyky.map((x) => x === j
+    ? `<p class="odkaz-dal notranslate" translate="no">${jazyky.map((x) => x === j
         ? `<strong>${E(NAZVY_JAZYKU[x] || x)}</strong>`
         : `<a href="/${uuid}/${x === prvni ? '' : x + '/'}">${E(NAZVY_JAZYKU[x] || x)}</a>`).join(' · ')}</p>`
     : '';

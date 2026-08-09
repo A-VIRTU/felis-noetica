@@ -9,12 +9,14 @@ verejne: true
 zbarveni:
   cs: Rezavý
   en: Red (ginger)
+  fr: Roux
 genotyp: O/Y
 soukroma_stranka:
   aktivni: true
   jazyky:
     - cs
     - en
+    - fr
 certifikat:
   typ: kmotrovsky
   misto: Brno
@@ -41,6 +43,8 @@ kmotr:
 pojmenovan_po:
   cs: Alain Aspect — experimenty s provázanými fotony, Nobelova cena 2022
   en: Alain Aspect — experiments with entangled photons, Nobel Prize 2022
+  fr: Alain Aspect — expériences sur les photons intriqués, prix Nobel 2022
 popis:
   cs: Rezavý kocour ze Sibylina vrhu.
   en: A red male kitten from Sibyla's litter.
+  fr: Un chaton mâle roux de la portée de Sibyla.

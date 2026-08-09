@@ -274,3 +274,33 @@ body {
   pointer-events: none !important;
   display: none;
 }
+
+
+.foto-siroka {
+  margin-top: var(--mezera);
+  margin-bottom: var(--mezera);
+  position: relative;
+}
+
+.obal .foto-siroka {
+  margin-left: calc((var(--sirka) - var(--sirka-foto)) / 2);
+  margin-right: calc((var(--sirka) - var(--sirka-foto)) / 2);
+  width: calc(100% + (var(--sirka-foto) - var(--sirka)));
+  max-width: var(--sirka-foto);
+}
+
+.obal-siroky .foto-siroka {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 56rem) {
+  .obal .foto-siroka {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    width: calc(100% + 3rem);
+    max-width: 100vw;
+  }
+}
