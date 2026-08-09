@@ -237,9 +237,9 @@ ${kotata.map((z) => {
   const datumNar = z.narozeni || v.narozeni || '';
   const rok = (datumNar || '').slice(0, 4);
   const langSuffix = (jazyk && jazyk !== 'cs') ? `${jazyk}/` : '';
-  const verejnaUrl = z.uuid
-    ? `/${z.uuid}/${langSuffix}`
-    : (z.verejne && rok ? `/kotata/${rok}/${slugJmena(z.jmeno)}/${langSuffix}` : null);
+  const verejnaUrl = (z.verejne !== false && rok)
+    ? `/kotata/${rok}/${slugJmena(z.jmeno)}/${langSuffix}`
+    : (z.uuid ? `/${z.uuid}/${langSuffix}` : null);
 
   let textOdkazu = z.jmeno.toUpperCase();
   if (z.stav === 'volne') {
