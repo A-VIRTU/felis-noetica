@@ -19,3 +19,8 @@ zbarveni:
 popis:
   cs: Odešla do nového domova, kde se adaptovala během několika dní.
   en: Left for a new home, adapting within days.
+soukroma_stranka:
+  aktivni: true
+  jazyky:
+    - cs
+    - en

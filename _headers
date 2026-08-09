@@ -9,6 +9,12 @@
 /media/*
   Cache-Control: public, max-age=31536000, immutable
 
+/c7e3b1a5-d9f2-4c8e-9a1b-3f5e7d9c1b2a/*
+  X-Robots-Tag: noindex, nofollow
+
+/a9d4f8e2-b1c3-4d5e-8f9a-7b6c5d4e3f2a/*
+  X-Robots-Tag: noindex, nofollow
+
 /c91a797e-2714-4d50-a65a-893528b10469/*
   X-Robots-Tag: noindex, nofollow
 

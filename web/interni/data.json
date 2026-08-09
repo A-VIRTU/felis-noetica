@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T11:25:19.845Z",
+ "vygenerovano": "2026-08-09T11:26:32.173Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -56,7 +56,7 @@
    "matka": "FS01-G00-F001",
    "otec": null,
    "verejne": true,
-   "stranka": null,
+   "stranka": "/c7e3b1a5-d9f2-4c8e-9a1b-3f5e7d9c1b2a/",
    "pocet_assetu": 0
   },
   {
@@ -86,7 +86,7 @@
    "matka": "FS01-G00-F001",
    "otec": null,
    "verejne": true,
-   "stranka": null,
+   "stranka": "/a9d4f8e2-b1c3-4d5e-8f9a-7b6c5d4e3f2a/",
    "pocet_assetu": 0
   },
   {
