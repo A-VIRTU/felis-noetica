@@ -179,7 +179,7 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
       if (rok) {
         const langPath = (j && j !== 'cs') ? `${j}/` : '';
         const parentUrl = `/kotata/${rok}/${slugJmena(r.jmeno)}/${langPath}`;
-        return `${E(label)}: <a href="${E(parentUrl)}" style="color:inherit; text-decoration:underline;">${E(jmeno)}</a>`;
+        return `${E(label)}: <a href="${E(parentUrl)}" style="color:inherit; text-decoration:none;">${E(jmeno)}</a>`;
       }
     }
     return `${E(label)}: ${E(jmeno)}`;
