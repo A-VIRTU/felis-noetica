@@ -1,0 +1,22 @@
+soubor: dokumenty/FS01-G02-M006_Penrose_Certificate_of_Honorary_Godparenthood_EN.pdf
+typ: dokument
+datum: '2026-08-08'
+misto: Brno
+pomer: null
+zvirata:
+  - FS01-G02-M006 Penrose
+hlavni: FS01-G02-M006 Penrose
+tagy:
+  - certifikat
+viditelnost: verejne
+token: cert-penrose-en-pdf-2026
+popisky:
+  cs:
+    navesti: Certificate of Honorary Godparenthood — EN (PDF)
+    text: Oficiální anglický tiskový certifikát pro sira Rogera Penrose
+  en:
+    navesti: Certificate of Honorary Godparenthood — EN (PDF)
+    text: Official English PDF certificate for Sir Roger Penrose
+  fr:
+    navesti: Certificate of Honorary Godparenthood — EN (PDF)
+    text: Certificat PDF officiel en anglais pour Sir Roger Penrose

@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T17:48:00.453Z",
+ "vygenerovano": "2026-08-09T18:00:46.667Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -222,7 +222,7 @@
    "otec": "FS01-G00-M001",
    "verejne": true,
    "stranka": "/b8c9694e-91a9-4a5e-986b-add58cedd104/",
-   "pocet_assetu": 5
+   "pocet_assetu": 6
   }
  ],
  "vrhy": [
@@ -908,7 +908,7 @@
    "zdroj": "data\\assety\\pafnuc-detail.yaml"
   },
   {
-   "soubor": "dokumenty/FS01-G02-M006_Penrose_Certificate_of_Honorary_Godparenthood.pdf",
+   "soubor": "dokumenty/FS01-G02-M006_Penrose_Certifikat_cestneho_kmotrovstvi_CS.pdf",
    "typ": "dokument",
    "datum": "2026-08-08",
    "misto": "Brno",
@@ -920,22 +920,52 @@
     "certifikat"
    ],
    "verejne": true,
-   "url": "/media/dokumenty/FS01-G02-M006_Penrose_Certificate_of_Honorary_Godparenthood.pdf",
+   "url": "/media/dokumenty/FS01-G02-M006_Penrose_Certifikat_cestneho_kmotrovstvi_CS.pdf",
    "popisky": {
     "cs": {
-     "navesti": "Certifikát čestného kmotrovství (PDF)",
-     "text": "Oficiální tiskový certifikát pro sira Rogera Penrose"
+     "navesti": "Certifikát čestného kmotrovství — CZ (PDF)",
+     "text": "Oficiální český tiskový certifikát pro sira Rogera Penrose"
     },
     "en": {
-     "navesti": "Certificate of Honorary Godparenthood (PDF)",
-     "text": "Official PDF certificate for Sir Roger Penrose"
+     "navesti": "Certificate of Honorary Godparenthood — CZ (PDF)",
+     "text": "Official Czech PDF certificate for Sir Roger Penrose"
     },
     "fr": {
-     "navesti": "Certificat de parrainage d'honneur (PDF)",
-     "text": "Certificat PDF officiel pour Sir Roger Penrose"
+     "navesti": "Certificat de parrainage d'honneur — CZ (PDF)",
+     "text": "Certificat PDF officiel en tchèque pour Sir Roger Penrose"
     }
    },
-   "zdroj": "data\\assety\\penrose-certifikat-pdf.yaml"
+   "zdroj": "data\\assety\\penrose-certifikat-cs-pdf.yaml"
+  },
+  {
+   "soubor": "dokumenty/FS01-G02-M006_Penrose_Certificate_of_Honorary_Godparenthood_EN.pdf",
+   "typ": "dokument",
+   "datum": "2026-08-08",
+   "misto": "Brno",
+   "zvirata": [
+    "FS01-G02-M006"
+   ],
+   "hlavni": "FS01-G02-M006",
+   "tagy": [
+    "certifikat"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/FS01-G02-M006_Penrose_Certificate_of_Honorary_Godparenthood_EN.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Certificate of Honorary Godparenthood — EN (PDF)",
+     "text": "Oficiální anglický tiskový certifikát pro sira Rogera Penrose"
+    },
+    "en": {
+     "navesti": "Certificate of Honorary Godparenthood — EN (PDF)",
+     "text": "Official English PDF certificate for Sir Roger Penrose"
+    },
+    "fr": {
+     "navesti": "Certificate of Honorary Godparenthood — EN (PDF)",
+     "text": "Certificat PDF officiel en anglais pour Sir Roger Penrose"
+    }
+   },
+   "zdroj": "data\\assety\\penrose-certifikat-en-pdf.yaml"
   },
   {
    "soubor": "foto/penrose-detail.jpg",
