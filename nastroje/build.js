@@ -81,6 +81,12 @@ function adresa(d) {
   return (soubor) => {
     const a = podleSouboru[soubor];
     const bn = path.basename(soubor);
+    if (a && !a.verejne && a.token) {
+      return `/soukrome/${a.token}/${bn}`;
+    }
+    if (a && a.typ === 'dokument') {
+      return `/media/${soubor}`;
+    }
     const webVersion = bn.replace(/\.jpg$/i, '-web.jpg');
     if (fs.existsSync(path.join(WEB, 'assets', 'images', webVersion))) {
       return `/assets/images/${webVersion}`;
@@ -88,10 +94,7 @@ function adresa(d) {
     if (fs.existsSync(path.join(WEB, 'assets', 'images', bn))) {
       return `/assets/images/${bn}`;
     }
-    if (a && !a.verejne) {
-      return `/soukrome/${a.token}/${bn}`;
-    }
-    return `/assets/images/${bn}`;
+    return `/media/${soubor}`;
   };
 }
 

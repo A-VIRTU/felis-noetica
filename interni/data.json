@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T12:36:04.306Z",
+ "vygenerovano": "2026-08-09T12:39:57.952Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -347,7 +347,7 @@
     "kote"
    ],
    "verejne": false,
-   "url": "/assets/images/2026-08-01_alain.jpg",
+   "url": "/soukrome/771383fd51f34374b68bb0f68d07921c/2026-08-01_alain.jpg",
    "popisky": {
     "cs": {
      "navesti": "1. srpna 2026",
@@ -587,7 +587,7 @@
     "zprava"
    ],
    "verejne": true,
-   "url": "/assets/images/Genomia_321880_Sofie.pdf",
+   "url": "/media/dokumenty/Genomia_321880_Sofie.pdf",
    "popisky": {
     "cs": {
      "navesti": "Zpráva č. 321880",
@@ -653,7 +653,7 @@
    "hlavni": null,
    "tagy": [],
    "verejne": false,
-   "url": "/assets/images/liska-nahled.jpg",
+   "url": "/soukrome/1b4df7c9cc924d032d427c6b56674969/liska-nahled.jpg",
    "popisky": {
     "cs": {
      "navesti": null,
