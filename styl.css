@@ -309,6 +309,7 @@ figcaption em{font-style:italic;}
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
+  pointer-events: none;
 }
 
 .lightbox-img-container {
@@ -318,6 +319,7 @@ figcaption em{font-style:italic;}
   align-items: center;
   justify-content: center;
   background: transparent !important;
+  pointer-events: auto;
 }
 
 .lightbox-img {
@@ -328,6 +330,7 @@ figcaption em{font-style:italic;}
   object-fit: contain;
   border-radius: 3px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  pointer-events: auto;
 }
 
 .lightbox-placeholder {
@@ -337,6 +340,7 @@ figcaption em{font-style:italic;}
   border: 1px dashed var(--linka);
   background: var(--papir);
   border-radius: 3px;
+  pointer-events: auto;
 }
 
 .lightbox-caption {
@@ -347,6 +351,7 @@ figcaption em{font-style:italic;}
   max-width: 44rem;
   font-size: 1.05rem;
   line-height: 1.6;
+  pointer-events: auto;
 }
 
 .lightbox-caption .datum {
@@ -370,6 +375,8 @@ figcaption em{font-style:italic;}
   appearance: none !important;
   -webkit-appearance: none !important;
   outline: none !important;
+  pointer-events: auto !important;
+  z-index: 10020 !important;
 }
 
 .lightbox-close {
@@ -387,7 +394,6 @@ figcaption em{font-style:italic;}
   text-align: center !important;
   cursor: pointer !important;
   transition: background 0.2s ease, transform 0.2s ease !important;
-  z-index: 10000 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -416,9 +422,7 @@ figcaption em{font-style:italic;}
   text-align: center !important;
   cursor: pointer !important;
   transition: background 0.2s ease, transform 0.2s ease !important;
-  z-index: 10000 !important;
   user-select: none !important;
-  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   padding: 0 !important;
@@ -450,5 +454,6 @@ figcaption em{font-style:italic;}
   font-family: "Newsreader", serif !important;
   font-size: 0.85rem !important;
   letter-spacing: 0.1em !important;
-  z-index: 10000 !important;
+  z-index: 10020 !important;
+  pointer-events: none !important;
 }

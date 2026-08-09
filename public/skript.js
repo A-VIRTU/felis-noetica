@@ -12,16 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
   overlay.className = 'lightbox-overlay';
   overlay.setAttribute('aria-hidden', 'true');
   overlay.innerHTML = `
-    <button class="lightbox-close" aria-label="Zavřít (Esc)">&times;</button>
-    <button class="lightbox-prev" aria-label="Předchozí fotka">&#10094;</button>
-    <button class="lightbox-next" aria-label="Následující fotka">&#10095;</button>
-    <div class="lightbox-counter"></div>
     <div class="lightbox-content">
       <div class="lightbox-img-container">
         <img class="lightbox-img" src="" alt="" />
       </div>
       <div class="lightbox-caption"></div>
     </div>
+    <button class="lightbox-close" aria-label="Zavřít (Esc)">&times;</button>
+    <button class="lightbox-prev" aria-label="Předchozí fotka">&#10094;</button>
+    <button class="lightbox-next" aria-label="Následující fotka">&#10095;</button>
+    <div class="lightbox-counter"></div>
   `;
   document.body.appendChild(overlay);
 
@@ -101,11 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
     currentGallery = [];
   }
 
-  closeBtn.addEventListener('click', closeLightbox);
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeLightbox();
+  });
+
   prevBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     renderGalleryItem(currentIndex - 1);
   });
+
   nextBtn.addEventListener('click', (e) => {
     e.stopPropagation();
     renderGalleryItem(currentIndex + 1);
