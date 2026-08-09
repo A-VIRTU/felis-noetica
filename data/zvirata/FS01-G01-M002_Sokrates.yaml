@@ -19,3 +19,9 @@ zbarveni:
 popis:
   cs: Největší z vrhu od prvního dne. Nechá se nosit, což u koček nebývá.
   en: The largest of the litter from day one. He lets himself be carried, which cats usually do not.
+uuid: d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a
+soukroma_stranka:
+  aktivni: true
+  jazyky:
+    - cs
+    - en

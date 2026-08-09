@@ -19,3 +19,9 @@ zbarveni:
 popis:
   cs: První dva měsíce byla z vrhu nejpodnikavější; dnes je tichá a hledí si svého.
   en: For the first two months she was the boldest of the litter; today she is quiet and keeps to herself.
+uuid: e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b
+soukroma_stranka:
+  aktivni: true
+  jazyky:
+    - cs
+    - en

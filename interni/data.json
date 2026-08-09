@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T11:27:26.450Z",
+ "vygenerovano": "2026-08-09T11:28:52.121Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -31,7 +31,7 @@
   },
   {
    "id": "FS01-G01-F003",
-   "uuid": null,
+   "uuid": "e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b",
    "jmeno": "Sofie",
    "pohlavi": "F",
    "generace": 1,
@@ -41,7 +41,7 @@
    "matka": "FS01-G00-F001",
    "otec": null,
    "verejne": true,
-   "stranka": null,
+   "stranka": "/e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b/",
    "pocet_assetu": 7
   },
   {
@@ -61,7 +61,7 @@
   },
   {
    "id": "FS01-G01-F005",
-   "uuid": null,
+   "uuid": "f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c",
    "jmeno": "Sibyla",
    "pohlavi": "F",
    "generace": 1,
@@ -71,7 +71,7 @@
    "matka": "FS01-G00-F001",
    "otec": null,
    "verejne": true,
-   "stranka": null,
+   "stranka": "/f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c/",
    "pocet_assetu": 11
   },
   {
@@ -91,7 +91,7 @@
   },
   {
    "id": "FS01-G01-M002",
-   "uuid": null,
+   "uuid": "d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a",
    "jmeno": "Sokrates",
    "pohlavi": "M",
    "generace": 1,
@@ -101,12 +101,12 @@
    "matka": "FS01-G00-F001",
    "otec": null,
    "verejne": true,
-   "stranka": null,
+   "stranka": "/d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a/",
    "pocet_assetu": 5
   },
   {
    "id": "FS01-G02-F001",
-   "uuid": null,
+   "uuid": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
    "jmeno": "Amálie",
    "pohlavi": "F",
    "generace": 2,
@@ -116,12 +116,12 @@
    "matka": "FS01-G01-F005",
    "otec": "FS01-G01-M002",
    "verejne": true,
-   "stranka": null,
+   "stranka": "/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d/",
    "pocet_assetu": 6
   },
   {
    "id": "FS01-G02-F002",
-   "uuid": null,
+   "uuid": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
    "jmeno": "Angelina",
    "pohlavi": "F",
    "generace": 2,
@@ -131,12 +131,12 @@
    "matka": "FS01-G01-F005",
    "otec": "FS01-G01-M002",
    "verejne": true,
-   "stranka": null,
+   "stranka": "/b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e/",
    "pocet_assetu": 2
   },
   {
    "id": "FS01-G02-F007",
-   "uuid": null,
+   "uuid": "e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
    "jmeno": "Priyamvada",
    "pohlavi": "F",
    "generace": 2,
@@ -146,12 +146,12 @@
    "matka": "FS01-G01-F003",
    "otec": "FS01-G00-M001",
    "verejne": true,
-   "stranka": null,
+   "stranka": "/e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b/",
    "pocet_assetu": 3
   },
   {
    "id": "FS01-G02-F008",
-   "uuid": null,
+   "uuid": "f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
    "jmeno": "Polly",
    "pohlavi": "F",
    "generace": 2,
@@ -161,7 +161,7 @@
    "matka": "FS01-G01-F003",
    "otec": "FS01-G00-M001",
    "verejne": true,
-   "stranka": null,
+   "stranka": "/f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c/",
    "pocet_assetu": 3
   },
   {
@@ -181,7 +181,7 @@
   },
   {
    "id": "FS01-G02-M004",
-   "uuid": null,
+   "uuid": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
    "jmeno": "Andrew",
    "pohlavi": "M",
    "generace": 2,
@@ -191,12 +191,12 @@
    "matka": "FS01-G01-F005",
    "otec": "FS01-G01-M002",
    "verejne": true,
-   "stranka": null,
+   "stranka": "/c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f/",
    "pocet_assetu": 4
   },
   {
    "id": "FS01-G02-M005",
-   "uuid": null,
+   "uuid": "d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
    "jmeno": "Pafnuc",
    "pohlavi": "M",
    "generace": 2,
@@ -206,7 +206,7 @@
    "matka": "FS01-G01-F003",
    "otec": "FS01-G00-M001",
    "verejne": true,
-   "stranka": null,
+   "stranka": "/d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a/",
    "pocet_assetu": 4
   },
   {

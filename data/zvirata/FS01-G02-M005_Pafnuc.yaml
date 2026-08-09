@@ -10,7 +10,7 @@ zbarveni:
   en: Cream / light red
 genotyp: O/Y
 soukroma_stranka:
-  aktivni: false
+  aktivni: true
   jazyky:
     - cs
     - en
@@ -32,3 +32,4 @@ vyznam:
 popis:
   cs: Krémový kocour ze Sofiina vrhu.
   en: A cream male kitten from Sofie's litter.
+uuid: d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a

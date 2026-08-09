@@ -10,7 +10,7 @@ zbarveni:
   en: Black and white
 genotyp: o/o S/s
 soukroma_stranka:
-  aktivni: false
+  aktivni: true
   jazyky:
     - cs
     - en
@@ -32,3 +32,4 @@ vyznam:
 popis:
   cs: Černobílá kočička ze Sofiina vrhu.
   en: A black and white female kitten from Sofie's litter.
+uuid: f6a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c

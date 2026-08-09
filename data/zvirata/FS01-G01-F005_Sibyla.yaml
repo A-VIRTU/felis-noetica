@@ -19,3 +19,9 @@ zbarveni:
 popis:
   cs: Nejmenší z vrhu a nejmenší zůstala, ale časem se z ní stala podnikavější ze sester.
   en: The smallest of the litter and the smallest she stayed, but in time she became the more enterprising of the sisters.
+uuid: f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c
+soukroma_stranka:
+  aktivni: true
+  jazyky:
+    - cs
+    - en

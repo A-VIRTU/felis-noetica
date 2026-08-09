@@ -254,6 +254,23 @@ async function main() {
     ...uuidCesty,
   ].join('\n\n') + '\n');
 
+  const redirects = [];
+  for (const z of d.zvirata) {
+    if (z.verejne && z.uuid) {
+      const v = d.vrhy.find((x) => x.id === z.vrh || x.__slug === z.vrh);
+      const datumNar = z.narozeni || (v ? v.narozeni : '');
+      const rok = (datumNar || '').slice(0, 4);
+      if (rok) {
+        const slug = slugJmena(z.jmeno);
+        redirects.push(`/kotata/${rok}/${slug}/ /${z.uuid}/ 200`);
+        redirects.push(`/kotata/${rok}/${slug}/en/ /${z.uuid}/en/ 200`);
+        redirects.push(`/kotata/${rok}/${slug}/fr/ /${z.uuid}/fr/ 200`);
+        redirects.push(`/kotata/${rok}/${slug} /${z.uuid}/ 200`);
+      }
+    }
+  }
+  zapis('_redirects', redirects.join('\n') + '\n');
+
   const smazano = uklidDist();
 
   // Sync built dist files into public directory for Cloudflare Pages

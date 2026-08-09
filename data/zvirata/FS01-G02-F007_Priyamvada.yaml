@@ -10,7 +10,7 @@ zbarveni:
   en: Tabby / silver grey (agouti)
 genotyp: A/- I/- o/o S/s
 soukroma_stranka:
-  aktivni: false
+  aktivni: true
   jazyky:
     - cs
     - en
@@ -32,3 +32,4 @@ vyznam:
 popis:
   cs: Mourovaná kočička ze Sofiina vrhu.
   en: A tabby female kitten from Sofie's litter.
+uuid: e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b
