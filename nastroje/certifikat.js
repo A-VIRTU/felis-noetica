@@ -118,10 +118,10 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
 </head>
 <body class="notranslate" translate="no">
 
-<div class="strana strana-titulni-grafika" style="background-image: url('${prefixAssets}${artSubpath}')"></div>
+<div class="strana strana-titulni-grafika" style="background-image: url('${prefixDist}assets/${artSubpath}')"></div>
 
 <div id="strana-certifikat" class="strana notranslate" translate="no">
-  <img src="${prefixAssets}${artSubpath}" alt="" class="certifikat-overlay-img" onerror="this.style.display='none'">
+  <img src="${prefixDist}assets/${artSubpath}" alt="" class="certifikat-overlay-img" onerror="this.style.display='none'">
   <div class="certifikat-vnitrni-ram">
     <div>
       <p class="jmeno-stanice">Felis Noetica</p>
@@ -154,7 +154,7 @@ ${vyznamRaw ? `    <div class="vyznam-box">
       <div class="certifikat-datum">${E(t.vDne(c.misto || 'Brno', datum(c.datum, jazyk)))}</div>
       <div class="podpisy-mriezka">
         <div class="podpis-line">
-          <img src="${prefixAssets}images/podpis.png" alt="" class="podpis-grafika-img" onerror="this.style.display='none'">
+          <img src="${prefixDist}assets/images/podpis.png" alt="" class="podpis-grafika-img" onerror="this.style.display='none'">
           <strong>Viktor Lošťák</strong><br>${E(t.chovatel)}
         </div>
         <div class="qr-blok-pravo">

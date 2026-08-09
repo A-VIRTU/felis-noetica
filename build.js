@@ -75,11 +75,33 @@ function kopirujStrom(zdroj, cil, vynech = new Set()) {
   }
 }
 
-// adresa mediálního souboru — vše směruje do jediného sdíleného stromu assets/ v rootu repozitáře
+function hardlinkStrom(zdroj, cil, vynech = new Set()) {
+  if (!fs.existsSync(zdroj)) return;
+  for (const f of fs.readdirSync(zdroj, { withFileTypes: true })) {
+    const sCesta = path.join(zdroj, f.name);
+    const cCesta = path.join(cil, f.name);
+    if (f.isDirectory()) {
+      hardlinkStrom(sCesta, cCesta, vynech);
+    } else {
+      const rel = path.relative(DIST, cCesta);
+      zapsane.add(path.normalize(rel));
+      if (!fs.existsSync(cCesta)) {
+        fs.mkdirSync(path.dirname(cCesta), { recursive: true });
+        try {
+          fs.linkSync(sCesta, cCesta);
+        } catch (e) {
+          fs.copyFileSync(sCesta, cCesta);
+        }
+      }
+    }
+  }
+}
+
+// adresa mediálního souboru — v rámci dist/ směřuje do /assets/
 function adresa(d) {
   const podleSouboru = Object.fromEntries(d.assety.map((a) => [a.soubor, a]));
   return (soubor, relKoren = '') => {
-    const prefixAssets = !relKoren ? '../assets/' : (relKoren.endsWith('/') ? relKoren + '../assets/' : relKoren + '/../assets/');
+    const prefix = !relKoren ? '' : (relKoren.endsWith('/') ? relKoren : relKoren + '/');
     const a = podleSouboru[soubor];
     const bn = path.basename(soubor);
     const ext = path.extname(soubor).toLowerCase();
@@ -89,9 +111,9 @@ function adresa(d) {
 
     const webVersion = bn.replace(/\.jpg$/i, '-web.jpg');
     if (fs.existsSync(path.join(KOREN, 'assets', 'images', webVersion))) {
-      return `${prefixAssets}images/${webVersion}`;
+      return `${prefix}assets/images/${webVersion}`;
     }
-    return `${prefixAssets}${subfolder}/${bn}`;
+    return `${prefix}assets/${subfolder}/${bn}`;
   };
 }
 
@@ -99,7 +121,7 @@ function adresa(d) {
 function vyrobZip(rel, zvire, assety, textovky) {
   const soubory = assety
     .filter((a) => a.viditelnost !== 'interni' && (a.typ === 'dokument' || a.typ === 'pdf'))
-    .map((a) => ({ nazev: path.basename(a.soubor), cesta: path.join(MEDIA, a.soubor) }));
+    .map((a) => ({ nazev: path.basename(a.soubor), cesta: path.join(KOREN, 'assets', 'dokumenty', path.basename(a.soubor)) }));
   zapis(rel, zipZeSouboru(soubory, textovky));
 }
 
@@ -129,12 +151,14 @@ async function main() {
     zapis(soubor, html);
   }
 
-  // --- 2. žádné kopírování assets! vše odkazuje do jediného adresáře assets/ v rootu ---
+  // --- 2. 0-bajtem neobsazující hardlinky pro dist/assets ---
   let verejnych = 0, soukromych = 0;
   for (const a of d.assety) {
     if (a.verejne) verejnych++;
     else soukromych++;
   }
+  const rootAssets = path.join(KOREN, 'assets');
+  hardlinkStrom(rootAssets, path.join(DIST, 'assets'));
 
   // --- 3. stránky zvířat: veřejná i majitelova ze STEJNÉ šablony ---
   // Rozdíl je jen v tom, co projde filtrem viditelnosti. Veřejná stránka
