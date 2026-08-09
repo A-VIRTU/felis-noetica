@@ -18,6 +18,7 @@ soukroma_stranka:
     - en
     - fr
 certifikat:
+  art: foto/alain-art.jpg
   typ: kmotrovsky
   misto: Brno
   datum: '2026-07-20'

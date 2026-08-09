@@ -100,7 +100,7 @@ const asset = {
 
 // Certifikát: co se na něj tiskne. Jazyky určují, kolik verzí se vygeneruje.
 const certifikat = {
-  povolene: ['typ', 'misto', 'datum', 'jazyky', 'foto', 'viditelnost'],
+  povolene: ['typ', 'misto', 'datum', 'jazyky', 'foto', 'art', 'viditelnost'],
   typy: ['puvod', 'kmotrovsky'],
 };
 

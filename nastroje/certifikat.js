@@ -91,17 +91,7 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
   const slugJmena = (s) => bezDia(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const slug = slugJmena(zvire.jmeno);
 
-  const { KOREN } = require('./data');
-  let artSubpath = `images/${slug}-art.jpg`;
-  if (c.art && fs.existsSync(path.join(KOREN, 'assets', 'images', c.art))) {
-    artSubpath = `images/${c.art}`;
-  } else if (fs.existsSync(path.join(KOREN, 'assets', 'images', `${slug}-art-novy.jpg`))) {
-    artSubpath = `images/${slug}-art-novy.jpg`;
-  } else if (fs.existsSync(path.join(KOREN, 'assets', 'images', `${slug}-art.jpg`))) {
-    artSubpath = `images/${slug}-art.jpg`;
-  } else if (fs.existsSync(path.join(KOREN, 'assets', 'images', 'bg_certifikat.jpg'))) {
-    artSubpath = 'images/bg_certifikat.jpg';
-  }
+  const artUrl = c.art ? url(c.art, relKoren) : `${prefixDist}assets/images/c.art`;
 
   return `<!DOCTYPE html>
 <html lang="${jazyk}" class="notranslate" translate="no">
@@ -118,10 +108,10 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
 </head>
 <body class="notranslate" translate="no">
 
-<div class="strana strana-titulni-grafika" style="background-image: url('${prefixDist}assets/${artSubpath}')"></div>
+<div class="strana strana-titulni-grafika" style="background-image: url('${artUrl}')"></div>
 
 <div id="strana-certifikat" class="strana notranslate" translate="no">
-  <img src="${prefixDist}assets/${artSubpath}" alt="" class="certifikat-overlay-img" onerror="this.style.display='none'">
+  <img src="${artUrl}" alt="" class="certifikat-overlay-img" onerror="this.style.display='none'">
   <div class="certifikat-vnitrni-ram">
     <div>
       <p class="jmeno-stanice">Felis Noetica</p>

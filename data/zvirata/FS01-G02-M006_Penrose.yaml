@@ -16,6 +16,7 @@ soukroma_stranka:
     - cs
     - en
 certifikat:
+  art: foto/penrose-art.jpg
   typ: kmotrovsky
   misto: Brno
   datum: '2026-08-08'

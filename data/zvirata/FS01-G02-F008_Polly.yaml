@@ -15,6 +15,7 @@ soukroma_stranka:
     - cs
     - en
 certifikat:
+  art: foto/polly-art.jpg
   typ: puvod
   misto: Brno
   datum: '2026-08-01'

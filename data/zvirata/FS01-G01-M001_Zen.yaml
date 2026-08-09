@@ -8,6 +8,7 @@ stav: prodano
 role: v novém domově
 verejne: true
 certifikat:
+  art: foto/zen-art.jpg
   typ: puvod
   misto: Brno
   datum: '2025-09-15'
