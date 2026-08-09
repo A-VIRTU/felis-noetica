@@ -270,7 +270,16 @@ function nacti({ tiche = false } = {}) {
 
   // média a hlavní zvíře + povinné popisky
   for (const a of assety) {
-    if (a.soubor && !fs.existsSync(path.join(MEDIA, a.soubor))) chyby.push(`${a.__soubor}: soubor 'media/${a.soubor}' neexistuje`);
+    if (a.soubor) {
+      const bn = path.basename(a.soubor);
+      const ext = path.extname(a.soubor).toLowerCase();
+      let sub = 'images';
+      if (ext === '.pdf') sub = 'dokumenty';
+      else if (ext === '.mp4') sub = 'videos';
+      const existujeVAssets = fs.existsSync(path.join(KOREN, 'assets', sub, bn)) ||
+        fs.existsSync(path.join(KOREN, 'assets', 'images', bn));
+      if (!existujeVAssets) chyby.push(`${a.__soubor}: soubor '${a.soubor}' neexistuje v assets/`);
+    }
     if (a.hlavni && Array.isArray(a.zvirata) && !a.zvirata.includes(a.hlavni)) chyby.push(`${a.__soubor}: 'hlavni' (${a.hlavni}) musí být i v 'zvirata'`);
     if (a.viditelnost === 'majitel' && !a.token) chyby.push(`${a.__soubor}: asset pro majitele potřebuje 'token' — spusť 'npm run scan'`);
 
