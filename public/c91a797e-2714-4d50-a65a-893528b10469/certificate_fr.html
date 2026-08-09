@@ -41,7 +41,7 @@
     }
   }
 
-  /* Standard A4 Print / View Page */
+  /* Page A4 standard */
   .strana {
     width: 210mm;
     height: 297mm;
@@ -57,7 +57,7 @@
     justify-content: space-between;
   }
 
-  /* Page 1: Standalone Art Cover */
+  /* Page 1: Couverture graphique */
   .strana-titulni-grafika {
     background-image: url('bg_certifikat.jpg');
     background-size: contain;
@@ -67,12 +67,12 @@
     padding: 0;
   }
 
-  /* Page 2: French Certificate Page */
+  /* Page 2: Certificat en français */
   #strana-certifikat {
     position: relative;
     overflow: hidden;
     background-color: var(--bg-papir);
-    padding: 24mm 16mm 24mm 16mm;
+    padding: 22mm 16mm 22mm 16mm;
   }
 
   .certifikat-overlay-img {
@@ -89,22 +89,11 @@
     z-index: 10;
   }
 
-  .zapatie {
-    border-top: 1px solid var(--linka);
-    padding-top: 8px;
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 8.5pt;
-    color: var(--text-tichy);
-  }
-
-  /* Inner frame lying under the overlay image */
   .certifikat-vnitrni-ram {
     position: relative;
     z-index: 1;
     border: none;
-    padding: 20px 24px;
+    padding: 16px 20px;
     width: 100%;
     height: 100%;
     flex: 1;
@@ -133,22 +122,38 @@
     font-weight: 300;
     font-size: 1.12rem;
     color: var(--text-tichy);
-    margin: 0 0 15px;
+    margin: 0 0 10px;
+  }
+
+  .certifikat-titre-fr {
+    font-size: 15pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--text-hlavni);
+    margin: 4px 0 2px;
+  }
+
+  .certifikat-subtitre-fr {
+    font-size: 10pt;
+    font-style: italic;
+    color: var(--akcent);
+    margin: 0 0 8px;
   }
 
   .certifikujese {
-    font-size: 13pt;
+    font-size: 11.5pt;
     font-style: italic;
     color: var(--text-tichy);
-    margin: 12px 0 4px;
-    font-weight: 700;
+    margin: 6px 0 4px;
+    font-weight: 600;
   }
 
   .jmeno-zviratko {
     font-size: 28pt;
     font-weight: 800;
     color: var(--akcent);
-    margin: 4px 0;
+    margin: 2px 0;
     letter-spacing: 0.02em;
   }
 
@@ -156,54 +161,54 @@
     font-size: 11.5pt;
     font-style: italic;
     color: var(--text-hlavni);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     font-weight: 800;
   }
 
   .udaje-mriezk {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    gap: 10px;
     text-align: left;
     background-color: transparent;
-    padding: 14px 20px;
+    padding: 12px 18px;
     border-radius: 4px;
     border: 1px solid var(--linka);
     font-size: 9.5pt;
-    margin: 14px 0;
+    margin: 10px 0;
   }
 
   .udaj-polozka strong { color: var(--akcent); }
 
   .vyznam-box {
-    margin: 14px 0;
-    padding: 14px 18px;
+    margin: 10px 0;
+    padding: 12px 16px;
     border-left: 3px solid var(--akcent);
     text-align: left;
-    font-size: 9.5pt;
-    line-height: 1.6;
+    font-size: 9.2pt;
+    line-height: 1.55;
     background-color: transparent;
     font-weight: 600;
   }
 
   .vyznam-nadpis {
-    font-size: 10.5pt;
+    font-size: 10pt;
     font-weight: 600;
     color: var(--akcent);
     margin-bottom: 4px;
   }
 
-  /* Certificate Footer */
+  /* Pied de page du certificat */
   .certifikat-dole-obal {
-    margin-top: 14px;
-    padding-top: 10px;
+    margin-top: 10px;
+    padding-top: 8px;
   }
 
   .podpisy-mriezka {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
   }
 
   .podpis-line {
@@ -253,7 +258,7 @@
 
   .certifikat-registrace {
     border-top: 1px solid var(--linka);
-    padding-top: 8px;
+    padding-top: 6px;
     font-size: 8.5pt;
     color: var(--text-tichy);
     letter-spacing: 0.05em;
@@ -262,10 +267,10 @@
 </head>
 <body>
 
-<!-- ================= PAGE 1: STANDALONE ART COVER ================= -->
+<!-- ================= PAGE 1: COUVERTURE GRAPHIQUE ================= -->
 <div class="strana strana-titulni-grafika"></div>
 
-<!-- ================= PAGE 2: FRENCH CERTIFICATE ================= -->
+<!-- ================= PAGE 2: CERTIFICAT DE PARRAINAGE D'HONNEUR ================= -->
 <div id="strana-certifikat" class="strana">
   <img src="bg_certifikat.jpg" alt="" class="certifikat-overlay-img">
   <div class="certifikat-vnitrni-ram">
@@ -275,14 +280,16 @@
       <p style="font-size: 8.5pt; color: var(--text-tichy); margin-top: 2px;">Chatterie d'Européens (European Shorthair) — FIFe n° 7944</p>
     </div>
 
-    <div style="text-align: center; margin: 8px 0;">
-      <div style="width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--zlatavost); box-shadow: 0 4px 15px rgba(0,0,0,0.12); overflow: hidden; display: inline-block;">
+    <div style="text-align: center; margin: 4px 0;">
+      <div style="width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--zlatavost); box-shadow: 0 4px 15px rgba(0,0,0,0.12); overflow: hidden; display: inline-block;">
         <img src="alain_foto.jpg" alt="Photo du chaton Alain" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); display: block;">
       </div>
     </div>
 
     <div>
-      <div class="certifikujese">Le présent document atteste l'origine, le nom et le parrainage d'honneur de</div>
+      <div class="certifikat-titre-fr">CERTIFICAT DE PARRAINAGE D'HONNEUR</div>
+      <div class="certifikat-subtitre-fr">Patrinus honorarius</div>
+      <div class="certifikujese">Le présent document atteste officiellement l'origine, le nom et le parrainage d'honneur de</div>
       <div class="jmeno-zviratko">Alain</div>
       <div class="formalni-jmeno">Alain of Felis Noetica</div>
     </div>
@@ -301,7 +308,7 @@
       Nommé en l'honneur d'<strong>Alain Aspect</strong>, physicien français, prix Nobel de physique 2022, pour ses expériences sur les photons intriqués établissant la violation des inégalités de Bell — tranchant par la mesure ce dont Einstein ne pouvait que douter — et pour son rôle de pionnier dans la science de l'information quantique. Ce chaton incarne la vivacité d'esprit, l'attachement, et le goût de trancher les questions par l'expérience.
     </div>
 
-    <!-- FOOTER: SIGNATURE LEFT, QR RIGHT -->
+    <!-- PIED DE PAGE : SIGNATURE À GAUCHE, CODE QR À DROITE -->
     <div class="certifikat-dole-obal">
       <div class="podpisy-mriezka">
         <div class="podpis-line">
