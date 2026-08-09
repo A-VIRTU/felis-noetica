@@ -80,9 +80,9 @@ function polozky({ zvire, assety, jazyk, url, majitel }) {
     odkaz: `${zvire.jmeno.normalize('NFD').replace(/[̀-ͯ]/g, '')}_Felis_Noetica.zip`,
   }));
 
-  // 2. certifikáty ve všech jazycích, které jsou v datech
+  // 2. certifikáty — pouze pokud existuje skutečný soubor ke stažení (c.soubor)
   const c = zvire.certifikat;
-  if (c && (majitel || (c.viditelnost || 'verejne') === 'verejne')) {
+  if (c && c.soubor && (majitel || (c.viditelnost || 'verejne') === 'verejne')) {
     const certTyp = c.typ === 'kmotrovsky' ? 'kmotrovsky' : 'puvod';
     const nadpisyMap = {
       puvod: {
@@ -102,7 +102,7 @@ function polozky({ zvire, assety, jazyk, url, majitel }) {
         ikona: 'certifikat',
         nadpis: nadpisCert,
         popis: zvire.kmotr ? `${(zvire.kmotr.osloveni || {})[j] || zvire.kmotr.jmeno}` : null,
-        odkaz: `certifikat-${j}.html`,
+        odkaz: url(c.soubor),
       }));
     }
   }
