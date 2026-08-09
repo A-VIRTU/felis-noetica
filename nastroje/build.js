@@ -257,22 +257,8 @@ async function main() {
     ...uuidCesty,
   ].join('\n\n') + '\n');
 
-  const redirects = [];
-  for (const z of d.zvirata) {
-    if (z.verejne && z.uuid) {
-      const v = d.vrhy.find((x) => x.id === z.vrh || x.__slug === z.vrh);
-      const datumNar = z.narozeni || (v ? v.narozeni : '');
-      const rok = (datumNar || '').slice(0, 4);
-      if (rok) {
-        const slug = slugJmena(z.jmeno);
-        redirects.push(`/kotata/${rok}/${slug}/ /${z.uuid}/ 301`);
-        redirects.push(`/kotata/${rok}/${slug}/en/ /${z.uuid}/en/ 301`);
-        redirects.push(`/kotata/${rok}/${slug}/fr/ /${z.uuid}/fr/ 301`);
-        redirects.push(`/kotata/${rok}/${slug} /${z.uuid}/ 301`);
-      }
-    }
-  }
-  zapis('_redirects', redirects.join('\n') + '\n');
+  // Clean empty _redirects file if needed or omit
+  zapis('_redirects', '# No redirects active\n');
 
   const smazano = uklidDist();
 
