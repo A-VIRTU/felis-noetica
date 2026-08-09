@@ -130,26 +130,18 @@ async function main() {
     zapis(soubor, html);
   }
 
-  // --- 2. média ---
+  // --- 2. odkaz na sdílenou složku assets v rootu ---
   let verejnych = 0, soukromych = 0;
   for (const a of d.assety) {
-    const zdroj = path.join(MEDIA, a.soubor);
-    const bn = path.basename(a.soubor);
-    const ext = path.extname(a.soubor).toLowerCase();
-    let subfolder = 'images';
-    if (ext === '.pdf') subfolder = 'dokumenty';
-    else if (ext === '.mp4') subfolder = 'videos';
-
-    kopiruj(zdroj, path.join('assets', subfolder, bn));
-    if (a.verejne) {
-      verejnych++;
-    } else {
-      soukromych++;
-    }
-    if (a.poster) {
-      const p = path.join(MEDIA, a.poster);
-      if (fs.existsSync(p)) kopiruj(p, path.join('assets', 'images', path.basename(a.poster)));
-    }
+    if (a.verejne) verejnych++;
+    else soukromych++;
+  }
+  const distAssets = path.join(DIST, 'assets');
+  const rootAssets = path.join(KOREN, 'assets');
+  if (!fs.existsSync(distAssets)) {
+    try {
+      fs.symlinkSync(rootAssets, distAssets, 'junction');
+    } catch (e) {}
   }
 
   // --- 3. stránky zvířat: veřejná i majitelova ze STEJNÉ šablony ---
