@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>FS01-G02-M001 Alain — Centre de documentation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text-hlavni: #2E2B27;
+    --text-tichy: #6B655D;
+    --akcent: #8B7355;
+    --zlatavost: #B89768;
+    --bg-papir: #FFFFFF;
+    --linka: #E8E2D8;
+    --zelena-ok: #2E6B38;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #EFECE6;
+    font-family: 'Newsreader', Georgia, serif;
+    color: var(--text-hlavni);
+    font-size: 11pt;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Hub de documentation */
+  .hub-container {
+    max-width: 210mm;
+    margin: 35px auto 25px;
+    background-color: #FDFBF7;
+    padding: 35px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.07);
+    border: 1px solid var(--zlatavost);
+  }
+
+  .hub-header {
+    text-align: center;
+    border-bottom: 1px solid var(--linka);
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+  }
+
+  .hub-logo {
+    width: 140px;
+    opacity: 0.8;
+    margin-bottom: 12px;
+  }
+
+  .jmeno-stanice {
+    font-family: "Newsreader", serif;
+    font-weight: 400;
+    font-size: 2.1rem;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    margin: 0 0 .2rem;
+    color: var(--text-hlavni);
+  }
+
+  .podtitul {
+    font-family: "Newsreader", serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.12rem;
+    color: var(--text-tichy);
+    margin: 0 0 15px;
+  }
+
+  .hub-karta {
+    background-color: #F8F5EE;
+    border: 1px solid var(--linka);
+    padding: 16px 24px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .hub-id {
+    font-size: 9.5pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--akcent);
+    font-weight: 500;
+    display: block;
+  }
+
+  .hub-jmeno {
+    font-size: 22pt;
+    font-weight: 500;
+    color: var(--text-hlavni);
+    margin: 3px 0 5px;
+  }
+
+  .hub-detail {
+    font-size: 10.5pt;
+    color: var(--text-tichy);
+    margin: 0;
+  }
+
+  .hub-sekce-nadpis {
+    font-size: 15pt;
+    color: var(--akcent);
+    margin: 25px 0 18px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .ke-stazeni-mriezka {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .karta-download {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFDF9;
+    border: 1px solid var(--linka);
+    padding: 18px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-hlavni);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .karta-download:hover {
+    border-color: var(--akcent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(139, 115, 85, 0.18);
+    background-color: #FFF;
+  }
+
+  .karta-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .karta-ikona {
+    font-size: 28pt;
+    line-height: 1;
+  }
+
+  .karta-text strong {
+    display: block;
+    font-size: 12.5pt;
+    color: var(--text-hlavni);
+    margin-bottom: 3px;
+  }
+
+  .karta-text span {
+    font-size: 9.5pt;
+    color: var(--text-tichy);
+  }
+
+  .karta-tlacitko {
+    background-color: var(--akcent);
+    color: white;
+    padding: 9px 18px;
+    border-radius: 5px;
+    font-size: 9.5pt;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  @media print {
+    .hub-container { display: none; }
+    body { background: none; }
+    .strana {
+      margin: 0;
+      box-shadow: none;
+      width: 100%;
+      height: 297mm;
+    }
+  }
+
+  /* Page A4 standard */
+  .strana {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    background-color: var(--bg-papir);
+    padding: 22mm 18mm 20mm 18mm;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: relative;
+    page-break-after: always;
+    break-after: page;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .strana-titulni-grafika {
+    background-image: url('bg_certifikat.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
+    padding: 0;
+  }
+
+  #strana-certifikat {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-papir);
+    padding: 22mm 16mm 22mm 16mm;
+  }
+
+  .certifikat-overlay-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    mix-blend-mode: darken;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .certifikat-vnitrni-ram {
+    position: relative;
+    z-index: 1;
+    border: none;
+    padding: 16px 20px;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .certifikat-titre-fr {
+    font-size: 15pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--text-hlavni);
+    margin: 4px 0 2px;
+  }
+
+  .certifikat-subtitre-fr {
+    font-size: 10pt;
+    font-style: italic;
+    color: var(--akcent);
+    margin: 0 0 8px;
+  }
+
+  .certifikujese {
+    font-size: 11.5pt;
+    font-style: italic;
+    color: var(--text-tichy);
+    margin: 6px 0 4px;
+    font-weight: 600;
+  }
+
+  .jmeno-zviratko {
+    font-size: 28pt;
+    font-weight: 800;
+    color: var(--akcent);
+    margin: 2px 0;
+    letter-spacing: 0.02em;
+  }
+
+  .formalni-jmeno {
+    font-size: 11.5pt;
+    font-style: italic;
+    color: var(--text-hlavni);
+    margin-bottom: 12px;
+    font-weight: 800;
+  }
+
+  .udaje-mriezk {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: left;
+    background-color: transparent;
+    padding: 12px 18px;
+    border-radius: 4px;
+    border: 1px solid var(--linka);
+    font-size: 9.5pt;
+    margin: 10px 0;
+  }
+
+  .udaj-polozka strong { color: var(--akcent); }
+
+  .vyznam-box {
+    margin: 10px 0;
+    padding: 12px 16px;
+    border-left: 3px solid var(--akcent);
+    text-align: left;
+    font-size: 9.2pt;
+    line-height: 1.55;
+    background-color: transparent;
+    font-weight: 600;
+  }
+
+  .vyznam-nadpis {
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--akcent);
+    margin-bottom: 4px;
+  }
+
+  .certifikat-dole-obal {
+    margin-top: 10px;
+    padding-top: 8px;
+  }
+
+  .podpisy-mriezka {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .podpis-line {
+    position: relative;
+    border-top: 1px dashed var(--text-tichy);
+    width: 200px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 9pt;
+  }
+
+  .podpis-grafika-img {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 52px;
+    width: auto;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 12;
+  }
+
+  .qr-blok-pravo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .qr-img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--zlatavost);
+    border-radius: 4px;
+    padding: 2px;
+    background-color: #FFFDF9;
+  }
+
+  .qr-blok-pravo span {
+    font-size: 8pt;
+    color: var(--text-tichy);
+    font-style: italic;
+    max-width: 140px;
+    line-height: 1.35;
+  }
+
+  .certifikat-registrace {
+    border-top: 1px solid var(--linka);
+    padding-top: 6px;
+    font-size: 8.5pt;
+    color: var(--text-tichy);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= CENTRE DE DOCUMENTATION ================= -->
+<div class="hub-container">
+  <div class="hub-header">
+    <img src="https://felisnoetica.cz/assets/images/logo-znacka.png" alt="Logo Felis Noetica" class="hub-logo">
+    <p class="jmeno-stanice">Felis Noetica</p>
+    <p class="podtitul">INTELLIGENTIA ET CONCORDIA</p>
+    
+    <div class="hub-karta">
+      <span class="hub-id">Identifiant : FS01-G02-M001</span>
+      <h1 class="hub-jmeno">Alain of Felis Noetica</h1>
+      <p class="hub-detail">Chaton mâle crème (♂) · Né le 14 juillet 2026 · Mère : Sibyla · Père : Sokrates</p>
+    </div>
+  </div>
+
+  <h2 class="hub-sekce-nadpis">📥 Fichiers à télécharger</h2>
+
+  <div class="ke-stazeni-mriezka">
+    <a href="certificate_fr.html" target="_blank" class="karta-download" style="border: 2px solid var(--akcent); background-color: #FFFDF9;">
+      <div class="karta-left">
+        <div class="karta-ikona">📜</div>
+        <div class="karta-text">
+          <strong>Certificat de parrainage d'honneur (Français)</strong>
+          <span>Certificat officiel dédié à M. Alain Aspect, de l'Académie française</span>
+        </div>
+      </div>
+      <div class="karta-tlacitko">🇫🇷 Ouvrir le certificat</div>
+    </a>
+
+    <a href="certificate_en.html" target="_blank" class="karta-download">
+      <div class="karta-left">
+        <div class="karta-ikona">📜</div>
+        <div class="karta-text">
+          <strong>Certificate of Honorary Godparenthood (English)</strong>
+          <span>Official certificate in English dedicated to Prof. Alain Aspect</span>
+        </div>
+      </div>
+      <div class="karta-tlacitko">🇬🇧 Open English Certificate</div>
+    </a>
+
+    <div onclick="window.print()" class="karta-download" style="cursor: pointer;">
+      <div class="karta-left">
+        <div class="karta-ikona">🖨️</div>
+        <div class="karta-text">
+          <strong>Imprimer / Enregistrer en PDF</strong>
+          <span>Imprimer ou sauvegarder le certificat officiel en format PDF</span>
+        </div>
+      </div>
+      <div class="karta-tlacitko">🖨️ Imprimer le document</div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PAGE 1: COUVERTURE GRAPHIQUE ================= -->
+<div class="strana strana-titulni-grafika"></div>
+
+<!-- ================= PAGE 2: CERTIFICAT DE PARRAINAGE D'HONNEUR ================= -->
+<div id="strana-certifikat" class="strana">
+  <img src="bg_certifikat.jpg" alt="" class="certifikat-overlay-img">
+  <div class="certifikat-vnitrni-ram">
+    <div>
+      <p class="jmeno-stanice">Felis Noetica</p>
+      <p class="podtitul">INTELLIGENTIA ET CONCORDIA</p>
+      <p style="font-size: 8.5pt; color: var(--text-tichy); margin-top: 2px;">Chatterie d'Européens (European Shorthair) — FIFe n° 7944</p>
+    </div>
+
+    <div style="text-align: center; margin: 4px 0;">
+      <div style="width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--zlatavost); box-shadow: 0 4px 15px rgba(0,0,0,0.12); overflow: hidden; display: inline-block;">
+        <img src="alain_foto.jpg" alt="Photo du chaton Alain" style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); display: block;">
+      </div>
+    </div>
+
+    <div>
+      <div class="certifikat-titre-fr">CERTIFICAT DE PARRAINAGE D'HONNEUR</div>
+      <div class="certifikat-subtitre-fr">Patrinus honorarius</div>
+      <div class="certifikujese">Le présent document atteste officiellement l'origine, le nom et le parrainage d'honneur de</div>
+      <div class="jmeno-zviratko">Alain</div>
+      <div class="formalni-jmeno">Alain of Felis Noetica</div>
+    </div>
+
+    <div class="udaje-mriezk">
+      <div class="udaj-polozka"><strong>Identifiant :</strong> FS01-G02-M001</div>
+      <div class="udaj-polozka"><strong>Sexe :</strong> mâle (♂)</div>
+      <div class="udaj-polozka"><strong>Date de naissance :</strong> 14 juillet 2026</div>
+      <div class="udaj-polozka"><strong>Robe :</strong> crème / roux clair (O/Y S/s)</div>
+      <div class="udaj-polozka"><strong>Mère :</strong> Sibyla (G1, O/o S/s)</div>
+      <div class="udaj-polozka"><strong>Père :</strong> Sokrates (G1, O/Y s/s)</div>
+    </div>
+
+    <div class="vyznam-box">
+      <div class="vyznam-nadpis">Signification et dédicace : M. Alain Aspect, de l'Académie française</div>
+      Nommé en l'honneur d'<strong>Alain Aspect</strong>, physicien français, prix Nobel de physique 2022, pour ses expériences sur les photons intriqués établissant la violation des inégalités de Bell — tranchant par la mesure ce dont Einstein ne pouvait que douter — et pour son rôle de pionnier dans la science de l'information quantique. Ce chaton incarne la vivacité d'esprit, l'attachement, et le goût de trancher les questions par l'expérience.
+    </div>
+
+    <div class="certifikat-dole-obal">
+      <div class="podpisy-mriezka">
+        <div class="podpis-line">
+          <img src="podpis.png" alt="Signature Viktor Lošťák" class="podpis-grafika-img">
+          <strong>Viktor Lošťák</strong><br>
+          Éleveur / Felis Noetica
+        </div>
+
+        <div class="qr-blok-pravo">
+          <img src="qr_kod.png" alt="Code QR Alain" class="qr-img">
+          <span>Généalogie numérique et vérification</span>
+        </div>
+      </div>
+
+      <div class="certifikat-registrace">
+        FIFe n° 7944 &nbsp;·&nbsp; ČSCH n° 30214 &nbsp;·&nbsp; A VIRTÙ RESEARCH &amp; TECHNOLOGIES s.r.o.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PAGE 3: LETTRE D'ACCOMPAGNEMENT ================= -->
+<div class="strana" style="padding: 24mm 20mm 20mm 20mm;">
+  <div>
+    <p style="font-size: 9pt; color: var(--text-tichy); margin-bottom: 20px;">
+      <strong>Monsieur le Professeur Alain Aspect</strong><br>
+      Laboratoire Charles Fabry · Institut d'Optique Graduate School<br>
+      2 avenue Augustin Fresnel, 91127 Palaiseau Cedex, France
+    </p>
+
+    <h2 style="font-size: 14pt; color: var(--akcent); border-bottom: 1px solid var(--linka); padding-bottom: 6px; margin-bottom: 15px;">Un chaton nommé Alain — parrainage d'honneur</h2>
+
+    <p>Monsieur le Professeur,</p>
+
+    <p>Je vous écris d'une petite chatterie d'Européens en République tchèque, Felis Noetica, enregistrée auprès de la FIFe sous le numéro 7944. Nous sélectionnons sur le tempérament, la curiosité et la capacité à résoudre des problèmes, non sur l'apparence ; notre devise est <em>Intelligentia et Concordia</em>.</p>
+
+    <p>Un chaton mâle crème est né chez nous le 14 juillet 2026. Il porte le nom d'Alain — officiellement <em>Alain of Felis Noetica</em> — en votre honneur, pour vos expériences sur les photons intriqués, et pour avoir tranché par la mesure ce dont Einstein ne pouvait que douter.</p>
+
+    <p>Nous donnons à chaque portée des noms de scientifiques dont l'œuvre nous inspire, et lorsqu'ils sont vivants, nous le leur écrivons. Veuillez accepter le certificat ci‑joint comme un simple témoignage de respect et de gratitude pour l'ensemble de votre travail. Nous ne demandons rien en retour.</p>
+
+    <p>Permettez‑moi d'y joindre nos félicitations pour votre élection à l'Académie française, au fauteuil 22.</p>
+
+    <p>Un détail qui vous amusera peut‑être : sur toutes les photographies, Alain a l'air profondément contrarié. Il ne l'est pas — c'est simplement son visage. Ce qui is sans doute une bonne raison de mesurer les choses plutôt que d'en juger sur l'apparence.</p>
+
+    <p>Je vous prie d'agréer, Monsieur le Professeur, l'expression de ma respectueuse considération.</p>
+
+    <div style="margin-top: 30px;">
+      <strong>Viktor Lošťák</strong><br>
+      <span style="font-size: 9.5pt; color: var(--text-tichy);">Éleveur, Felis Noetica · Brno et Runářov, République tchèque</span><br>
+      <span style="font-size: 9pt; color: var(--text-tichy);">info@felisnoetica.cz · felisnoetica.cz</span>
+    </div>
+  </div>
+
+  <div class="zapatie">
+    <span>Felis Noetica — Lettre d'accompagnement (FS01-G02-M001)</span>
+    <span>Page 3</span>
+  </div>
+</div>
+
+</body>
+</html>
