@@ -15,14 +15,14 @@ soukroma_stranka:
     - cs
     - en
 certifikat:
-  art: foto/pafnuc-art.jpg
+  art: images/pafnuc-art.jpg
   typ: puvod
   misto: Brno
   datum: '2026-08-01'
   jazyky:
     - cs
     - en
-  foto: foto/pafnuc-detail.jpg
+  foto: images/pafnuc-detail.jpg
   viditelnost: verejne
 pojmenovan_po:
   cs: Pafnutij Čebyšev — zakladatel ruské matematické školy

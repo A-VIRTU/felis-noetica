@@ -15,14 +15,14 @@ soukroma_stranka:
     - cs
     - en
 certifikat:
-  art: foto/andrew-art.jpg
+  art: images/andrew-art.jpg
   typ: puvod
   misto: Brno
   datum: '2026-07-20'
   jazyky:
     - cs
     - en
-  foto: foto/andrew-detail.jpg
+  foto: images/andrew-detail.jpg
   viditelnost: verejne
 pojmenovan_po:
   cs: Andrew Wiles — důkaz Velké Fermatovy věty po 350 letech

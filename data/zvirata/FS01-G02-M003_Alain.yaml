@@ -18,7 +18,7 @@ soukroma_stranka:
     - en
     - fr
 certifikat:
-  art: foto/alain-art.jpg
+  art: images/alain-art.jpg
   typ: kmotrovsky
   misto: Brno
   datum: '2026-07-20'
@@ -26,7 +26,7 @@ certifikat:
     - cs
     - en
     - fr
-  foto: foto/alain-detail.jpg
+  foto: images/alain-detail.jpg
   viditelnost: verejne
 kmotr:
   jmeno: Alain Aspect

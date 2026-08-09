@@ -15,14 +15,14 @@ soukroma_stranka:
     - cs
     - en
 certifikat:
-  art: foto/amalie-art.jpg
+  art: images/amalie-art.jpg
   typ: puvod
   misto: Brno
   datum: '2026-07-20'
   jazyky:
     - cs
     - en
-  foto: foto/amelie-detail.jpg
+  foto: images/amelie-detail.jpg
   viditelnost: verejne
 pojmenovan_po:
   cs: Amalie Emmy Noetherová — teorém spojující symetrie a zákony zachování

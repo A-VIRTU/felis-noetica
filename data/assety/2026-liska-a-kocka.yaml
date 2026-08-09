@@ -1,4 +1,4 @@
-soubor: video/liska-a-kocka-runarov.mp4
+soubor: videos/liska-a-kocka-runarov.mp4
 typ: video
 datum: '2026-06-01'
 misto: Runářov
@@ -10,7 +10,7 @@ tagy:
   - liska
   - kamera
 viditelnost: verejne
-poster: foto/liska-nahled.jpg
+poster: images/liska-nahled.jpg
 popisky:
   cs:
     navesti: Runářov

@@ -15,14 +15,14 @@ soukroma_stranka:
     - cs
     - en
 certifikat:
-  art: foto/priyamvada-art.jpg
+  art: images/priyamvada-art.jpg
   typ: puvod
   misto: Brno
   datum: '2026-08-01'
   jazyky:
     - cs
     - en
-  foto: foto/priyamvada-detail.jpg
+  foto: images/priyamvada-detail.jpg
   viditelnost: verejne
 pojmenovan_po:
   cs: Priyamvada Natarajanová — mapování temné hmoty gravitačními čočkami (Yale)

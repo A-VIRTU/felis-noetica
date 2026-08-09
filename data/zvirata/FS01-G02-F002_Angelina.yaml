@@ -15,14 +15,14 @@ soukroma_stranka:
     - cs
     - en
 certifikat:
-  art: foto/angelina-art.jpg
+  art: images/angelina-art.jpg
   typ: puvod
   misto: Brno
   datum: '2026-07-20'
   jazyky:
     - cs
     - en
-  foto: foto/angelina-detail.jpg
+  foto: images/angelina-detail.jpg
   viditelnost: verejne
 pojmenovan_po:
   cs: Fanny Angelina Hesseová — agar pro kultivaci bakterií a rozvoj mikrobiologie

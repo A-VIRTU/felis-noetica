@@ -15,14 +15,14 @@ soukroma_stranka:
     - cs
     - en
 certifikat:
-  art: foto/polly-art.jpg
+  art: images/polly-art.jpg
   typ: puvod
   misto: Brno
   datum: '2026-08-01'
   jazyky:
     - cs
     - en
-  foto: foto/polly-detail.jpg
+  foto: images/polly-detail.jpg
   viditelnost: verejne
 pojmenovan_po:
   cs: Polly Matzingerová — model nebezpečí v imunologii

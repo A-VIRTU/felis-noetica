@@ -102,18 +102,14 @@ function adresa(d) {
   const podleSouboru = Object.fromEntries(d.assety.map((a) => [a.soubor, a]));
   return (soubor, relKoren = '') => {
     const prefix = !relKoren ? '' : (relKoren.endsWith('/') ? relKoren : relKoren + '/');
-    const a = podleSouboru[soubor];
-    const bn = path.basename(soubor);
-    const ext = path.extname(soubor).toLowerCase();
-    let subfolder = 'images';
-    if (ext === '.pdf') subfolder = 'dokumenty';
-    else if (ext === '.mp4') subfolder = 'videos';
+    const cleanPath = soubor.replace(/^assets\//, '').replace(/^foto\//, 'images/').replace(/^video\//, 'videos/');
+    const bn = path.basename(cleanPath);
 
     const webVersion = bn.replace(/\.jpg$/i, '-web.jpg');
     if (fs.existsSync(path.join(KOREN, 'assets', 'images', webVersion))) {
       return `${prefix}assets/images/${webVersion}`;
     }
-    return `${prefix}assets/${subfolder}/${bn}`;
+    return `${prefix}assets/${cleanPath}`;
   };
 }
 

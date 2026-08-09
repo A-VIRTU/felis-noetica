@@ -16,14 +16,14 @@ soukroma_stranka:
     - cs
     - en
 certifikat:
-  art: foto/penrose-art.jpg
+  art: images/penrose-art.jpg
   typ: kmotrovsky
   misto: Brno
   datum: '2026-08-08'
   jazyky:
     - cs
     - en
-  foto: foto/penrose-detail.jpg
+  foto: images/penrose-detail.jpg
   viditelnost: verejne
 kmotr:
   jmeno: Sir Roger Penrose
