@@ -87,7 +87,7 @@ a:focus-visible{outline:2px solid var(--trava);outline-offset:3px;border-radius:
 
 .podtitul{
   font-family:"Newsreader",serif;font-style:italic;font-weight:400;
-  font-size:1.05rem;color:var(--text-tichy);margin:0;line-height:1.55;
+  font-size:1.3rem;color:var(--text-tichy);margin:0;line-height:1.55;
 }
 
 /* ---------- teze ---------- */
