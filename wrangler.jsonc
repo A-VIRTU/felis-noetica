@@ -3,7 +3,7 @@
   "name": "felis-noetica",
   "compatibility_date": "2026-08-08",
   "build": {
-    "command": "node build.js"
+    "command": "node nastroje/build.js"
   },
   "assets": {
     "directory": "public"
