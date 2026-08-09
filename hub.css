@@ -34,8 +34,8 @@ body {
 }
 .hub-header { text-align: center; border-bottom: 1px solid var(--linka); padding-bottom: 25px; margin-bottom: 25px; }
 .hub-logo { width: 140px; opacity: .8; margin-bottom: 12px; }
-.jmeno-stanice { font-weight: 400; font-size: 2.1rem; letter-spacing: .07em; text-transform: uppercase; margin: 0 0 .2rem; }
-.podtitul { font-style: italic; font-weight: 300; font-size: 1.12rem; color: var(--text-tichy); margin: 0 0 15px; }
+.jmeno-stanice { font-weight: 500; font-size: 2.1rem; letter-spacing: .07em; text-transform: uppercase; margin: 0 0 .2rem; }
+.podtitul { font-style: italic; font-weight: 400; font-size: 1.12rem; color: var(--text-tichy); margin: 0 0 15px; }
 .hub-karta { background-color: #F8F5EE; border: 1px solid var(--linka); padding: 16px 24px; border-radius: 6px; display: inline-block; margin-top: 10px; text-align: center; }
 .hub-id { font-size: 9.5pt; letter-spacing: .12em; text-transform: uppercase; color: var(--akcent); font-weight: 500; display: block; }
 .hub-jmeno { font-size: 22pt; font-weight: 500; margin: 3px 0 5px; }
