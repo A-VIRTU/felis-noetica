@@ -177,3 +177,93 @@ body {
 .lightbox-caption em {
   font-style: italic;
 }
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  box-sizing: border-box !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  outline: none !important;
+}
+
+.lightbox-close {
+  position: fixed !important;
+  top: 1.25rem !important;
+  right: 1.75rem !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  color: #FFFDF9 !important;
+  font-size: 1.75rem !important;
+  line-height: 40px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease, transform 0.2s ease !important;
+  z-index: 10000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.35) !important;
+  transform: scale(1.08) !important;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: fixed !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50% !important;
+  width: 52px !important;
+  height: 52px !important;
+  color: #FFFDF9 !important;
+  font-size: 1.8rem !important;
+  line-height: 48px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease, transform 0.2s ease !important;
+  z-index: 10000 !important;
+  user-select: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.lightbox-prev { left: 1.5rem !important; }
+.lightbox-next { right: 1.5rem !important; }
+
+.lightbox-prev:hover {
+  background: rgba(255, 255, 255, 0.35) !important;
+  transform: translateY(-50%) scale(1.08) !important;
+}
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.35) !important;
+  transform: translateY(-50%) scale(1.08) !important;
+}
+
+.lightbox-counter {
+  position: fixed !important;
+  top: 1.4rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  padding: 0.3rem 0.9rem !important;
+  border-radius: 20px !important;
+  color: #FFFDF9 !important;
+  font-family: "Newsreader", serif !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 0.1em !important;
+  z-index: 10000 !important;
+}
