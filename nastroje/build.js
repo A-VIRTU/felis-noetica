@@ -80,18 +80,18 @@ function adresa(d) {
   const podleSouboru = Object.fromEntries(d.assety.map((a) => [a.soubor, a]));
   return (soubor) => {
     const a = podleSouboru[soubor];
-    if (!a || a.verejne) {
-      const bn = path.basename(soubor);
-      const webVersion = bn.replace(/\.jpg$/i, '-web.jpg');
-      if (fs.existsSync(path.join(WEB, 'assets', 'images', webVersion))) {
-        return `/assets/images/${webVersion}`;
-      }
-      if (fs.existsSync(path.join(WEB, 'assets', 'images', bn))) {
-        return `/assets/images/${bn}`;
-      }
+    const bn = path.basename(soubor);
+    const webVersion = bn.replace(/\.jpg$/i, '-web.jpg');
+    if (fs.existsSync(path.join(WEB, 'assets', 'images', webVersion))) {
+      return `/assets/images/${webVersion}`;
+    }
+    if (fs.existsSync(path.join(WEB, 'assets', 'images', bn))) {
       return `/assets/images/${bn}`;
     }
-    return `/soukrome/${a.token}/${path.basename(soubor)}`;
+    if (a && !a.verejne) {
+      return `/soukrome/${a.token}/${bn}`;
+    }
+    return `/assets/images/${bn}`;
   };
 }
 
@@ -134,12 +134,15 @@ async function main() {
   let verejnych = 0, soukromych = 0;
   for (const a of d.assety) {
     const zdroj = path.join(MEDIA, a.soubor);
+    kopiruj(zdroj, path.join('media', a.soubor));
+    kopiruj(zdroj, path.join('assets', 'images', path.basename(a.soubor)));
     if (a.verejne) {
-      kopiruj(zdroj, path.join('media', a.soubor));
-      kopiruj(zdroj, path.join('assets', 'images', path.basename(a.soubor)));
       verejnych++;
     }
-    else { kopiruj(zdroj, path.join('soukrome', a.token, path.basename(a.soubor))); soukromych++; }
+    else {
+      kopiruj(zdroj, path.join('soukrome', a.token, path.basename(a.soubor)));
+      soukromych++;
+    }
     if (a.poster) {
       const p = path.join(MEDIA, a.poster);
       if (fs.existsSync(p)) kopiruj(p, path.join('media', a.poster));
