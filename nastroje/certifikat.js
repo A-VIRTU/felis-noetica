@@ -63,7 +63,9 @@ function rodic(zvirata, id) {
 }
 
 function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
-  const prefix = !relKoren ? '' : (relKoren.endsWith('/') ? relKoren : relKoren + '/');
+  const prefixDist = !relKoren ? '' : (relKoren.endsWith('/') ? relKoren : relKoren + '/');
+  const prefixAssets = !relKoren ? '../assets/' : (relKoren.endsWith('/') ? relKoren + '../assets/' : relKoren + '/../assets/');
+
   const t = TEXTY[jazyk] || TEXTY.cs;
   const c = zvire.certifikat || {};
   const kmotrovsky = c.typ === 'kmotrovsky' && zvire.kmotr;
@@ -90,15 +92,15 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
   const slug = slugJmena(zvire.jmeno);
 
   const { KOREN } = require('./data');
-  let artSoubor = `assets/images/${slug}-art.jpg`;
+  let artSubpath = `images/${slug}-art.jpg`;
   if (c.art && fs.existsSync(path.join(KOREN, 'assets', 'images', c.art))) {
-    artSoubor = `assets/images/${c.art}`;
+    artSubpath = `images/${c.art}`;
   } else if (fs.existsSync(path.join(KOREN, 'assets', 'images', `${slug}-art-novy.jpg`))) {
-    artSoubor = `assets/images/${slug}-art-novy.jpg`;
+    artSubpath = `images/${slug}-art-novy.jpg`;
   } else if (fs.existsSync(path.join(KOREN, 'assets', 'images', `${slug}-art.jpg`))) {
-    artSoubor = `assets/images/${slug}-art.jpg`;
+    artSubpath = `images/${slug}-art.jpg`;
   } else if (fs.existsSync(path.join(KOREN, 'assets', 'images', 'bg_certifikat.jpg'))) {
-    artSoubor = 'assets/images/bg_certifikat.jpg';
+    artSubpath = 'images/bg_certifikat.jpg';
   }
 
   return `<!DOCTYPE html>
@@ -112,14 +114,14 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${prefix}hub.css">
+<link rel="stylesheet" href="${prefixDist}hub.css">
 </head>
 <body class="notranslate" translate="no">
 
-<div class="strana strana-titulni-grafika" style="background-image: url('${prefix}${artSoubor}')"></div>
+<div class="strana strana-titulni-grafika" style="background-image: url('${prefixAssets}${artSubpath}')"></div>
 
 <div id="strana-certifikat" class="strana notranslate" translate="no">
-  <img src="${prefix}${artSoubor}" alt="" class="certifikat-overlay-img" onerror="this.style.display='none'">
+  <img src="${prefixAssets}${artSubpath}" alt="" class="certifikat-overlay-img" onerror="this.style.display='none'">
   <div class="certifikat-vnitrni-ram">
     <div>
       <p class="jmeno-stanice">Felis Noetica</p>
@@ -152,7 +154,7 @@ ${vyznamRaw ? `    <div class="vyznam-box">
       <div class="certifikat-datum">${E(t.vDne(c.misto || 'Brno', datum(c.datum, jazyk)))}</div>
       <div class="podpisy-mriezka">
         <div class="podpis-line">
-          <img src="${prefix}assets/images/podpis.png" alt="" class="podpis-grafika-img" onerror="this.style.display='none'">
+          <img src="${prefixAssets}images/podpis.png" alt="" class="podpis-grafika-img" onerror="this.style.display='none'">
           <strong>Viktor Lošťák</strong><br>${E(t.chovatel)}
         </div>
         <div class="qr-blok-pravo">

@@ -75,11 +75,11 @@ function kopirujStrom(zdroj, cil, vynech = new Set()) {
   }
 }
 
-// adresa mediálního souboru — vše směruje do jednotného stromu assets/
+// adresa mediálního souboru — vše směruje do jediného sdíleného stromu assets/ v rootu repozitáře
 function adresa(d) {
   const podleSouboru = Object.fromEntries(d.assety.map((a) => [a.soubor, a]));
   return (soubor, relKoren = '') => {
-    const prefix = !relKoren ? '' : (relKoren.endsWith('/') ? relKoren : relKoren + '/');
+    const prefixAssets = !relKoren ? '../assets/' : (relKoren.endsWith('/') ? relKoren + '../assets/' : relKoren + '/../assets/');
     const a = podleSouboru[soubor];
     const bn = path.basename(soubor);
     const ext = path.extname(soubor).toLowerCase();
@@ -89,9 +89,9 @@ function adresa(d) {
 
     const webVersion = bn.replace(/\.jpg$/i, '-web.jpg');
     if (fs.existsSync(path.join(KOREN, 'assets', 'images', webVersion))) {
-      return `${prefix}assets/images/${webVersion}`;
+      return `${prefixAssets}images/${webVersion}`;
     }
-    return `${prefix}assets/${subfolder}/${bn}`;
+    return `${prefixAssets}${subfolder}/${bn}`;
   };
 }
 
@@ -129,14 +129,12 @@ async function main() {
     zapis(soubor, html);
   }
 
-  // --- 2. kopírování sdílené složky assets do dist/ ---
+  // --- 2. žádné kopírování assets! vše odkazuje do jediného adresáře assets/ v rootu ---
   let verejnych = 0, soukromych = 0;
   for (const a of d.assety) {
     if (a.verejne) verejnych++;
     else soukromych++;
   }
-  const rootAssets = path.join(KOREN, 'assets');
-  kopirujStrom(rootAssets, 'assets');
 
   // --- 3. stránky zvířat: veřejná i majitelova ze STEJNÉ šablony ---
   // Rozdíl je jen v tom, co projde filtrem viditelnosti. Veřejná stránka
