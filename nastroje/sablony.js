@@ -110,14 +110,13 @@ function figura(a, jazyk = 'cs', url) {
 
 // ---------- privátní stránka majitele ----------
 
-function stranakMajitele({ zvire, jazyk, assety, zvirata, url, kontakt, jazyky = [], uuid, prvni }) {
-  const j = jazyk || 'cs';
+function stranakMajitele({ zvire, assety, j = 'cs', url, majitel, uuid, jazyky = ['cs'], kontakt, zvirata = [], relKoren = '' }) {
   const s = SLOVNIK[j] || SLOVNIK.cs;
-  // přepínač jazyků: první jazyk sedí na /<uuid>/, další na /<uuid>/<jazyk>/
+  const prvni = jazyky[0];
   const prepinac = jazyky.length > 1
-    ? `<p class="odkaz-dal notranslate" translate="no">${jazyky.map((x) => x === j
+    ? `<p class="prepinac-jazyku">${jazyky.map((x) => (x === j
         ? `<strong>${E(NAZVY_JAZYKU[x] || x)}</strong>`
-        : `<a href="/${uuid}/${x === prvni ? '' : x + '/'}">${E(NAZVY_JAZYKU[x] || x)}</a>`).join(' · ')}</p>`
+        : `<a href="${x === prvni ? 'index.html' : x + '/index.html'}">${E(NAZVY_JAZYKU[x] || x)}</a>`)).join(' · ')}</p>`
     : '';
   const fotky = assety.filter((a) => a.typ === 'foto' || a.typ === 'video');
   const doks = assety.filter((a) => a.typ === 'dokument');
@@ -133,8 +132,8 @@ function stranakMajitele({ zvire, jazyk, assety, zvirata, url, kontakt, jazyky =
 
   const telo = `
 <header class="hlavicka">
-  <a href="/" class="hlavicka-odkaz">
-    <img class="znak" src="/assets/images/logo.png" alt="Felis Noetica">
+  <a href="${relKoren}index.html" class="hlavicka-odkaz">
+    <img class="znak" src="${relKoren}assets/images/logo.png" alt="Felis Noetica">
     <h1 class="jmeno-stanice">Felis Noetica</h1>
   </a>
   <p class="podtitul">${E(s.tvoje)}</p>
@@ -160,7 +159,7 @@ ${fotky.length ? `<section class="blok obal obal-siroky">
 
 <section class="blok obal">
   <div class="cenik">
-    <div class="polozka"><span><a href="/${E(uuid)}/certifikat-${E(j)}.html">${E(s.certifikat)}</a></span><span class="cena">HTML</span></div>
+    <div class="polozka"><span><a href="certifikat-${E(j)}.html">${E(s.certifikat)}</a></span><span class="cena">HTML</span></div>
   </div>
 </section>
 
@@ -244,8 +243,8 @@ ${kotata.map((z) => {
   const rok = (datumNar || '').slice(0, 4);
   const langSuffix = (jazyk && jazyk !== 'cs') ? `${jazyk}/` : '';
   const verejnaUrl = (z.verejne !== false && rok)
-    ? `/kotata/${rok}/${slugJmena(z.jmeno)}/${langSuffix}`
-    : (z.uuid ? `/${z.uuid}/${langSuffix}` : null);
+    ? `kotata/${rok}/${slugJmena(z.jmeno)}/${langSuffix}`
+    : (z.uuid ? `${z.uuid}/${langSuffix}` : null);
 
   let textOdkazu = z.jmeno.toUpperCase();
   if (z.stav === 'volne') {
