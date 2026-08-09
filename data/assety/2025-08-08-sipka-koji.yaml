@@ -1,0 +1,25 @@
+soubor: images/2025-08-08_sipka_koji.jpg
+typ: foto
+datum: '2025-08-08'
+misto: Brno
+pomer: null
+zvirata:
+  - FS01-G00-F001 Šipka
+  - FS01-G01-M002 Sokrates
+  - FS01-G01-M001 Zen
+  - FS01-G01-F005 Sibyla
+  - FS01-G01-F004 Aténa
+  - FS01-G01-F003 Sofie
+hlavni: null
+tagy:
+  - kojeni
+  - skupina
+viditelnost: verejne
+token: 2025-08-08-sipka-koji-token
+popisky:
+  cs:
+    navesti: "8. srpna 2025"
+    text: "Šipka kojí svá koťata z prvního vrhu (zleva doprava: Sokrates, Zen, Sibyla, Aténa a Sofie)."
+  en:
+    navesti: "8 August 2025"
+    text: "Šipka nursing her first litter (left to right: Sokrates, Zen, Sibyla, Aténa, and Sofie)."
