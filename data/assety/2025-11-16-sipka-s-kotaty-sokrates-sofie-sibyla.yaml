@@ -1,0 +1,26 @@
+soubor: foto/2025-11-16_sipka_s_kotaty_sokrates_sofie_sibyla.jpg
+typ: foto
+datum: '2025-11-16'
+misto: Runářov
+pomer: null
+zvirata:
+  - FS01-G00-F001 Šipka
+  - FS01-G01-M002 Sokrates
+  - FS01-G01-F003 Sofie
+  - FS01-G01-F005 Sibyla
+hlavni: FS01-G00-F001 Šipka
+tagy:
+  - sipka
+  - sokrates
+  - sofie
+  - sibyla
+  - kotata
+viditelnost: verejne
+token: photo-sipka-kotata-2025-11-16
+popisky:
+  cs:
+    navesti: 16. listopadu 2025
+    text: Šipka s koťaty si hrají, vlevo Šipka, pak po směru hodin Sokrates, Sofie, Sibyla
+  en:
+    navesti: 16 November 2025
+    text: Šipka playing with kittens, on the left Šipka, then clockwise Sokrates, Sofie, Sibyla

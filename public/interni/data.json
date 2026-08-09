@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T19:23:12.979Z",
+ "vygenerovano": "2026-08-09T19:25:06.287Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -13,7 +13,7 @@
    "otec": null,
    "verejne": false,
    "stranka": null,
-   "pocet_assetu": 14
+   "pocet_assetu": 15
   },
   {
    "id": "FS01-G00-M001",
@@ -42,7 +42,7 @@
    "otec": null,
    "verejne": true,
    "stranka": "/e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b/",
-   "pocet_assetu": 6
+   "pocet_assetu": 7
   },
   {
    "id": "FS01-G01-F004",
@@ -72,7 +72,7 @@
    "otec": null,
    "verejne": true,
    "stranka": "/f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c/",
-   "pocet_assetu": 12
+   "pocet_assetu": 13
   },
   {
    "id": "FS01-G01-M001",
@@ -102,7 +102,7 @@
    "otec": null,
    "verejne": true,
    "stranka": "/d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a/",
-   "pocet_assetu": 6
+   "pocet_assetu": 7
   },
   {
    "id": "FS01-G02-F001",
@@ -253,6 +253,39 @@
  ],
  "assety": [
   {
+   "soubor": "foto/2025-11-16_sipka_s_kotaty_sokrates_sofie_sibyla.jpg",
+   "typ": "foto",
+   "datum": "2025-11-16",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G00-F001",
+    "FS01-G01-M002",
+    "FS01-G01-F003",
+    "FS01-G01-F005"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [
+    "sipka",
+    "sokrates",
+    "sofie",
+    "sibyla",
+    "kotata"
+   ],
+   "verejne": true,
+   "url": "/media/foto/2025-11-16_sipka_s_kotaty_sokrates_sofie_sibyla.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "16. listopadu 2025",
+     "text": "Šipka s koťaty si hrají, vlevo Šipka, pak po směru hodin Sokrates, Sofie, Sibyla"
+    },
+    "en": {
+     "navesti": "16 November 2025",
+     "text": "Šipka playing with kittens, on the left Šipka, then clockwise Sokrates, Sofie, Sibyla"
+    }
+   },
+   "zdroj": "data\\assety\\2025-11-16-sipka-s-kotaty-sokrates-sofie-sibyla.yaml"
+  },
+  {
    "soubor": "foto/2025-12-31_sipka_silvestr_2025_teletnik_v_runarove.jpg",
    "typ": "foto",
    "datum": "2025-12-31",
@@ -267,7 +300,7 @@
     "teletnik"
    ],
    "verejne": true,
-   "url": "/media/foto/2025-12-31_sipka_silvestr_2025_teletnik_v_runarove.jpg",
+   "url": "/assets/images/2025-12-31_sipka_silvestr_2025_teletnik_v_runarove.jpg",
    "popisky": {
     "cs": {
      "navesti": "31. prosince 2025",
@@ -1863,11 +1896,15 @@
   "genetika",
   "genomia",
   "kamera",
+  "kotata",
   "kote",
   "liska",
   "runarov",
+  "sibyla",
   "sipka",
   "skupina",
+  "sofie",
+  "sokrates",
   "teletnik",
   "vaha",
   "vrh",
