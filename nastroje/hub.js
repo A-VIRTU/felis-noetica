@@ -279,6 +279,7 @@ ${fotky.length ? `  <h2 class="hub-sekce-nadpis">${E(t.fotky)}</h2>
     <p class="poznamka">${E(majitel ? t.jenProVas : t.verejna)}</p>
   </footer>
 </div>
+<script src="/skript.js?v=20260809b"></script>
 </body>
 </html>`;
 }
