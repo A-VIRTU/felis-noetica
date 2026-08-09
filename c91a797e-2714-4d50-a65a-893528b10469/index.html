@@ -20,6 +20,11 @@
 
   * { box-sizing: border-box; }
 
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
   body {
     margin: 0;
     padding: 0;
@@ -615,6 +620,10 @@
 
     <!-- SPODNÍ BLOK: PODPIS VLEVO, QR KÓD VPRAVO, REGISTRACE DOLE -->
     <div class="certifikat-dole-obal">
+      <div style="font-size:9.5pt; font-style:italic; color:var(--text-tichy); margin-bottom:6px; text-align:left;">
+        V Brně dne 20. července 2026
+      </div>
+
       <div class="podpisy-mriezka">
         <div class="podpis-line">
           <img src="podpis.png" alt="Podpis Viktor Lošťák" class="podpis-grafika-img">
