@@ -236,7 +236,10 @@ ${kotata.map((z) => {
   const slugJmena = (s) => bezDia(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const datumNar = z.narozeni || v.narozeni || '';
   const rok = (datumNar || '').slice(0, 4);
-  const verejnaUrl = z.verejne && rok ? `/kotata/${rok}/${slugJmena(z.jmeno)}/` : null;
+  const langSuffix = (jazyk && jazyk !== 'cs') ? `${jazyk}/` : '';
+  const verejnaUrl = z.uuid
+    ? `/${z.uuid}/${langSuffix}`
+    : (z.verejne && rok ? `/kotata/${rok}/${slugJmena(z.jmeno)}/${langSuffix}` : null);
 
   let textOdkazu = z.jmeno.toUpperCase();
   if (z.stav === 'volne') {
