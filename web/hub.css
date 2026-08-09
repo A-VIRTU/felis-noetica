@@ -322,12 +322,17 @@ body {
 
 /* ---------- Certifikáty ---------- */
 
+@page {
+  size: 210mm 297mm;
+  margin: 0;
+}
+
 .strana {
   width: 210mm;
-  min-height: 270mm;
-  margin: 20px auto;
-  background-color: var(--bg-papir);
-  padding: 20mm 16mm;
+  height: 297mm;
+  margin: 0 auto 40px auto;
+  background-color: #FFFFFF;
+  padding: 0;
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   position: relative;
   page-break-after: always;
@@ -335,6 +340,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .strana-titulni-grafika {
@@ -348,10 +354,23 @@ body {
 #strana-certifikat {
   position: relative;
   overflow: hidden;
-  background-color: #FDFBF7;
+  background-color: #FFFFFF;
   padding: 16mm 14mm;
-  border: 1px solid var(--zlatavost);
-  border-radius: 6px;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+@media print {
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #FFFFFF !important;
+  }
+  .strana {
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
 }
 
 .certifikat-overlay-img {
