@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>FS01-G02-F001 Amálie — Osvědčení o původu a jménu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --text-hlavni: #2E2B27;
+    --text-tichy: #6B655D;
+    --akcent: #8B7355;
+    --zlatavost: #B89768;
+    --bg-papir: #FFFFFF;
+    --linka: #E8E2D8;
+    --zelena-ok: #2E6B38;
+  }
+
+  * { box-sizing: border-box; }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #EFECE6;
+    font-family: 'Newsreader', Georgia, serif;
+    color: var(--text-hlavni);
+    font-size: 11pt;
+    line-height: 1.6;
+    -webkit-print-color-adjust: exact;
+  }
+
+  @media print {
+    body { background: none; }
+    .strana {
+      margin: 0;
+      box-shadow: none;
+      width: 100%;
+      height: 297mm;
+    }
+  }
+
+  /* Standard A4 Print / View Page */
+  .strana {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    background-color: var(--bg-papir);
+    padding: 22mm 18mm 20mm 18mm;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: relative;
+    page-break-after: always;
+    break-after: page;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Page 1: Standalone Art Cover (Fine Line Geometry Art) */
+  .strana-titulni-grafika {
+    background-image: url('bg_certifikat.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #FFFFFF;
+    padding: 0;
+  }
+
+  /* Page 2: Certificate Page */
+  #strana-certifikat {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-papir);
+    padding: 22mm 16mm 22mm 16mm;
+  }
+
+  .certifikat-overlay-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    mix-blend-mode: darken;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .certifikat-vnitrni-ram {
+    position: relative;
+    z-index: 1;
+    border: none;
+    padding: 16px 20px;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .jmeno-stanice {
+    font-family: "Newsreader", serif;
+    font-weight: 400;
+    font-size: 2.1rem;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    margin: 0 0 .2rem;
+    color: var(--text-hlavni);
+  }
+
+  .podtitul {
+    font-family: "Newsreader", serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.12rem;
+    color: var(--text-tichy);
+    margin: 0 0 10px;
+  }
+
+  .certifikat-titre-en {
+    font-size: 15pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--text-hlavni);
+    margin: 4px 0 2px;
+  }
+
+  .certifikat-subtitre-en {
+    font-size: 10pt;
+    font-style: italic;
+    color: var(--akcent);
+    margin: 0 0 8px;
+  }
+
+  .certifikujese {
+    font-size: 11.5pt;
+    font-style: italic;
+    color: var(--text-tichy);
+    margin: 6px 0 4px;
+    font-weight: 600;
+  }
+
+  .jmeno-zviratko {
+    font-size: 28pt;
+    font-weight: 800;
+    color: var(--akcent);
+    margin: 2px 0;
+    letter-spacing: 0.02em;
+  }
+
+  .formalni-jmeno {
+    font-size: 11.5pt;
+    font-style: italic;
+    color: var(--text-hlavni);
+    margin-bottom: 12px;
+    font-weight: 800;
+  }
+
+  .udaje-mriezk {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    text-align: left;
+    background-color: transparent;
+    padding: 12px 18px;
+    border-radius: 4px;
+    border: 1px solid var(--linka);
+    font-size: 9.5pt;
+    margin: 10px 0;
+  }
+
+  .udaj-polozka strong { color: var(--akcent); }
+
+  .vyznam-box {
+    margin: 10px 0;
+    padding: 12px 16px;
+    border-left: 3px solid var(--akcent);
+    text-align: left;
+    font-size: 9.2pt;
+    line-height: 1.55;
+    background-color: transparent;
+    font-weight: 600;
+  }
+
+  .vyznam-nadpis {
+    font-size: 10pt;
+    font-weight: 600;
+    color: var(--akcent);
+    margin-bottom: 4px;
+  }
+
+  .certifikat-dole-obal {
+    margin-top: 10px;
+    padding-top: 8px;
+  }
+
+  .podpisy-mriezka {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .podpis-line {
+    position: relative;
+    border-top: 1px dashed var(--text-tichy);
+    width: 200px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 9pt;
+  }
+
+  .podpis-grafika-img {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 52px;
+    width: auto;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 12;
+  }
+
+  .qr-blok-pravo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .qr-img {
+    width: 60px;
+    height: 60px;
+    border: 1px solid var(--zlatavost);
+    border-radius: 4px;
+    padding: 2px;
+    background-color: #FFFDF9;
+  }
+
+  .qr-blok-pravo span {
+    font-size: 8pt;
+    color: var(--text-tichy);
+    font-style: italic;
+    max-width: 140px;
+    line-height: 1.35;
+  }
+
+  .certifikat-registrace {
+    border-top: 1px solid var(--linka);
+    padding-top: 6px;
+    font-size: 8.5pt;
+    color: var(--text-tichy);
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<!-- STRANA 1: TITULNÍ UMĚLECKÁ STRÁNKA -->
+<div class="strana strana-titulni-grafika"></div>
+
+<!-- STRANA 2: OSVĚDČENÍ O PŮVODU A JMÉNU -->
+<div id="strana-certifikat" class="strana">
+  <img src="bg_certifikat.jpg" alt="" class="certifikat-overlay-img">
+  <div class="certifikat-vnitrni-ram">
+    <div>
+      <p class="jmeno-stanice">Felis Noetica</p>
+      <p class="podtitul">INTELLIGENTIA ET CONCORDIA</p>
+      <p style="font-size: 8.5pt; color: var(--text-tichy); margin-top: 2px;">Chovná stanice evropských krátkosrstých koček (FIFe reg. č. 7944)</p>
+    </div>
+
+    <div style="text-align: center; margin: 4px 0;">
+      <div style="width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--zlatavost); box-shadow: 0 4px 15px rgba(0,0,0,0.12); overflow: hidden; display: inline-block;">
+        <img src="amalie_foto.jpg" alt="Foto kočičky Amálie" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+    </div>
+
+    <div>
+      <div class="certifikat-titre-en">OSVĚDČENÍ O PŮVODU A JMÉNU</div>
+      <div class="certifikat-subtitre-en">Documentum originis et nominis</div>
+      <div class="certifikujese">Tímto se oficiálně osvědčuje původ a jméno jedince</div>
+      <div class="jmeno-zviratko">Amálie</div>
+      <div class="formalni-jmeno">Amálie of Felis Noetica</div>
+    </div>
+
+    <div class="udaje-mriezk">
+      <div class="udaj-polozka"><strong>ID:</strong> FS01-G02-F001</div>
+      <div class="udaj-polozka"><strong>Pohlaví:</strong> Kočka (♀)</div>
+      <div class="udaj-polozka"><strong>Datum narození:</strong> 14. července 2026</div>
+      <div class="udaj-polozka"><strong>Zbarvení:</strong> Trikolóra (O/o S/s)</div>
+      <div class="udaj-polozka"><strong>Matka:</strong> Sibyla (G1, O/o S/s)</div>
+      <div class="udaj-polozka"><strong>Otec:</strong> Sokrates (G1, O/Y s/s)</div>
+    </div>
+
+    <div class="vyznam-box">
+      <div class="vyznam-nadpis">Význam a inspirace jména: Amalie Emmy Noetherová</div>
+      Pojmenována na počest německé matematičky Amalie Emmy Noetherové, jejíž průlomový teorém odhalil hlubokou a nedílnou souvislost mezi symetriemi fyzikálních zákonů a zákony zachování energie, hybnosti a elektrického náboje — čímž položila jeden z nejvýznamnějších základů moderní teoretické fyziky.
+    </div>
+
+    <div class="certifikat-dole-obal">
+      <div style="font-size:9.5pt; font-style:italic; color:var(--text-tichy); margin-bottom:6px; text-align:left;">
+        V Brně dne 20. července 2026
+      </div>
+
+      <div class="podpisy-mriezka">
+        <div class="podpis-line">
+          <img src="podpis.png" alt="Podpis Viktor Lošťák" class="podpis-grafika-img">
+          <strong>Viktor Lošťák</strong><br>
+          Chovatel / Felis Noetica
+        </div>
+
+        <div class="qr-blok-pravo">
+          <img src="qr_kod.png" alt="QR Kód Amálie" class="qr-img">
+          <span>Digitální rodokmen a ověření původu</span>
+        </div>
+      </div>
+
+      <div class="certifikat-registrace">
+        FIFe reg. č. 7944 &nbsp;·&nbsp; ČSCH reg. č. 30214 &nbsp;·&nbsp; A VIRTÙ RESEARCH &amp; TECHNOLOGIES s.r.o.
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

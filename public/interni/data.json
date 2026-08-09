@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T18:57:36.706Z",
+ "vygenerovano": "2026-08-09T19:08:36.975Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -117,7 +117,7 @@
    "otec": "FS01-G01-M002",
    "verejne": true,
    "stranka": "/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d/",
-   "pocet_assetu": 6
+   "pocet_assetu": 8
   },
   {
    "id": "FS01-G02-F002",
@@ -556,6 +556,66 @@
     }
    },
    "zdroj": "data\\assety\\alain-detail.yaml"
+  },
+  {
+   "soubor": "dokumenty/FS01-G02-F001_Amalie_Osvedceni_o_puvodu_a_jmenu_CS.pdf",
+   "typ": "dokument",
+   "datum": "2026-07-20",
+   "misto": "Brno",
+   "zvirata": [
+    "FS01-G02-F001"
+   ],
+   "hlavni": "FS01-G02-F001",
+   "tagy": [
+    "certifikat"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/FS01-G02-F001_Amalie_Osvedceni_o_puvodu_a_jmenu_CS.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Osvědčení o původu a jménu — CZ (PDF)",
+     "text": "Oficiální tiskový certifikát původu v češtině"
+    },
+    "en": {
+     "navesti": "Certificate of Origin and Name — CZ (PDF)",
+     "text": "Official Czech PDF certificate of origin"
+    },
+    "fr": {
+     "navesti": "Certificat d'origine et de nom — CZ (PDF)",
+     "text": "Certificat PDF officiel en tchèque"
+    }
+   },
+   "zdroj": "data\\assety\\amalie-certifikat-cs-pdf.yaml"
+  },
+  {
+   "soubor": "dokumenty/FS01-G02-F001_Amalie_Certificate_of_Origin_and_Name_EN.pdf",
+   "typ": "dokument",
+   "datum": "2026-07-20",
+   "misto": "Brno",
+   "zvirata": [
+    "FS01-G02-F001"
+   ],
+   "hlavni": "FS01-G02-F001",
+   "tagy": [
+    "certifikat"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/FS01-G02-F001_Amalie_Certificate_of_Origin_and_Name_EN.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Osvědčení o původu a jménu — EN (PDF)",
+     "text": "Oficiální tiskový certifikát původu v angličtině"
+    },
+    "en": {
+     "navesti": "Certificate of Origin and Name — EN (PDF)",
+     "text": "Official English PDF certificate of origin"
+    },
+    "fr": {
+     "navesti": "Certificat d'origine et de nom — EN (PDF)",
+     "text": "Certificat PDF officiel en anglais"
+    }
+   },
+   "zdroj": "data\\assety\\amalie-certifikat-en-pdf.yaml"
   },
   {
    "soubor": "foto/amelie-detail.jpg",

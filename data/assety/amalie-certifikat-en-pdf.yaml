@@ -1,0 +1,22 @@
+soubor: dokumenty/FS01-G02-F001_Amalie_Certificate_of_Origin_and_Name_EN.pdf
+typ: dokument
+datum: '2026-07-20'
+misto: Brno
+pomer: null
+zvirata:
+  - FS01-G02-F001 Amálie
+hlavni: FS01-G02-F001 Amálie
+tagy:
+  - certifikat
+viditelnost: verejne
+token: cert-amalie-en-pdf
+popisky:
+  cs:
+    navesti: Osvědčení o původu a jménu — EN (PDF)
+    text: Oficiální tiskový certifikát původu v angličtině
+  en:
+    navesti: Certificate of Origin and Name — EN (PDF)
+    text: Official English PDF certificate of origin
+  fr:
+    navesti: Certificat d'origine et de nom — EN (PDF)
+    text: Certificat PDF officiel en anglais
