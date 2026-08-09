@@ -1,0 +1,21 @@
+soubor: dokumenty/FS01-G02-F008_Polly_Osvedceni_o_puvodu_a_jmenu_CS.pdf
+typ: dokument
+datum: '2026-08-01'
+misto: Brno
+zvirata:
+  - FS01-G02-F008
+hlavni: FS01-G02-F008
+tagy:
+  - certifikat
+  - cs
+viditelnost: verejne
+popisky:
+  cs:
+    navesti: Osvědčení o původu (PDF)
+    text: Oficiální tiskové osvědčení o původu a jménu.
+  en:
+    navesti: Certificate of Origin (PDF)
+    text: Official printable certificate of origin and name.
+  fr:
+    navesti: Certificat d'origine (PDF)
+    text: Certificat officiel d'origine et de nom à imprimer.
