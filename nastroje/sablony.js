@@ -175,7 +175,8 @@ ${fotky.length ? `<section class="blok obal obal-siroky">
 
 // ---------- fragment aktuálních koťat pro index.html ----------
 
-function fragmentKotata({ vrhy, zvirata, assety, jazyk, url }) {
+function fragmentKotata({ vrhy, zvirata, assety, jazyk, url, relKoren = '' }) {
+  const prefix = !relKoren ? '' : (relKoren.endsWith('/') ? relKoren : relKoren + '/');
   const podleVrhu = {};
   for (const z of zvirata) if (z.vrh) (podleVrhu[z.vrh] ||= []).push(z);
 
@@ -241,10 +242,10 @@ ${kotata.map((z) => {
   const slugJmena = (s) => bezDia(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const datumNar = z.narozeni || v.narozeni || '';
   const rok = (datumNar || '').slice(0, 4);
-  const langSuffix = (jazyk && jazyk !== 'cs') ? `${jazyk}/` : '';
+  const langSuffix = (jazyk && jazyk !== 'cs') ? `${jazyk}/index.html` : 'index.html';
   const verejnaUrl = (z.verejne !== false && rok)
-    ? `kotata/${rok}/${slugJmena(z.jmeno)}/${langSuffix}`
-    : (z.uuid ? `${z.uuid}/${langSuffix}` : null);
+    ? `${prefix}kotata/${rok}/${slugJmena(z.jmeno)}/${langSuffix}`
+    : (z.uuid ? `${prefix}${z.uuid}/${langSuffix}` : null);
 
   let textOdkazu = z.jmeno.toUpperCase();
   if (z.stav === 'volne') {
