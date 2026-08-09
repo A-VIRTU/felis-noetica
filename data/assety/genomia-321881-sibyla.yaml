@@ -1,0 +1,22 @@
+soubor: dokumenty/Genomia_321881_Sibyla.pdf
+typ: dokument
+datum: '2026-03-11'
+misto: Plzeň
+pomer: null
+zvirata:
+  - FS01-G01-F005 Sibyla
+hlavni: FS01-G01-F005 Sibyla
+tagy:
+  - genomia
+viditelnost: verejne
+token: genomia-321881-sibyla-2026
+popisky:
+  cs:
+    navesti: Zpráva č. 321881
+    text: Kompletní genetický panel, Genomia Plzeň.
+  en:
+    navesti: Report No. 321881
+    text: Full genetic panel, Genomia Plzeň.
+  fr:
+    navesti: Rapport n° 321881
+    text: Panneau génétique complet, Genomia Plzeň.

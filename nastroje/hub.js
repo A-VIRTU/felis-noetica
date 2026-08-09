@@ -121,9 +121,6 @@ function polozky({ zvire, assety, jazyk, url, majitel }) {
     }));
   }
 
-  // 4. tisk do PDF
-  ven.push(karta({ ikona: 'tisk', nadpis: t.tisk, popis: t.tiskPopis, onclick: 'window.print()' }));
-
   return { karty: ven, fotky: viditelne.filter((x) => x.typ === 'foto' || x.typ === 'video') };
 }
 

@@ -1,0 +1,22 @@
+soubor: dokumenty/Genomia_321882_Sokrates.pdf
+typ: dokument
+datum: '2026-03-11'
+misto: Plzeň
+pomer: null
+zvirata:
+  - FS01-G01-M002 Sokrates
+hlavni: FS01-G01-M002 Sokrates
+tagy:
+  - genomia
+viditelnost: verejne
+token: genomia-321882-sokrates-2026
+popisky:
+  cs:
+    navesti: Zpráva č. 321882
+    text: Kompletní genetický panel, Genomia Plzeň.
+  en:
+    navesti: Report No. 321882
+    text: Full genetic panel, Genomia Plzeň.
+  fr:
+    navesti: Rapport n° 321882
+    text: Panneau génétique complet, Genomia Plzeň.

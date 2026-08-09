@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T13:52:30.209Z",
+ "vygenerovano": "2026-08-09T14:03:13.365Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -13,7 +13,7 @@
    "otec": null,
    "verejne": false,
    "stranka": null,
-   "pocet_assetu": 12
+   "pocet_assetu": 13
   },
   {
    "id": "FS01-G00-M001",
@@ -72,7 +72,7 @@
    "otec": null,
    "verejne": true,
    "stranka": "/f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c/",
-   "pocet_assetu": 12
+   "pocet_assetu": 13
   },
   {
    "id": "FS01-G01-M001",
@@ -102,7 +102,7 @@
    "otec": null,
    "verejne": true,
    "stranka": "/d1e2f3a4-b5c6-4d7e-8f9a-0b1c2d3e4f5a/",
-   "pocet_assetu": 5
+   "pocet_assetu": 6
   },
   {
    "id": "FS01-G02-F001",
@@ -599,6 +599,96 @@
     }
    },
    "zdroj": "data\\assety\\genomia-321880-sofie.yaml"
+  },
+  {
+   "soubor": "dokumenty/Genomia_321881_Sibyla.pdf",
+   "typ": "dokument",
+   "datum": "2026-03-11",
+   "misto": "Plzeň",
+   "zvirata": [
+    "FS01-G01-F005"
+   ],
+   "hlavni": "FS01-G01-F005",
+   "tagy": [
+    "genomia"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/Genomia_321881_Sibyla.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Zpráva č. 321881",
+     "text": "Kompletní genetický panel, Genomia Plzeň."
+    },
+    "en": {
+     "navesti": "Report No. 321881",
+     "text": "Full genetic panel, Genomia Plzeň."
+    },
+    "fr": {
+     "navesti": "Rapport n° 321881",
+     "text": "Panneau génétique complet, Genomia Plzeň."
+    }
+   },
+   "zdroj": "data\\assety\\genomia-321881-sibyla.yaml"
+  },
+  {
+   "soubor": "dokumenty/Genomia_321882_Sokrates.pdf",
+   "typ": "dokument",
+   "datum": "2026-03-11",
+   "misto": "Plzeň",
+   "zvirata": [
+    "FS01-G01-M002"
+   ],
+   "hlavni": "FS01-G01-M002",
+   "tagy": [
+    "genomia"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/Genomia_321882_Sokrates.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Zpráva č. 321882",
+     "text": "Kompletní genetický panel, Genomia Plzeň."
+    },
+    "en": {
+     "navesti": "Report No. 321882",
+     "text": "Full genetic panel, Genomia Plzeň."
+    },
+    "fr": {
+     "navesti": "Rapport n° 321882",
+     "text": "Panneau génétique complet, Genomia Plzeň."
+    }
+   },
+   "zdroj": "data\\assety\\genomia-321882-sokrates.yaml"
+  },
+  {
+   "soubor": "dokumenty/Genomia_321883_Sipka.pdf",
+   "typ": "dokument",
+   "datum": "2026-03-11",
+   "misto": "Plzeň",
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [
+    "genomia"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/Genomia_321883_Sipka.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Zpráva č. 321883",
+     "text": "Kompletní genetický panel, Genomia Plzeň."
+    },
+    "en": {
+     "navesti": "Report No. 321883",
+     "text": "Full genetic panel, Genomia Plzeň."
+    },
+    "fr": {
+     "navesti": "Rapport n° 321883",
+     "text": "Panneau génétique complet, Genomia Plzeň."
+    }
+   },
+   "zdroj": "data\\assety\\genomia-321883-sipka.yaml"
   },
   {
    "soubor": "dokumenty/Genomia_Testy_Matka_Sipka.pdf",
