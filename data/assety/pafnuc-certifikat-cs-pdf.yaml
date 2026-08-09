@@ -10,12 +10,8 @@ tagy:
   - cs
 viditelnost: verejne
 popisky:
-  cs:
+  cs: &ref_0
     navesti: Osvědčení o původu (PDF)
     text: Oficiální tiskové osvědčení o původu a jménu.
-  en:
-    navesti: Certificate of Origin (PDF)
-    text: Official printable certificate of origin and name.
-  fr:
-    navesti: Certificat d'origine (PDF)
-    text: Certificat officiel d'origine et de nom à imprimer.
+  en: *ref_0
+  fr: *ref_0

@@ -11,12 +11,8 @@ tagy:
 viditelnost: verejne
 token: cert-penrose-en-pdf-2026
 popisky:
-  cs:
-    navesti: Certificate of Honorary Godparenthood — EN (PDF)
-    text: Oficiální anglický tiskový certifikát pro sira Rogera Penrose
-  en:
-    navesti: Certificate of Honorary Godparenthood — EN (PDF)
-    text: Official English PDF certificate for Sir Roger Penrose
-  fr:
-    navesti: Certificate of Honorary Godparenthood — EN (PDF)
-    text: Certificat PDF officiel en anglais pour Sir Roger Penrose
+  cs: &ref_0
+    navesti: Certificate of Origin (PDF)
+    text: Official printable certificate of origin and name.
+  en: *ref_0
+  fr: *ref_0

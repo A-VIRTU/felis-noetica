@@ -10,12 +10,8 @@ tagy:
   - en
 viditelnost: verejne
 popisky:
-  cs:
-    navesti: Certifikát kmotrovství (PDF)
-    text: Oficiální tiskový certifikát čestného kmotrovství.
-  en:
+  cs: &ref_0
     navesti: Godparenthood Certificate (PDF)
     text: Official printable certificate of honorary godparenthood.
-  fr:
-    navesti: Certificat de parrainage (PDF)
-    text: Certificat officiel de parrainage d'honneur à imprimer.
+  en: *ref_0
+  fr: *ref_0

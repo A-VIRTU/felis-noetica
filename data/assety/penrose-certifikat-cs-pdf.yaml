@@ -11,12 +11,8 @@ tagy:
 viditelnost: verejne
 token: cert-penrose-cs-pdf-2026
 popisky:
-  cs:
-    navesti: Certifikát čestného kmotrovství — CZ (PDF)
-    text: Oficiální český tiskový certifikát pro sira Rogera Penrose
-  en:
-    navesti: Certificate of Honorary Godparenthood — CZ (PDF)
-    text: Official Czech PDF certificate for Sir Roger Penrose
-  fr:
-    navesti: Certificat de parrainage d'honneur — CZ (PDF)
-    text: Certificat PDF officiel en tchèque pour Sir Roger Penrose
+  cs: &ref_0
+    navesti: Osvědčení o původu (PDF)
+    text: Oficiální tiskové osvědčení o původu a jménu.
+  en: *ref_0
+  fr: *ref_0
