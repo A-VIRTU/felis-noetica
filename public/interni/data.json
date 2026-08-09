@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T11:26:32.173Z",
+ "vygenerovano": "2026-08-09T11:27:26.450Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -264,7 +264,7 @@
    "hlavni": null,
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/2026-07-31_sibylin-vrh-matka-a-kote.jpg",
+   "url": "/assets/images/2026-07-31_sibylin-vrh-matka-a-kote-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "31. července 2026",
@@ -290,7 +290,7 @@
    "hlavni": null,
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/2026-07-31_sibylin-vrh-matka-objima-kote.jpg",
+   "url": "/assets/images/2026-07-31_sibylin-vrh-matka-objima-kote-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "31. července 2026",
@@ -321,7 +321,7 @@
     "vrh"
    ],
    "verejne": true,
-   "url": "/media/foto/2026-07-31_sofiin-vrh-skupina.jpg",
+   "url": "/assets/images/2026-07-31_sofiin-vrh-skupina-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "31. července 2026",
@@ -374,7 +374,7 @@
    "hlavni": null,
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/2026-08-03_sibylin-vrh-detail-skupina.jpg",
+   "url": "/assets/images/2026-08-03_sibylin-vrh-detail-skupina-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "3. srpna 2026",
@@ -401,7 +401,7 @@
    "hlavni": null,
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/2026-08-03_sibylin-vrh-kojeni.jpg",
+   "url": "/assets/images/2026-08-03_sibylin-vrh-kojeni-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "3. srpna 2026",
@@ -427,7 +427,7 @@
     "kamera"
    ],
    "verejne": true,
-   "url": "/media/video/liska-a-kocka-runarov.mp4",
+   "url": "/assets/images/liska-a-kocka-runarov.mp4",
    "popisky": {
     "cs": {
      "navesti": "Runářov",
@@ -454,7 +454,7 @@
     "detail"
    ],
    "verejne": true,
-   "url": "/media/foto/alain-detail.jpg",
+   "url": "/assets/images/alain-detail-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "1. srpna 2026",
@@ -481,7 +481,7 @@
     "detail"
    ],
    "verejne": true,
-   "url": "/media/foto/amelie-detail.jpg",
+   "url": "/assets/images/amelie-detail-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "1. srpna 2026",
@@ -505,7 +505,7 @@
    "hlavni": null,
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/amelie-vaha.jpg",
+   "url": "/assets/images/amelie-vaha.jpg",
    "popisky": {
     "cs": {
      "navesti": "5. srpna 2026",
@@ -532,7 +532,7 @@
     "detail"
    ],
    "verejne": true,
-   "url": "/media/foto/andrew-detail.jpg",
+   "url": "/assets/images/andrew-detail-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "1. srpna 2026",
@@ -559,7 +559,7 @@
     "detail"
    ],
    "verejne": true,
-   "url": "/media/foto/angelina-detail.jpg",
+   "url": "/assets/images/angelina-detail-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "1. srpna 2026",
@@ -587,7 +587,7 @@
     "zprava"
    ],
    "verejne": true,
-   "url": "/media/dokumenty/Genomia_321880_Sofie.pdf",
+   "url": "/assets/images/Genomia_321880_Sofie.pdf",
    "popisky": {
     "cs": {
      "navesti": "Zpráva č. 321880",
@@ -609,7 +609,7 @@
    "hlavni": null,
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/IMG_20250805_091744.jpg",
+   "url": "/assets/images/IMG_20250805_091744.jpg",
    "popisky": {
     "cs": {
      "navesti": "5. srpna 2025",
@@ -631,7 +631,7 @@
    "hlavni": null,
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/IMG_20250904_122454.jpg",
+   "url": "/assets/images/IMG_20250904_122454.jpg",
    "popisky": {
     "cs": {
      "navesti": "4. září 2025",
@@ -680,7 +680,7 @@
     "detail"
    ],
    "verejne": true,
-   "url": "/media/foto/pafnuc-detail.jpg",
+   "url": "/assets/images/pafnuc-detail-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "8. srpna 2026",
@@ -707,7 +707,7 @@
     "detail"
    ],
    "verejne": true,
-   "url": "/media/foto/penrose-detail.jpg",
+   "url": "/assets/images/penrose-detail-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "8. srpna 2026",
@@ -734,7 +734,7 @@
     "detail"
    ],
    "verejne": true,
-   "url": "/media/foto/polly-detail.jpg",
+   "url": "/assets/images/polly-detail-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "8. srpna 2026",
@@ -761,7 +761,7 @@
     "detail"
    ],
    "verejne": true,
-   "url": "/media/foto/priyamvada-detail.jpg",
+   "url": "/assets/images/priyamvada-detail-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "8. srpna 2026",
@@ -785,7 +785,7 @@
    "hlavni": "FS01-G01-F005",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sibyla-lovkyne.jpg",
+   "url": "/assets/images/sibyla-lovkyne-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "20. srpna 2025",
@@ -809,7 +809,7 @@
    "hlavni": "FS01-G01-F005",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sibyla-odpocinek.jpg",
+   "url": "/assets/images/sibyla-odpocinek.jpg",
    "popisky": {
     "cs": {
      "navesti": "10. července 2025",
@@ -833,7 +833,7 @@
    "hlavni": "FS01-G01-F005",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sibyla-portret.jpg",
+   "url": "/assets/images/sibyla-portret-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "15. června 2025",
@@ -857,7 +857,7 @@
    "hlavni": "FS01-G01-F005",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sibyla-s-kotaty-2026.jpg",
+   "url": "/assets/images/sibyla-s-kotaty-2026.jpg",
    "popisky": {
     "cs": {
      "navesti": "25. července 2026",
@@ -881,7 +881,7 @@
    "hlavni": "FS01-G01-F005",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sibyla-s-kotaty-detail.jpg",
+   "url": "/assets/images/sibyla-s-kotaty-detail.jpg",
    "popisky": {
     "cs": {
      "navesti": "26. července 2026",
@@ -905,7 +905,7 @@
    "hlavni": "FS01-G01-F005",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sibyla-u-vody.jpg",
+   "url": "/assets/images/sibyla-u-vody.jpg",
    "popisky": {
     "cs": {
      "navesti": "1. září 2025",
@@ -936,7 +936,7 @@
     "vrh"
    ],
    "verejne": true,
-   "url": "/media/foto/sibylin-vrh-skupina.jpg",
+   "url": "/assets/images/sibylin-vrh-skupina-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "20. července 2026",
@@ -960,7 +960,7 @@
    "hlavni": "FS01-G00-F001",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sipka-a-kotata-hra.jpg",
+   "url": "/assets/images/sipka-a-kotata-hra.jpg",
    "popisky": {
     "cs": {
      "navesti": "10. srpna 2025",
@@ -985,7 +985,7 @@
    "hlavni": null,
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sipka-a-sokrates-u-misky.jpg",
+   "url": "/assets/images/sipka-a-sokrates-u-misky.jpg",
    "popisky": {
     "cs": {
      "navesti": "15. srpna 2025",
@@ -1009,7 +1009,7 @@
    "hlavni": "FS01-G00-F001",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sipka-na-cesticce.jpg",
+   "url": "/assets/images/sipka-na-cesticce.jpg",
    "popisky": {
     "cs": {
      "navesti": "20. června 2025",
@@ -1033,7 +1033,7 @@
    "hlavni": "FS01-G00-F001",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sipka-na-prahu-dilny.jpg",
+   "url": "/assets/images/sipka-na-prahu-dilny.jpg",
    "popisky": {
     "cs": {
      "navesti": "5. července 2025",
@@ -1057,7 +1057,7 @@
    "hlavni": "FS01-G00-F001",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sipka-nocni-prochazka.jpg",
+   "url": "/assets/images/sipka-nocni-prochazka.jpg",
    "popisky": {
     "cs": {
      "navesti": "25. července 2025",
@@ -1081,7 +1081,7 @@
    "hlavni": "FS01-G00-F001",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sipka-portret-leto.jpg",
+   "url": "/assets/images/sipka-portret-leto.jpg",
    "popisky": {
     "cs": {
      "navesti": "1. července 2025",
@@ -1105,7 +1105,7 @@
    "hlavni": "FS01-G00-F001",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sipka-portret-zima.jpg",
+   "url": "/assets/images/sipka-portret-zima.jpg",
    "popisky": {
     "cs": {
      "navesti": "15. ledna 2025",
@@ -1129,7 +1129,7 @@
    "hlavni": "FS01-G00-F001",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sipka-s-kotaty.jpg",
+   "url": "/assets/images/sipka-s-kotaty.jpg",
    "popisky": {
     "cs": {
      "navesti": "1. srpna 2025",
@@ -1153,7 +1153,7 @@
    "hlavni": "FS01-G00-F001",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sipka-u-klavesnice-crop.jpg",
+   "url": "/assets/images/sipka-u-klavesnice-crop.jpg",
    "popisky": {
     "cs": {
      "navesti": "10. září 2025",
@@ -1177,7 +1177,7 @@
    "hlavni": "FS01-G00-F001",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sipka-u-klavesnice.jpg",
+   "url": "/assets/images/sipka-u-klavesnice-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "10. září 2025",
@@ -1201,7 +1201,7 @@
    "hlavni": "FS01-G00-F001",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sipka-v-boudicce.jpg",
+   "url": "/assets/images/sipka-v-boudicce.jpg",
    "popisky": {
     "cs": {
      "navesti": "15. října 2025",
@@ -1225,7 +1225,7 @@
    "hlavni": "FS01-G01-F003",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sofie-odpocinek.jpg",
+   "url": "/assets/images/sofie-odpocinek-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "15. července 2025",
@@ -1249,7 +1249,7 @@
    "hlavni": "FS01-G01-F003",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sofie-portret.jpg",
+   "url": "/assets/images/sofie-portret-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "10. června 2025",
@@ -1273,7 +1273,7 @@
    "hlavni": "FS01-G01-F003",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sofie-u-notebooku.jpg",
+   "url": "/assets/images/sofie-u-notebooku-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "5. října 2025",
@@ -1301,7 +1301,7 @@
    "hlavni": null,
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sofiin-vrh-siroka.jpg",
+   "url": "/assets/images/sofiin-vrh-siroka-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "28. července 2026",
@@ -1329,7 +1329,7 @@
     "vaha"
    ],
    "verejne": true,
-   "url": "/media/foto/sofiin-vrh-vaha.jpg",
+   "url": "/assets/images/sofiin-vrh-vaha-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "2. srpna 2026",
@@ -1353,7 +1353,7 @@
    "hlavni": "FS01-G01-M002",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sokrates-na-kameni.jpg",
+   "url": "/assets/images/sokrates-na-kameni-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "1. července 2025",
@@ -1377,7 +1377,7 @@
    "hlavni": "FS01-G01-M002",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sokrates-na-plotu.jpg",
+   "url": "/assets/images/sokrates-na-plotu.jpg",
    "popisky": {
     "cs": {
      "navesti": "20. července 2025",
@@ -1401,7 +1401,7 @@
    "hlavni": "FS01-G01-M002",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sokrates-na-prochazce.jpg",
+   "url": "/assets/images/sokrates-na-prochazce-web.jpg",
    "popisky": {
     "cs": {
      "navesti": "12. srpna 2025",
@@ -1425,7 +1425,7 @@
    "hlavni": "FS01-G01-M002",
    "tagy": [],
    "verejne": true,
-   "url": "/media/foto/sokrates-na-traverze.jpg",
+   "url": "/assets/images/sokrates-na-traverze.jpg",
    "popisky": {
     "cs": {
      "navesti": "15. září 2025",
