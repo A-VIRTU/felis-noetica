@@ -1,0 +1,19 @@
+soubor: images/2025-08-20_zen_pod_zidi.jpg
+typ: foto
+datum: '2025-08-20'
+misto: Brno
+pomer: null
+zvirata:
+  - FS01-G01-M001 Zen
+hlavni: null
+tagy:
+  - odpocinek
+viditelnost: verejne
+token: 2025-08-20-zen-pod-zidi-token
+popisky:
+  cs:
+    navesti: "20. srpna 2025"
+    text: "Zen klidně odpočívá pod židlí."
+  en:
+    navesti: "20 August 2025"
+    text: "Zen calmly resting under a chair."

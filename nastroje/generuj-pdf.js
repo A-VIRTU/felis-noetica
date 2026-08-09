@@ -78,14 +78,19 @@ function vytvorNeboAktualizujAssetYaml(zvire, j, pdfNazev) {
 }
 
 async function generuj() {
+  const target = process.argv[2] ? process.argv[2].toLowerCase() : null;
   const d = nacti();
-  console.log('Generuji PDF certifikáty z HTML...');
+  console.log(target ? `Generuji PDF certifikát pro: ${target}...` : 'Generuji PDF certifikáty z HTML...');
 
   let pocet = 0;
   for (const z of d.zvirata) {
     // VYJMA PENROSEHO podle výslovného pokynu uživatele!
     if (z.id.includes('Penrose') || z.jmeno.toLowerCase() === 'penrose') {
       console.log(`[PŘESKOČENO] ${z.jmeno} (${z.id}) — vynecháno na pokyn uživatele.`);
+      continue;
+    }
+
+    if (target && !z.jmeno.toLowerCase().includes(target) && !z.id.toLowerCase().includes(target)) {
       continue;
     }
 

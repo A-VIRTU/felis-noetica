@@ -1,0 +1,19 @@
+soubor: images/2025-08-21_zen_na_pohovce_pohled.jpg
+typ: foto
+datum: '2025-08-21'
+misto: Brno
+pomer: null
+zvirata:
+  - FS01-G01-M001 Zen
+hlavni: null
+tagy:
+  - hra
+viditelnost: verejne
+token: 2025-08-21-zen-na-pohovce-pohled-token
+popisky:
+  cs:
+    navesti: "21. srpna 2025"
+    text: "Zen na pohovce zvědavě pozoruje okolí."
+  en:
+    navesti: "21 August 2025"
+    text: "Zen on the sofa curiously observing."

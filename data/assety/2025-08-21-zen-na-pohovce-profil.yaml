@@ -1,0 +1,20 @@
+soubor: images/2025-08-21_zen_na_pohovce_profil.jpg
+typ: foto
+datum: '2025-08-21'
+misto: Brno
+pomer: null
+zvirata:
+  - FS01-G01-M001 Zen
+hlavni: FS01-G01-M001 Zen
+tagy:
+  - hra
+  - detail
+viditelnost: verejne
+token: 2025-08-21-zen-na-pohovce-profil-token
+popisky:
+  cs:
+    navesti: "21. srpna 2025"
+    text: "Zen při hře a lezení po opěradle pohovky."
+  en:
+    navesti: "21 August 2025"
+    text: "Zen playing and climbing on the sofa armrest."
