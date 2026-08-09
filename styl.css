@@ -303,6 +303,37 @@ figcaption em{font-style:italic;}
   max-width: 90vw;
   max-height: 88vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.lightbox-img-container {
+  max-width: 90vw;
+  max-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 3px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-placeholder {
+  width: 75vw;
+  height: 50vh;
+  max-width: 800px;
   border: 1px dashed var(--linka);
   background: var(--papir);
   border-radius: 3px;
@@ -331,112 +362,3 @@ figcaption em{font-style:italic;}
 .lightbox-caption em {
   font-style: italic;
 }
-
-.lightbox-close {
-  position: fixed;
-  top: 1.25rem;
-  right: 1.75rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  color: var(--papir);
-  font-size: 1.75rem;
-  line-height: 40px;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-  z-index: 10000;
-}
-
-.lightbox-close:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.08);
-}
-
-/* Ovládací prvky galérie v Lightboxu */
-.lightbox-prev,
-.lightbox-next {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
-  width: 52px;
-  height: 52px;
-  color: var(--papir);
-  font-size: 1.8rem;
-  line-height: 48px;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
-  z-index: 10000;
-  user-select: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.lightbox-prev { left: 1.5rem; }
-.lightbox-next { right: 1.5rem; }
-
-.lightbox-prev:hover,
-.lightbox-next:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-50%) scale(1.08);
-}
-
-.lightbox-counter {
-  position: fixed;
-  top: 1.4rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 0.3rem 0.9rem;
-  border-radius: 20px;
-  color: var(--papir);
-  font-family: "Newsreader", serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  z-index: 10000;
-}
-
-/* Úprava ořezu konkrétní fotky Šipky ve stránce (posun doprava a dolů) */
-.foto-sipka {
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  object-position: 88% 22%;
-  border-radius: 3px;
-  display: block;
-}
-
-@media (max-width: 34rem) {
-  .foto-sipka {
-    height: 250px;
-    object-position: 92% 20%;
-  }
-  .lightbox-prev { left: 0.5rem; width: 42px; height: 42px; font-size: 1.4rem; }
-  .lightbox-next { right: 0.5rem; width: 42px; height: 42px; font-size: 1.4rem; }
-}
-
-@media (min-width: 55rem) {
-  .foto-siroka, .vrh-foto, .video-siroka {
-    width: var(--sirka-foto) !important;
-    max-width: var(--sirka-foto) !important;
-    margin-left: calc((var(--sirka) - var(--sirka-foto)) / 2) !important;
-  }
-}
-
-@media (min-width: 40rem) and (max-width: 55rem) {
-  .foto-siroka, .vrh-foto, .video-siroka {
-    width: calc(100% + 3rem) !important;
-    margin-left: -1.5rem !important;
-  }
-}
-
-
-
