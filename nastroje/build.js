@@ -129,19 +129,14 @@ async function main() {
     zapis(soubor, html);
   }
 
-  // --- 2. odkaz na sdílenou složku assets v rootu ---
+  // --- 2. kopírování sdílené složky assets do dist/ ---
   let verejnych = 0, soukromych = 0;
   for (const a of d.assety) {
     if (a.verejne) verejnych++;
     else soukromych++;
   }
-  const distAssets = path.join(DIST, 'assets');
   const rootAssets = path.join(KOREN, 'assets');
-  if (!fs.existsSync(distAssets)) {
-    try {
-      fs.symlinkSync(rootAssets, distAssets, 'junction');
-    } catch (e) {}
-  }
+  kopirujStrom(rootAssets, 'assets');
 
   // --- 3. stránky zvířat: veřejná i majitelova ze STEJNÉ šablony ---
   // Rozdíl je jen v tom, co projde filtrem viditelnosti. Veřejná stránka
