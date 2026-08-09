@@ -319,3 +319,240 @@ body {
     max-width: 100vw;
   }
 }
+
+/* ---------- Certifikáty ---------- */
+
+.strana {
+  width: 210mm;
+  min-height: 270mm;
+  margin: 20px auto;
+  background-color: var(--bg-papir);
+  padding: 20mm 16mm;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  position: relative;
+  page-break-after: always;
+  break-after: page;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.strana-titulni-grafika {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #FFFFFF;
+  padding: 0;
+}
+
+#strana-certifikat {
+  position: relative;
+  overflow: hidden;
+  background-color: #FDFBF7;
+  padding: 16mm 14mm;
+  border: 1px solid var(--zlatavost);
+  border-radius: 6px;
+}
+
+.certifikat-overlay-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  mix-blend-mode: darken;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.certifikat-vnitrni-ram {
+  position: relative;
+  z-index: 1;
+  border: none;
+  padding: 10px 14px;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.foto-kolecko {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid var(--zlatavost);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  overflow: hidden;
+  display: inline-block;
+  margin: 6px auto;
+}
+.foto-kolecko img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.certifikat-titul {
+  font-size: 15pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text-hlavni);
+  margin: 4px 0 2px;
+}
+
+.certifikat-subtitre-en {
+  font-size: 10pt;
+  font-style: italic;
+  color: var(--akcent);
+  margin: 0 0 8px;
+}
+
+.certifikujese {
+  font-size: 11.5pt;
+  font-style: italic;
+  color: var(--text-tichy);
+  margin: 6px 0 4px;
+  font-weight: 600;
+}
+
+.jmeno-zviratko {
+  font-size: 28pt;
+  font-weight: 800;
+  color: var(--akcent);
+  margin: 2px 0;
+  letter-spacing: 0.02em;
+}
+
+.formalni-jmeno {
+  font-size: 11.5pt;
+  font-style: italic;
+  color: var(--text-hlavni);
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.udaje-mriezk {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  text-align: left;
+  background-color: transparent;
+  padding: 12px 18px;
+  border-radius: 4px;
+  border: 1px solid var(--linka);
+  font-size: 9.5pt;
+  margin: 10px 0;
+}
+
+.udaj-polozka strong { color: var(--akcent); }
+
+.vyznam-box {
+  margin: 10px 0;
+  padding: 12px 16px;
+  border-left: 3px solid var(--akcent);
+  text-align: left;
+  font-size: 9.2pt;
+  line-height: 1.55;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.vyznam-nadpis {
+  font-size: 10pt;
+  font-weight: 600;
+  color: var(--akcent);
+  margin-bottom: 4px;
+}
+
+.certifikat-dole-obal {
+  margin-top: 10px;
+  padding-top: 8px;
+}
+
+.certifikat-datum {
+  font-size: 9.5pt;
+  font-style: italic;
+  color: var(--text-tichy);
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.podpisy-mriezka {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.podpis-line {
+  position: relative;
+  border-top: 1px dashed var(--text-tichy);
+  width: 200px;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 9pt;
+}
+
+.podpis-grafika-img {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 52px;
+  width: auto;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 12;
+}
+
+.qr-blok-pravo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+.qr-img {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--zlatavost);
+  border-radius: 4px;
+  padding: 2px;
+  background-color: #FFFDF9;
+  display: inline-block;
+}
+
+.qr-img svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.qr-blok-pravo span {
+  font-size: 8pt;
+  color: var(--text-tichy);
+  font-style: italic;
+  max-width: 160px;
+  line-height: 1.35;
+}
+
+.certifikat-registrace {
+  border-top: 1px solid var(--linka);
+  padding-top: 6px;
+  font-size: 8.5pt;
+  color: var(--text-tichy);
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
