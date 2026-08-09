@@ -181,16 +181,16 @@ figcaption{margin-top:.65rem;font-size:.9rem;line-height:1.55;color:var(--text-t
 
 .foto-siroka figcaption,
 .video-siroka figcaption {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 0;
+  padding-right: 0;
   box-sizing: border-box;
 }
 
-@media (min-width: 52rem) {
+@media (max-width: 56rem) {
   .obal .foto-siroka figcaption,
   .obal .video-siroka figcaption {
-    padding-left: calc((100% - var(--sirka)) / 2);
-    padding-right: calc((100% - var(--sirka)) / 2);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
