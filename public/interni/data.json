@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T12:41:47.007Z",
+ "vygenerovano": "2026-08-09T12:43:27.776Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -42,7 +42,7 @@
    "otec": null,
    "verejne": true,
    "stranka": "/e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b/",
-   "pocet_assetu": 7
+   "pocet_assetu": 6
   },
   {
    "id": "FS01-G01-F004",
@@ -1320,8 +1320,7 @@
    "datum": "2026-08-02",
    "misto": null,
    "zvirata": [
-    "FS01-G02-M005",
-    "FS01-G01-F003"
+    "FS01-G02-M005"
    ],
    "hlavni": "FS01-G02-M005",
    "tagy": [
