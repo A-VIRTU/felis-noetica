@@ -1,8 +1,20 @@
 {
   "name": "felis-noetica",
   "version": "1.0.0",
-  "private": true,
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "build": "node build.js"
+    "build": "node nastroje/build.js",
+    "scan": "node nastroje/scan.js",
+    "kontrola": "node nastroje/kontrola.js",
+    "prepis-odkazy": "node nastroje/prepis-odkazy.js",
+    "bench": "node nastroje/bench.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^5.2.3",
+    "qrcode": "^1.5.4"
   }
 }

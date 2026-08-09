@@ -1,0 +1,40 @@
+id: FS01-G02-M006
+uuid: b8c9694e-91a9-4a5e-986b-add58cedd104
+formalni_jmeno: Penrose of Felis Noetica
+jmeno: Penrose
+pohlavi: M
+vrh: V2026-Sofie
+stav: volne
+verejne: true
+zbarveni:
+  cs: Černý
+  en: Solid black
+genotyp: o/Y a/a
+soukroma_stranka:
+  aktivni: true
+  jazyky:
+    - cs
+    - en
+certifikat:
+  typ: kmotrovsky
+  misto: Brno
+  datum: '2026-08-08'
+  jazyky:
+    - cs
+    - en
+  foto: foto/penrose-detail.jpg
+  viditelnost: verejne
+kmotr:
+  jmeno: Sir Roger Penrose
+  osloveni:
+    cs: Sir Roger Penrose OM FRS
+    en: Sir Roger Penrose OM FRS
+  vyznam:
+    cs: Pojmenován 8. srpna 2026 při příležitosti 95. narozenin sira Rogera Penrose OM FRS, na počest jeho objevu, že vznik černých děr je robustní předpovědí obecné teorie relativity (Nobelova cena za fyziku 2020), věta o singularitách, které nesou jeho jméno, a jeho průkopnické práce na Penroseově dláždění a teorii twistorů.
+    en: Named on 8 August 2026 on the occasion of Sir Roger Penrose OM FRS turning ninety-five, in honour of his discovery that black hole formation is a robust prediction of the general theory of relativity (Nobel Prize in Physics 2020), of the singularity theorems that bear his name, and of his pioneering work on Penrose tilings and twistor theory.
+pojmenovan_po:
+  cs: Sir Roger Penrose OM FRS — černé díry, Penroseovo dláždění, Nobelova cena 2020
+  en: Sir Roger Penrose OM FRS — black holes, Penrose tilings, Nobel Prize 2020
+popis:
+  cs: Černý kocour ze Sofiina vrhu.
+  en: A solid black male kitten from Sofie's litter.

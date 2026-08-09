@@ -1,0 +1,34 @@
+id: FS01-G02-F002
+formalni_jmeno: Angelina of Felis Noetica
+jmeno: Angelina
+pohlavi: F
+vrh: V2026-Sibyla
+stav: volne
+verejne: true
+zbarveni:
+  cs: Trikolóra
+  en: Tricolour (Calico)
+genotyp: O/o S/s
+soukroma_stranka:
+  aktivni: false
+  jazyky:
+    - cs
+    - en
+certifikat:
+  typ: puvod
+  misto: Brno
+  datum: '2026-07-20'
+  jazyky:
+    - cs
+    - en
+  foto: foto/angelina-detail.jpg
+  viditelnost: verejne
+pojmenovan_po:
+  cs: Fanny Angelina Hesseová — agar pro kultivaci bakterií a rozvoj mikrobiologie
+  en: Fanny Angelina Hesse — suggested agar for culturing bacteria
+vyznam:
+  cs: Pojmenována na počest Fanny Angeliny Hesseové, která navrhla využití agaru jako pevného živného média pro kultivaci mikroorganismů. Tento její nápad umožnil Robertu Kochovi a celé lékařské vědě izolovat čisté bakteriální kultury a položit tak základy moderní mikrobiologie.
+  en: Named in honour of Fanny Angelina Hesse, who suggested using agar-agar as a solid medium for culturing microorganisms. Her innovation enabled Robert Koch and medical science to isolate pure bacterial cultures, laying the foundation for modern microbiology.
+popis:
+  cs: Tříbarevná (trikolóra) kočička ze Sibylina vrhu.
+  en: A tricolour female kitten from Sibyla's litter.

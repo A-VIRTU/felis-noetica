@@ -1,0 +1,20 @@
+soubor: foto/andrew-detail.jpg
+typ: foto
+datum: '2026-08-01'
+misto: Runářov
+pomer: null
+zvirata:
+  - FS01-G02-M004 Andrew
+hlavni: FS01-G02-M004 Andrew
+tagy:
+  - kote
+  - detail
+viditelnost: verejne
+token: c784f1295b93198a28793019f6a1120e
+popisky:
+  cs:
+    navesti: 1. srpna 2026
+    text: Andrew při prvních krůčkách v pelíšku.
+  en:
+    navesti: 1 August 2026
+    text: Andrew taking his first steps in the bed.

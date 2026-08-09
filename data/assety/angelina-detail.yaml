@@ -1,0 +1,20 @@
+soubor: foto/angelina-detail.jpg
+typ: foto
+datum: '2026-08-01'
+misto: Runářov
+pomer: null
+zvirata:
+  - FS01-G02-F002 Angelina
+hlavni: FS01-G02-F002 Angelina
+tagy:
+  - kote
+  - detail
+viditelnost: verejne
+token: f681a94200192847a98410294821a10b
+popisky:
+  cs:
+    navesti: 1. srpna 2026
+    text: Detailní snímek kočičky Angeliny.
+  en:
+    navesti: 1 August 2026
+    text: Detail shot of female kitten Angelina.

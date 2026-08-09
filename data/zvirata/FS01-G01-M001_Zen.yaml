@@ -1,0 +1,21 @@
+id: FS01-G01-M001
+formalni_jmeno: Zen of Felis Noetica
+uuid: a9d4f8e2-b1c3-4d5e-8f9a-7b6c5d4e3f2a
+jmeno: Zen
+pohlavi: M
+vrh: V2025-Sipka
+stav: prodano
+role: v novém domově
+verejne: true
+pojmenovan_po:
+  cs: Zen — tradice soustředění a vnitřního klidu
+  en: Zen — tradition of concentration and inner peace
+vyznam:
+  cs: Pojmenován podle tradice Zenu, ztělesňující soustředění na přítomný okamžik, vnitřní klid, rovnováhu a schopnost srovnat se s jakýmkoliv novým prostředí bez úzkosti.
+  en: Named after the Zen tradition, embodying presence, inner calm, poise, and the natural ability to adapt to any environment without anxiety.
+zbarveni:
+  cs: Černý
+  en: Solid black
+popis:
+  cs: Odešel do nového domova, kde se adaptoval během několika dní.
+  en: Left for a new home, adapting within days.

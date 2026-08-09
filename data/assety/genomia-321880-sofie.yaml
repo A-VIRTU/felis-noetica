@@ -1,0 +1,20 @@
+soubor: dokumenty/Genomia_321880_Sofie.pdf
+typ: dokument
+datum: '2026-03-11'
+misto: null
+pomer: null
+zvirata:
+  - FS01-G01-F003 Sofie
+hlavni: FS01-G01-F003 Sofie
+tagy:
+  - genomia
+  - genetika
+  - zprava
+viditelnost: verejne
+popisky:
+  cs:
+    navesti: Zpráva č. 321880
+    text: Kompletní genetický panel, Genomia Plzeň. Krevní skupina A/A.
+  en:
+    navesti: Report no. 321880
+    text: Full genetic panel, Genomia Plzeň. Blood type A/A.

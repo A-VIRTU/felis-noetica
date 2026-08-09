@@ -1,0 +1,21 @@
+id: FS01-G01-F004
+formalni_jmeno: Aténa of Felis Noetica
+uuid: c7e3b1a5-d9f2-4c8e-9a1b-3f5e7d9c1b2a
+jmeno: Aténa
+pohlavi: F
+vrh: V2025-Sipka
+stav: prodano
+role: v novém domově
+verejne: true
+pojmenovan_po:
+  cs: Pallas Aténa — řecká bohyně moudrosti
+  en: Pallas Athena — Greek goddess of wisdom
+vyznam:
+  cs: Pojmenována na počest Pallas Atény, starořecké bohyně moudrosti, odvahy, strategií a řemesel — ochránkyně všech, kteří řeší problémy rozvahou a nepanikaří.
+  en: Named in honour of Pallas Athena, Greek goddess of wisdom, courage, strategy, and skill — protector of those who solve problems with composure.
+zbarveni:
+  cs: Trikolóra
+  en: Tricolour (Calico)
+popis:
+  cs: Odešla do nového domova, kde se adaptovala během několika dní.
+  en: Left for a new home, adapting within days.

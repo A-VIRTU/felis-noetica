@@ -1,0 +1,34 @@
+id: FS01-G02-M004
+formalni_jmeno: Andrew of Felis Noetica
+jmeno: Andrew
+pohlavi: M
+vrh: V2026-Sibyla
+stav: volne
+verejne: true
+zbarveni:
+  cs: Rezavo-bílý
+  en: Red and white
+genotyp: O/Y S/s
+soukroma_stranka:
+  aktivni: false
+  jazyky:
+    - cs
+    - en
+certifikat:
+  typ: puvod
+  misto: Brno
+  datum: '2026-07-20'
+  jazyky:
+    - cs
+    - en
+  foto: foto/andrew-detail.jpg
+  viditelnost: verejne
+pojmenovan_po:
+  cs: Andrew Wiles — důkaz Velké Fermatovy věty po 350 letech
+  en: Andrew Wiles — proved Fermat's Last Theorem after 350 years
+vyznam:
+  cs: Pojmenován na počest sira Andrewa Wilese, britského matematika, který po více než 350 letech dokázal Velkou Fermatovu větu spojením teorie eliptických křivek a modulárních forem — čímž vyřešil nejslavnější a nejdelší otevřený problém v historii matematiky.
+  en: Named in honour of Sir Andrew Wiles, British mathematician who proved Fermat's Last Theorem after more than three and a half centuries by linking elliptic curves and modular forms — resolving the most famous open problem in the history of mathematics.
+popis:
+  cs: Rezavo-bílý kocour ze Sibylina vrhu.
+  en: A red and white male kitten from Sibyla's litter.

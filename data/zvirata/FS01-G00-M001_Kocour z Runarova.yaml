@@ -1,0 +1,10 @@
+id: FS01-G00-M001
+jmeno: Kocour z Runářova
+pohlavi: M
+narozeni: '2024-01-01'
+rodice_neznami: true
+stav: doma
+verejne: false
+popis:
+  cs: Nepříbuzný kocour.
+  en: Unrelated tom.

@@ -1,0 +1,34 @@
+id: FS01-G02-M005
+formalni_jmeno: Pafnuc of Felis Noetica
+jmeno: Pafnuc
+pohlavi: M
+vrh: V2026-Sofie
+stav: volne
+verejne: true
+zbarveni:
+  cs: Krémový / světle rezavý
+  en: Cream / light red
+genotyp: O/Y
+soukroma_stranka:
+  aktivni: false
+  jazyky:
+    - cs
+    - en
+certifikat:
+  typ: puvod
+  misto: Brno
+  datum: '2026-08-01'
+  jazyky:
+    - cs
+    - en
+  foto: foto/pafnuc-detail.jpg
+  viditelnost: verejne
+pojmenovan_po:
+  cs: Pafnutij Čebyšev — zakladatel ruské matematické školy
+  en: Pafnuty Chebyshev — founder of Russian mathematics
+vyznam:
+  cs: Pojmenován na počest Pafnutije Lvoviče Čebyševa, jednoho z nejvýznamnějších matematiků 19. století, zakladatele sanktpetěrburské matematické školy, za jeho objev Čebyševových polynomů, teoretické práce o rozložení prvočísel a vyvinutí přesných mechanických převodových vazeb.
+  en: Named in honour of Pafnuty Chebyshev, one of the foremost 19th-century mathematicians, for his discovery of Chebyshev polynomials, pioneering work on prime number distribution, and mechanical linkages.
+popis:
+  cs: Krémový kocour ze Sofiina vrhu.
+  en: A cream male kitten from Sofie's litter.

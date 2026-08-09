@@ -1,0 +1,46 @@
+id: FS01-G02-M003
+uuid: c91a797e-2714-4d50-a65a-893528b10469
+formalni_jmeno: Alain of Felis Noetica
+jmeno: Alain
+pohlavi: M
+vrh: V2026-Sibyla
+stav: volne
+verejne: true
+zbarveni:
+  cs: Rezavý
+  en: Red (ginger)
+genotyp: O/Y
+soukroma_stranka:
+  aktivni: true
+  jazyky:
+    - cs
+    - en
+certifikat:
+  typ: kmotrovsky
+  misto: Brno
+  datum: '2026-07-20'
+  jazyky:
+    - cs
+    - en
+    - fr
+  foto: foto/alain-detail.jpg
+  viditelnost: verejne
+kmotr:
+  jmeno: Alain Aspect
+  osloveni:
+    cs: prof. Alain Aspect, člen Francouzské akademie
+    en: Prof. Alain Aspect, of the Académie française
+    fr: M. Alain Aspect, de l'Académie française
+  pracoviste: Laboratoire Charles Fabry · Institut d'Optique Graduate School
+  adresa: 2 avenue Augustin Fresnel, 91127 Palaiseau Cedex, France
+  odeslano: '2026-07-20'
+  vyznam:
+    cs: Jméno odkazuje na prof. Alaina Aspecta, francouzského fyzika, laureáta Nobelovy ceny za fyziku 2022, za experimenty s provázanými fotony dokazující porušení Bellových nerovností — čímž měřením rozhodl to, o čem Einstein mohl jen pochybovat — a za průkopnickou práci v kvantové informační vědě.
+    en: Named in honour of Prof. Alain Aspect, French physicist and Nobel laureate in Physics (2022), for experiments with entangled photons establishing the violation of Bell inequalities — settling by measurement what Einstein could only doubt — and for pioneering quantum information science.
+    fr: Nommé en l'honneur d'Alain Aspect, physicien français, prix Nobel de physique 2022, pour ses expériences sur les photons intriqués établissant la violation des inégalités de Bell — tranchant par la mesure ce dont Einstein ne pouvait que douter — et pour son rôle de pionnier dans la science de l'information quantique.
+pojmenovan_po:
+  cs: Alain Aspect — experimenty s provázanými fotony, Nobelova cena 2022
+  en: Alain Aspect — experiments with entangled photons, Nobel Prize 2022
+popis:
+  cs: Rezavý kocour ze Sibylina vrhu.
+  en: A red male kitten from Sibyla's litter.

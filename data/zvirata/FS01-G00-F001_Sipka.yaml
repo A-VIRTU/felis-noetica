@@ -1,0 +1,12 @@
+id: FS01-G00-F001
+jmeno: Šipka
+pohlavi: F
+narozeni: '2024-05-01'
+rodice_neznami: true
+stav: chovna
+role: zakladatelka chovu, chovná
+krevni_skupina: A/A
+verejne: false
+popis:
+  cs: Zakladatelská kočka stanice.
+  en: Founding cat.

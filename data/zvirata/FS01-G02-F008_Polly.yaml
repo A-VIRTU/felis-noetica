@@ -1,0 +1,34 @@
+id: FS01-G02-F008
+formalni_jmeno: Polly of Felis Noetica
+jmeno: Polly
+pohlavi: F
+vrh: V2026-Sofie
+stav: volne
+verejne: true
+zbarveni:
+  cs: Černobílá
+  en: Black and white
+genotyp: o/o S/s
+soukroma_stranka:
+  aktivni: false
+  jazyky:
+    - cs
+    - en
+certifikat:
+  typ: puvod
+  misto: Brno
+  datum: '2026-08-01'
+  jazyky:
+    - cs
+    - en
+  foto: foto/polly-detail.jpg
+  viditelnost: verejne
+pojmenovan_po:
+  cs: Polly Matzingerová — model nebezpečí v imunologii
+  en: Polly Matzinger — danger model in immunology
+vyznam:
+  cs: Pojmenována na počest americké imunoložky Polly Matzingerové, autorky revolučního modelu nebezpečí v imunologii. Její teorie proměnila chápání imunitního systému tím, že ukázala, že imunita nereaguje primárně na cizí látky, ale na signály poškození a tísně z vlastních tkání.
+  en: Named in honour of American immunologist Polly Matzinger, creator of the revolutionary Danger Model in immunology. Her theory transformed immune science by demonstrating that immunity responds not to non-self, but to danger signals emitted by damaged tissues.
+popis:
+  cs: Černobílá kočička ze Sofiina vrhu.
+  en: A black and white female kitten from Sofie's litter.

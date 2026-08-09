@@ -1,0 +1,20 @@
+soubor: video/liska-a-kocka-runarov.mp4
+typ: video
+datum: '2026-06-01'
+misto: Runářov
+pomer: '16:9'
+zvirata: []
+hlavni: null
+tagy:
+  - drevnik
+  - liska
+  - kamera
+viditelnost: verejne
+poster: foto/liska-nahled.jpg
+popisky:
+  cs:
+    navesti: Runářov
+    text: Liška se hádá, kočka se dívá.
+  en:
+    navesti: Runářov
+    text: The fox argues, the cat watches.
