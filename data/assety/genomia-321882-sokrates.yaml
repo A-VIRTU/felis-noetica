@@ -12,11 +12,11 @@ viditelnost: verejne
 token: genomia-321882-sokrates-2026
 popisky:
   cs:
-    navesti: Zpráva č. 321882
-    text: Kompletní genetický panel, Genomia Plzeň.
+    navesti: Genetický test — Sokrates (Genomia)
+    text: Kompletní genetický panel a zdravotní profil z laboratoře Genomia.
   en:
-    navesti: Report No. 321882
-    text: Full genetic panel, Genomia Plzeň.
+    navesti: Genetic test — Sokrates (Genomia)
+    text: Full genetic panel and health profile from Genomia laboratory.
   fr:
-    navesti: Rapport n° 321882
-    text: Panneau génétique complet, Genomia Plzeň.
+    navesti: Test génétique — Sokrates (Genomia)
+    text: Panneau génétique complet de Genomia.

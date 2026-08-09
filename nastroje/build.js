@@ -167,10 +167,30 @@ async function main() {
   for (const z of d.zvirata) {
     const rodicovskeAssety = [];
     if (z.matka && d.podleZvirete[z.matka]) {
-      rodicovskeAssety.push(...d.podleZvirete[z.matka].filter((a) => a.typ === 'dokument' || a.typ === 'pdf'));
+      const matkaObj = d.zvirata.find((x) => x.id === z.matka);
+      const mJmeno = matkaObj ? matkaObj.jmeno : 'matka';
+      for (const a of d.podleZvirete[z.matka].filter((a) => a.typ === 'dokument' || a.typ === 'pdf')) {
+        const aKopie = JSON.parse(JSON.stringify(a));
+        aKopie.popisky = {
+          cs: { navesti: `Genetický test matky — ${mJmeno} (Genomia)`, text: a.popisky?.cs?.text || 'Kompletní genetický panel a zdravotní profil z laboratoře Genomia.' },
+          en: { navesti: `Dam's genetic test — ${mJmeno} (Genomia)`, text: a.popisky?.en?.text || 'Full genetic panel and health profile from Genomia laboratory.' },
+          fr: { navesti: `Test génétique de la mère — ${mJmeno} (Genomia)`, text: a.popisky?.fr?.text || 'Panneau génétique complet de Genomia.' },
+        };
+        rodicovskeAssety.push(aKopie);
+      }
     }
     if (z.otec && d.podleZvirete[z.otec]) {
-      rodicovskeAssety.push(...d.podleZvirete[z.otec].filter((a) => a.typ === 'dokument' || a.typ === 'pdf'));
+      const otecObj = d.zvirata.find((x) => x.id === z.otec);
+      const oJmeno = otecObj ? otecObj.jmeno : 'otec';
+      for (const a of d.podleZvirete[z.otec].filter((a) => a.typ === 'dokument' || a.typ === 'pdf')) {
+        const aKopie = JSON.parse(JSON.stringify(a));
+        aKopie.popisky = {
+          cs: { navesti: `Genetický test otce — ${oJmeno} (Genomia)`, text: a.popisky?.cs?.text || 'Kompletní genetický panel a zdravotní profil z laboratoře Genomia.' },
+          en: { navesti: `Sire's genetic test — ${oJmeno} (Genomia)`, text: a.popisky?.en?.text || 'Full genetic panel and health profile from Genomia laboratory.' },
+          fr: { navesti: `Test génétique du père — ${oJmeno} (Genomia)`, text: a.popisky?.fr?.text || 'Panneau génétique complet de Genomia.' },
+        };
+        rodicovskeAssety.push(aKopie);
+      }
     }
     const vsestkyAssety = [...(d.podleZvirete[z.id] || []), ...rodicovskeAssety];
     const videne = new Set();

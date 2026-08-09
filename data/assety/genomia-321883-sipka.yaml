@@ -12,11 +12,11 @@ viditelnost: verejne
 token: genomia-321883-sipka-2026
 popisky:
   cs:
-    navesti: Zpráva č. 321883
-    text: Kompletní genetický panel, Genomia Plzeň.
+    navesti: Genetický test — Šipka (Genomia)
+    text: Kompletní genetický panel a zdravotní profil z laboratoře Genomia.
   en:
-    navesti: Report No. 321883
-    text: Full genetic panel, Genomia Plzeň.
+    navesti: Genetic test — Šipka (Genomia)
+    text: Full genetic panel and health profile from Genomia laboratory.
   fr:
-    navesti: Rapport n° 321883
-    text: Panneau génétique complet, Genomia Plzeň.
+    navesti: Test génétique — Šipka (Genomia)
+    text: Panneau génétique complet de Genomia.

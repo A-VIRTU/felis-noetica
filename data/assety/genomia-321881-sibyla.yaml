@@ -12,11 +12,11 @@ viditelnost: verejne
 token: genomia-321881-sibyla-2026
 popisky:
   cs:
-    navesti: Zpráva č. 321881
-    text: Kompletní genetický panel, Genomia Plzeň.
+    navesti: Genetický test — Sibyla (Genomia)
+    text: Kompletní genetický panel a zdravotní profil z laboratoře Genomia.
   en:
-    navesti: Report No. 321881
-    text: Full genetic panel, Genomia Plzeň.
+    navesti: Genetic test — Sibyla (Genomia)
+    text: Full genetic panel and health profile from Genomia laboratory.
   fr:
-    navesti: Rapport n° 321881
-    text: Panneau génétique complet, Genomia Plzeň.
+    navesti: Test génétique — Sibyla (Genomia)
+    text: Panneau génétique complet de Genomia.
