@@ -210,6 +210,17 @@ async function main() {
     const adresaQr = `https://felisnoetica.cz${maSoukromou ? `/${z.uuid}/` : verejnaCesta}`;
     const qr = await qrSvg(adresaQr);
 
+function hardlinkSoubor(relZdroj, relCil) {
+  const src = path.join(DIST, relZdroj);
+  const dst = path.join(DIST, relCil);
+  zapsane.add(path.normalize(relCil));
+  if (fs.existsSync(src)) {
+    fs.mkdirSync(path.dirname(dst), { recursive: true });
+    if (fs.existsSync(dst)) fs.unlinkSync(dst);
+    try { fs.linkSync(src, dst); } catch(e) { fs.copyFileSync(src, dst); }
+  }
+}
+
     const vykresli = (koren, jazyky, majitel) => {
       for (const [i, j] of jazyky.entries()) {
         const podSlozka = path.join(koren, i === 0 ? '' : j);
@@ -219,6 +230,11 @@ async function main() {
           zvire: z, jazyk: j, assety, url, majitel, jazyky,
           koren: '/' + koren.split(path.sep).join('/') + '/', jmenem, kontakt: KONTAKT, zvirata: d.zvirata, relKoren,
         }));
+
+        if (i > 0) {
+          const zipNazev = `${bezDia(z.jmeno)}_Felis_Noetica.zip`;
+          hardlinkSoubor(path.join(koren, zipNazev), path.join(podSlozka, zipNazev));
+        }
       }
       const c = z.certifikat;
       if (c && (majitel || (c.viditelnost || 'verejne') === 'verejne')) {
@@ -238,8 +254,6 @@ async function main() {
       const pubJazyky = (z.certifikat && z.certifikat.jazyky && z.certifikat.jazyky.length > 1)
         ? z.certifikat.jazyky
         : ((sp && sp.jazyky && sp.jazyky.length > 1) ? sp.jazyky : ['cs', 'en']);
-      vykresli(slozka, pubJazyky, false);
-      verejnychStranek++;
 
       const certVzip = [];
       if (z.certifikat && (z.certifikat.viditelnost || 'verejne') === 'verejne') {
@@ -253,12 +267,13 @@ async function main() {
       const verejneAssety = assety.filter((a) => a.viditelnost === 'verejne');
       vyrobZip(path.join(slozka, `${bezDia(z.jmeno)}_Felis_Noetica.zip`), z, verejneAssety, certVzip);
       zipu++;
+
+      vykresli(slozka, pubJazyky, false);
+      verejnychStranek++;
     }
 
     if (maSoukromou) {
       const jazyky = sp.jazyky && sp.jazyky.length ? sp.jazyky : [sp.jazyk || 'cs'];
-      vykresli(z.uuid, jazyky, true);
-      soukromychStranek += jazyky.length;
       const certVzip = [];
       if (z.certifikat) for (const j of z.certifikat.jazyky || ['cs']) {
         certVzip.push({ nazev: `certifikat-${j}.html`,
@@ -266,6 +281,9 @@ async function main() {
       }
       vyrobZip(path.join(z.uuid, `${bezDia(z.jmeno)}_Felis_Noetica.zip`), z, assety, certVzip);
       zipu++;
+
+      vykresli(z.uuid, jazyky, true);
+      soukromychStranek += jazyky.length;
     }
   }
 

@@ -1,22 +1,22 @@
-soubor: dokumenty/Genomia_321882_Sokrates.pdf
+soubor: dokumenty/Genomia_321882_Sipka.pdf
 typ: dokument
 datum: '2026-03-11'
 misto: Plzeň
 pomer: null
 zvirata:
-  - FS01-G01-M002 Sokrates
-hlavni: FS01-G01-M002 Sokrates
+  - FS01-G00-F001 Šipka
+hlavni: FS01-G00-F001 Šipka
 tagy:
   - genomia
 viditelnost: verejne
-token: genomia-321882-sokrates-2026
+token: genomia-321882-sipka-2026
 popisky:
   cs:
-    navesti: Genetický test — Sokrates (Genomia)
+    navesti: Genetický test — Šipka (Genomia)
     text: Kompletní genetický panel a zdravotní profil z laboratoře Genomia.
   en:
-    navesti: Genetic test — Sokrates (Genomia)
+    navesti: Genetic test — Šipka (Genomia)
     text: Full genetic panel and health profile from Genomia laboratory.
   fr:
-    navesti: Test génétique — Sokrates (Genomia)
+    navesti: Test génétique — Šipka (Genomia)
     text: Panneau génétique complet de Genomia.
