@@ -6,6 +6,6 @@
     "command": "node nastroje/build.js"
   },
   "assets": {
-    "directory": "public"
+    "directory": "dist"
   }
 }

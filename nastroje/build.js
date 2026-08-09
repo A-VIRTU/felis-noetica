@@ -75,34 +75,31 @@ function kopirujStrom(zdroj, cil, vynech = new Set()) {
   }
 }
 
-// adresa mediálního souboru
+// adresa mediálního souboru — vše směruje do jednotného stromu /assets/
 function adresa(d) {
   const podleSouboru = Object.fromEntries(d.assety.map((a) => [a.soubor, a]));
   return (soubor) => {
     const a = podleSouboru[soubor];
     const bn = path.basename(soubor);
-    if (a && !a.verejne && a.token) {
-      return `/soukrome/${a.token}/${bn}`;
+    const ext = path.extname(soubor).toLowerCase();
+    if (ext === '.pdf') {
+      return `/assets/dokumenty/${bn}`;
     }
-    if (a && a.typ === 'dokument') {
-      return `/media/${soubor}`;
+    if (ext === '.mp4') {
+      return `/assets/videos/${bn}`;
     }
     const webVersion = bn.replace(/\.jpg$/i, '-web.jpg');
     if (fs.existsSync(path.join(WEB, 'assets', 'images', webVersion))) {
       return `/assets/images/${webVersion}`;
     }
-    if (fs.existsSync(path.join(WEB, 'assets', 'images', bn))) {
-      return `/assets/images/${bn}`;
-    }
-    return `/media/${soubor}`;
+    return `/assets/images/${bn}`;
   };
 }
 
-// ZIP pro majitele — obsahuje přesně to, co majitel vidí na své stránce.
-// Sestavuje se ze stejného filtru viditelnosti, takže se nemůže rozejít.
+// ZIP pro majitele — obsahuje certifikáty a dokumenty
 function vyrobZip(rel, zvire, assety, textovky) {
   const soubory = assety
-    .filter((a) => a.viditelnost !== 'interni')
+    .filter((a) => a.viditelnost !== 'interni' && (a.typ === 'dokument' || a.typ === 'pdf'))
     .map((a) => ({ nazev: path.basename(a.soubor), cesta: path.join(MEDIA, a.soubor) }));
   zapis(rel, zipZeSouboru(soubory, textovky));
 }
@@ -137,18 +134,21 @@ async function main() {
   let verejnych = 0, soukromych = 0;
   for (const a of d.assety) {
     const zdroj = path.join(MEDIA, a.soubor);
-    kopiruj(zdroj, path.join('media', a.soubor));
-    kopiruj(zdroj, path.join('assets', 'images', path.basename(a.soubor)));
+    const bn = path.basename(a.soubor);
+    const ext = path.extname(a.soubor).toLowerCase();
+    let subfolder = 'images';
+    if (ext === '.pdf') subfolder = 'dokumenty';
+    else if (ext === '.mp4') subfolder = 'videos';
+
+    kopiruj(zdroj, path.join('assets', subfolder, bn));
     if (a.verejne) {
       verejnych++;
-    }
-    else {
-      kopiruj(zdroj, path.join('soukrome', a.token, path.basename(a.soubor)));
+    } else {
       soukromych++;
     }
     if (a.poster) {
       const p = path.join(MEDIA, a.poster);
-      if (fs.existsSync(p)) kopiruj(p, path.join('media', a.poster));
+      if (fs.existsSync(p)) kopiruj(p, path.join('assets', 'images', path.basename(a.poster)));
     }
   }
 
@@ -266,24 +266,6 @@ async function main() {
 
   const smazano = uklidDist();
 
-  // Sync built dist files into public directory for Cloudflare Pages
-  const PUBLIC = path.join(KOREN, 'public');
-  function copyRecursiveSync(src, dest) {
-    if (!fs.existsSync(src)) return;
-    fs.mkdirSync(dest, { recursive: true });
-    for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
-      const srcPath = path.join(src, entry.name);
-      const destPath = path.join(dest, entry.name);
-      if (entry.isDirectory()) {
-        copyRecursiveSync(srcPath, destPath);
-      } else {
-        fs.copyFileSync(srcPath, destPath);
-      }
-    }
-  }
-  copyRecursiveSync(DIST, PUBLIC);
-  copyRecursiveSync(DIST, KOREN);
-  copyRecursiveSync(DIST, WEB);
 
   console.log(`✓ hotovo
   ${d.zvirata.length} zvířat, ${d.vrhy.length} vrhů, ${d.assety.length} assetů (${verejnych} veřejných, ${soukromych} pro majitele)
