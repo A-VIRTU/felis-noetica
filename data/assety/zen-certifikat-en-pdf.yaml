@@ -1,0 +1,22 @@
+soubor: dokumenty/FS01-G01-M001_Zen_Certificate_of_Origin_and_Name_EN.pdf
+typ: dokument
+datum: '2025-09-15'
+misto: Brno
+pomer: null
+zvirata:
+  - FS01-G01-M001 Zen
+hlavni: FS01-G01-M001 Zen
+tagy:
+  - certifikat
+viditelnost: verejne
+token: cert-zen-en-pdf-2025
+popisky:
+  cs:
+    navesti: Osvědčení o původu a jménu — EN (PDF)
+    text: Oficiální tiskový certifikát původu v angličtině
+  en:
+    navesti: Certificate of Origin and Name — EN (PDF)
+    text: Official English PDF certificate of origin
+  fr:
+    navesti: Certificat d'origine et de nom — EN (PDF)
+    text: Certificat PDF officiel en anglais

@@ -7,6 +7,14 @@ vrh: V2025-Sipka
 stav: prodano
 role: v novém domově
 verejne: true
+certifikat:
+  typ: puvod
+  misto: Brno
+  datum: '2025-09-15'
+  jazyky:
+    - cs
+    - en
+  viditelnost: verejne
 pojmenovan_po:
   cs: Zen — tradice soustředění a vnitřního klidu
   en: Zen — tradition of concentration and inner peace

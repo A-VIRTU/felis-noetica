@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T18:04:27.826Z",
+ "vygenerovano": "2026-08-09T18:49:51.530Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -87,7 +87,7 @@
    "otec": null,
    "verejne": true,
    "stranka": "/a9d4f8e2-b1c3-4d5e-8f9a-7b6c5d4e3f2a/",
-   "pocet_assetu": 0
+   "pocet_assetu": 2
   },
   {
    "id": "FS01-G01-M002",
@@ -1706,6 +1706,66 @@
     }
    },
    "zdroj": "data\\assety\\sokrates-na-traverze.yaml"
+  },
+  {
+   "soubor": "dokumenty/FS01-G01-M001_Zen_Osvedceni_o_puvodu_a_jmenu_CS.pdf",
+   "typ": "dokument",
+   "datum": "2025-09-15",
+   "misto": "Brno",
+   "zvirata": [
+    "FS01-G01-M001"
+   ],
+   "hlavni": "FS01-G01-M001",
+   "tagy": [
+    "certifikat"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/FS01-G01-M001_Zen_Osvedceni_o_puvodu_a_jmenu_CS.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Osvědčení o původu a jménu — CZ (PDF)",
+     "text": "Oficiální tiskový certifikát původu v češtině"
+    },
+    "en": {
+     "navesti": "Certificate of Origin and Name — CZ (PDF)",
+     "text": "Official Czech PDF certificate of origin"
+    },
+    "fr": {
+     "navesti": "Certificat d'origine et de nom — CZ (PDF)",
+     "text": "Certificat PDF officiel en tchèque"
+    }
+   },
+   "zdroj": "data\\assety\\zen-certifikat-cs-pdf.yaml"
+  },
+  {
+   "soubor": "dokumenty/FS01-G01-M001_Zen_Certificate_of_Origin_and_Name_EN.pdf",
+   "typ": "dokument",
+   "datum": "2025-09-15",
+   "misto": "Brno",
+   "zvirata": [
+    "FS01-G01-M001"
+   ],
+   "hlavni": "FS01-G01-M001",
+   "tagy": [
+    "certifikat"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/FS01-G01-M001_Zen_Certificate_of_Origin_and_Name_EN.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Osvědčení o původu a jménu — EN (PDF)",
+     "text": "Oficiální tiskový certifikát původu v angličtině"
+    },
+    "en": {
+     "navesti": "Certificate of Origin and Name — EN (PDF)",
+     "text": "Official English PDF certificate of origin"
+    },
+    "fr": {
+     "navesti": "Certificat d'origine et de nom — EN (PDF)",
+     "text": "Certificat PDF officiel en anglais"
+    }
+   },
+   "zdroj": "data\\assety\\zen-certifikat-en-pdf.yaml"
   }
  ],
  "tagy": [
