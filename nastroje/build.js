@@ -169,7 +169,20 @@ async function main() {
   let verejnychStranek = 0, soukromychStranek = 0, certifikatu = 0, zipu = 0;
 
   for (const z of d.zvirata) {
-    const assety = d.podleZvirete[z.id] || [];
+    const rodicovskeAssety = [];
+    if (z.matka && d.podleZvirete[z.matka]) {
+      rodicovskeAssety.push(...d.podleZvirete[z.matka].filter((a) => a.typ === 'dokument' || a.typ === 'pdf'));
+    }
+    if (z.otec && d.podleZvirete[z.otec]) {
+      rodicovskeAssety.push(...d.podleZvirete[z.otec].filter((a) => a.typ === 'dokument' || a.typ === 'pdf'));
+    }
+    const vsestkyAssety = [...(d.podleZvirete[z.id] || []), ...rodicovskeAssety];
+    const videne = new Set();
+    const assety = vsestkyAssety.filter((a) => {
+      if (videne.has(a.soubor)) return false;
+      videne.add(a.soubor);
+      return true;
+    });
     const sp = z.soukroma_stranka;
     const maSoukromou = !!(sp && sp.aktivni && z.uuid);
     const v = d.vrhy.find((x) => x.id === z.vrh || x.__slug === z.vrh);
