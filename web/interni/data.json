@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T18:00:46.667Z",
+ "vygenerovano": "2026-08-09T18:04:27.826Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -42,7 +42,7 @@
    "otec": null,
    "verejne": true,
    "stranka": "/e2f3a4b5-c6d7-4e8f-9a0b-1c2d3e4f5a6b/",
-   "pocet_assetu": 7
+   "pocet_assetu": 6
   },
   {
    "id": "FS01-G01-F004",
@@ -72,7 +72,7 @@
    "otec": null,
    "verejne": true,
    "stranka": "/f3a4b5c6-d7e8-4f9a-0b1c-2d3e4f5a6b7c/",
-   "pocet_assetu": 13
+   "pocet_assetu": 12
   },
   {
    "id": "FS01-G01-M001",
@@ -177,7 +177,7 @@
    "otec": "FS01-G01-M002",
    "verejne": true,
    "stranka": "/c91a797e-2714-4d50-a65a-893528b10469/",
-   "pocet_assetu": 11
+   "pocet_assetu": 10
   },
   {
    "id": "FS01-G02-M004",
@@ -222,7 +222,7 @@
    "otec": "FS01-G00-M001",
    "verejne": true,
    "stranka": "/b8c9694e-91a9-4a5e-986b-add58cedd104/",
-   "pocet_assetu": 6
+   "pocet_assetu": 5
   }
  ],
  "vrhy": [
@@ -786,13 +786,9 @@
    "datum": "2026-03-11",
    "misto": "Plzeň",
    "zvirata": [
-    "FS01-G00-F001",
-    "FS01-G01-F003",
-    "FS01-G01-F005",
-    "FS01-G02-M006",
-    "FS01-G02-M003"
+    "FS01-G00-F001"
    ],
-   "hlavni": null,
+   "hlavni": "FS01-G00-F001",
    "tagy": [
     "genomia"
    ],

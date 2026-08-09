@@ -5,11 +5,7 @@ misto: Plzeň
 pomer: null
 zvirata:
   - FS01-G00-F001 Šipka
-  - FS01-G01-F003 Sofie
-  - FS01-G01-F005 Sibyla
-  - FS01-G02-M006 Penrose
-  - FS01-G02-M003 Alain
-hlavni: null
+hlavni: FS01-G00-F001 Šipka
 tagy:
   - genomia
 viditelnost: verejne
