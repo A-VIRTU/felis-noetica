@@ -98,7 +98,7 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
 </head>
 <body class="notranslate" translate="no">
 
-<div class="strana strana-titulni-grafika"></div>
+<div class="strana strana-titulni-grafika" style="background-image: url('${prefix}assets/images/bg_certifikat.jpg')"></div>
 
 <div id="strana-certifikat" class="strana notranslate" translate="no">
   <img src="${prefix}assets/images/bg_certifikat.jpg" alt="" class="certifikat-overlay-img" onerror="this.style.display='none'">
