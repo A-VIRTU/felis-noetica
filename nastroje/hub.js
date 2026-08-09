@@ -104,9 +104,11 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
 
   const prepinac = jazyky.length > 1
     ? `<p class="prepinac notranslate" translate="no">${jazyky.map((x) => {
-        const linkRel = (x === j) ? null : (x === jazyky[0] ? '../' : (j === jazyky[0] ? `${x}/` : `../${x}/`));
         if (x === j) return `<strong>${E(NAZVY_JAZYKU[x] || x)}</strong>`;
-        return `<a href="${E(linkRel)}" onclick="sessionStorage.setItem('lang-selected','${x}')">${E(NAZVY_JAZYKU[x] || x)}</a>`;
+        const targetUrl = (j === 'cs' || j === jazyky[0])
+          ? (x === 'cs' || x === jazyky[0] ? 'index.html' : `${x}/index.html`)
+          : (x === 'cs' || x === jazyky[0] ? '../index.html' : `../${x}/index.html`);
+        return `<a href="${E(targetUrl)}" onclick="sessionStorage.setItem('lang-selected','${x}')">${E(NAZVY_JAZYKU[x] || x)}</a>`;
       }).join(' · ')}</p>`
     : '';
 
@@ -149,12 +151,12 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
       const rok = (datumNar || '').slice(0, 4);
       if (rok) {
         const rJazyky = (r.certifikat && r.certifikat.jazyky) || (r.soukroma_stranka && r.soukroma_stranka.jazyky) || ['cs', 'en'];
-        let targetLang = '';
+        let targetLang = 'index.html';
         if (j !== 'cs') {
           if (rJazyky.includes(j)) {
-            targetLang = `${j}/`;
+            targetLang = `${j}/index.html`;
           } else if (rJazyky.includes('en')) {
-            targetLang = 'en/';
+            targetLang = 'en/index.html';
           }
         }
         const parentUrl = `${prefix}kotata/${rok}/${slugJmena(r.jmeno)}/${targetLang}`;

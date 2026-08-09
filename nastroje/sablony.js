@@ -114,9 +114,13 @@ function stranakMajitele({ zvire, assety, j = 'cs', url, majitel, uuid, jazyky =
   const s = SLOVNIK[j] || SLOVNIK.cs;
   const prvni = jazyky[0];
   const prepinac = jazyky.length > 1
-    ? `<p class="prepinac-jazyku">${jazyky.map((x) => (x === j
-        ? `<strong>${E(NAZVY_JAZYKU[x] || x)}</strong>`
-        : `<a href="${x === prvni ? 'index.html' : x + '/index.html'}">${E(NAZVY_JAZYKU[x] || x)}</a>`)).join(' · ')}</p>`
+    ? `<p class="prepinac-jazyku">${jazyky.map((x) => {
+        if (x === j) return `<strong>${E(NAZVY_JAZYKU[x] || x)}</strong>`;
+        const targetUrl = (j === 'cs' || j === jazyky[0])
+          ? (x === 'cs' || x === jazyky[0] ? 'index.html' : `${x}/index.html`)
+          : (x === 'cs' || x === jazyky[0] ? '../index.html' : `../${x}/index.html`);
+        return `<a href="${E(targetUrl)}">${E(NAZVY_JAZYKU[x] || x)}</a>`;
+      }).join(' · ')}</p>`
     : '';
   const fotky = assety.filter((a) => a.typ === 'foto' || a.typ === 'video');
   const doks = assety.filter((a) => a.typ === 'dokument');
