@@ -14,13 +14,16 @@ const T = (preklad, jazyk) => {
 
 const MESICE = ['ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince'];
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
 
-// 2026-07-14 -> "14. července 2026" / "14 July 2026"
+// 2026-07-14 -> "14. července 2026" / "14 July 2026" / "14 juillet 2026"
 function datum(d, jazyk = 'cs') {
   if (!d) return '';
   const [r, m, den] = String(d).split('-').map(Number);
   if (!r) return String(d);
-  return jazyk === 'en' ? `${den} ${MONTHS[m - 1]} ${r}` : `${den}. ${MESICE[m - 1]} ${r}`;
+  if (jazyk === 'fr') return `${den} ${MOIS[m - 1]} ${r}`;
+  if (jazyk === 'en') return `${den} ${MONTHS[m - 1]} ${r}`;
+  return `${den}. ${MESICE[m - 1]} ${r}`;
 }
 
 // české počítané podstatné jméno: 1 kotě, 2–4 koťata, 5+ koťat
