@@ -84,8 +84,8 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
     || (zvire.kmotr && T(zvire.kmotr.vyznam, jazyk))
     || T(zvire.pojmenovan_po, jazyk);
   const vyznamNadpisText = (zvire.kmotr && (T(zvire.kmotr.osloveni, jazyk) || zvire.kmotr.jmeno))
-    ? `${E(t.vyznamNadpis)}: ${E(T(zvire.kmotr.osloveni, jazyk) || zvire.kmotr.jmeno)}`
-    : (T(zvire.pojmenovan_po, jazyk) ? `${E(t.vyznamNadpis)}: ${E(T(zvire.pojmenovan_po, jazyk))}` : E(t.vyznamNadpis));
+    ? E(T(zvire.kmotr.osloveni, jazyk) || zvire.kmotr.jmeno)
+    : (T(zvire.pojmenovan_po, jazyk) ? E(T(zvire.pojmenovan_po, jazyk)) : '');
 
   const bezDia = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const slugJmena = (s) => bezDia(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
