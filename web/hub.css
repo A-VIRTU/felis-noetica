@@ -238,10 +238,11 @@ body {
   cursor: pointer !important;
   transition: background 0.2s ease, transform 0.2s ease !important;
   user-select: none !important;
-  align-items: center !important;
-  justify-content: center !important;
+  align-items: center;
+  justify-content: center;
   padding: 0 !important;
   margin: 0 !important;
+  display: none;
 }
 
 .lightbox-prev { left: 1.5rem !important; }
@@ -271,4 +272,5 @@ body {
   letter-spacing: 0.1em !important;
   z-index: 10020 !important;
   pointer-events: none !important;
+  display: none;
 }

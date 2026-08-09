@@ -53,14 +53,14 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxCaption.innerHTML = item.captionHtml || '';
 
     if (currentGallery.length > 1) {
-      prevBtn.style.display = 'flex';
-      nextBtn.style.display = 'flex';
-      counterEl.style.display = 'block';
+      prevBtn.style.setProperty('display', 'flex', 'important');
+      nextBtn.style.setProperty('display', 'flex', 'important');
+      counterEl.style.setProperty('display', 'block', 'important');
       counterEl.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
     } else {
-      prevBtn.style.display = 'none';
-      nextBtn.style.display = 'none';
-      counterEl.style.display = 'none';
+      prevBtn.style.setProperty('display', 'none', 'important');
+      nextBtn.style.setProperty('display', 'none', 'important');
+      counterEl.style.setProperty('display', 'none', 'important');
     }
   }
 
@@ -74,9 +74,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openLightboxPlaceholder(mistoText, captionHtml) {
     currentGallery = [];
-    prevBtn.style.display = 'none';
-    nextBtn.style.display = 'none';
-    counterEl.style.display = 'none';
+    prevBtn.style.setProperty('display', 'none', 'important');
+    nextBtn.style.setProperty('display', 'none', 'important');
+    counterEl.style.setProperty('display', 'none', 'important');
 
     lightboxImg.style.display = 'none';
     let placeholderBox = overlay.querySelector('.lightbox-placeholder');
