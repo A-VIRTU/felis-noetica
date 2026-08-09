@@ -75,24 +75,23 @@ function kopirujStrom(zdroj, cil, vynech = new Set()) {
   }
 }
 
-// adresa mediálního souboru — vše směruje do jednotného stromu /assets/
+// adresa mediálního souboru — vše směruje do jednotného stromu assets/
 function adresa(d) {
   const podleSouboru = Object.fromEntries(d.assety.map((a) => [a.soubor, a]));
-  return (soubor) => {
+  return (soubor, relKoren = '') => {
+    const prefix = !relKoren ? '' : (relKoren.endsWith('/') ? relKoren : relKoren + '/');
     const a = podleSouboru[soubor];
     const bn = path.basename(soubor);
     const ext = path.extname(soubor).toLowerCase();
-    if (ext === '.pdf') {
-      return `/assets/dokumenty/${bn}`;
-    }
-    if (ext === '.mp4') {
-      return `/assets/videos/${bn}`;
-    }
+    let subfolder = 'images';
+    if (ext === '.pdf') subfolder = 'dokumenty';
+    else if (ext === '.mp4') subfolder = 'videos';
+
     const webVersion = bn.replace(/\.jpg$/i, '-web.jpg');
-    if (fs.existsSync(path.join(WEB, 'assets', 'images', webVersion))) {
-      return `/assets/images/${webVersion}`;
+    if (fs.existsSync(path.join(KOREN, 'assets', 'images', webVersion))) {
+      return `${prefix}assets/images/${webVersion}`;
     }
-    return `/assets/images/${bn}`;
+    return `${prefix}assets/${subfolder}/${bn}`;
   };
 }
 
@@ -167,16 +166,21 @@ async function main() {
 
     const vykresli = (koren, jazyky, majitel) => {
       for (const [i, j] of jazyky.entries()) {
-        zapis(path.join(koren, i === 0 ? '' : j, 'index.html'), hub({
+        const podSlozka = path.join(koren, i === 0 ? '' : j);
+        const depth = podSlozka.split(path.sep).filter(Boolean).length;
+        const relKoren = '../'.repeat(depth);
+        zapis(path.join(podSlozka, 'index.html'), hub({
           zvire: z, jazyk: j, assety, url, majitel, jazyky,
-          koren: '/' + koren.split(path.sep).join('/') + '/', jmenem, kontakt: KONTAKT, zvirata: d.zvirata,
+          koren: '/' + koren.split(path.sep).join('/') + '/', jmenem, kontakt: KONTAKT, zvirata: d.zvirata, relKoren,
         }));
       }
       const c = z.certifikat;
       if (c && (majitel || (c.viditelnost || 'verejne') === 'verejne')) {
+        const certDepth = koren.split(path.sep).filter(Boolean).length;
+        const relKorenCert = '../'.repeat(certDepth);
         for (const j of c.jazyky || ['cs']) {
           zapis(path.join(koren, `certifikat-${j}.html`),
-            certifikat({ zvire: z, jazyk: j, zvirata: d.zvirata, qr, adresa: adresaQr, url }));
+            certifikat({ zvire: z, jazyk: j, zvirata: d.zvirata, qr, adresa: adresaQr, url, relKoren: relKorenCert }));
           certifikatu++;
         }
       }

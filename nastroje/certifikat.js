@@ -60,7 +60,8 @@ function rodic(zvirata, id) {
   return casti ? `${z.jmeno} (${casti})` : z.jmeno;
 }
 
-function certifikat({ zvire, jazyk, zvirata, qr, adresa, url }) {
+function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
+  const prefix = !relKoren ? '' : (relKoren.endsWith('/') ? relKoren : relKoren + '/');
   const t = TEXTY[jazyk] || TEXTY.cs;
   const c = zvire.certifikat || {};
   const kmotrovsky = c.typ === 'kmotrovsky' && zvire.kmotr;
@@ -86,14 +87,14 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url }) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/hub.css">
+<link rel="stylesheet" href="${prefix}hub.css">
 </head>
 <body class="notranslate" translate="no">
 
 <div class="strana strana-titulni-grafika"></div>
 
 <div id="strana-certifikat" class="strana notranslate" translate="no">
-  <img src="/assets/images/bg_certifikat.jpg" alt="" class="certifikat-overlay-img">
+  <img src="${prefix}assets/images/bg_certifikat.jpg" alt="" class="certifikat-overlay-img">
   <div class="certifikat-vnitrni-ram">
     <div>
       <p class="jmeno-stanice">Felis Noetica</p>
@@ -102,7 +103,7 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url }) {
     </div>
 
 ${c.foto ? `    <div style="text-align:center;margin:4px 0">
-      <div class="foto-kolecko"><img src="${E(url(c.foto))}" alt="${E(zvire.jmeno)}"></div>
+      <div class="foto-kolecko"><img src="${E(url(c.foto, relKoren))}" alt="${E(zvire.jmeno)}"></div>
     </div>` : ''}
 
     <div>
@@ -126,7 +127,7 @@ ${kmotrovsky && T(k.vyznam, jazyk) ? `    <div class="vyznam-box">
       <div class="certifikat-datum">${E(t.vDne(c.misto || 'Brno', datum(c.datum, jazyk)))}</div>
       <div class="podpisy-mriezka">
         <div class="podpis-line">
-          <img src="/assets/images/podpis.png" alt="" class="podpis-grafika-img">
+          <img src="${prefix}assets/images/podpis.png" alt="" class="podpis-grafika-img">
           <strong>Viktor Lošťák</strong><br>${E(t.chovatel)}
         </div>
         <div class="qr-blok-pravo">

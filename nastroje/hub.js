@@ -96,10 +96,11 @@ function polozky({ zvire, assety, jazyk, url, majitel }) {
   return { karty: ven, fotky: viditelne.filter((x) => x.typ === 'foto' || x.typ === 'video') };
 }
 
-function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, kontakt, zvirata = [] }) {
+function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, kontakt, zvirata = [], relKoren = '' }) {
+  const prefix = !relKoren ? '' : (relKoren.endsWith('/') ? relKoren : relKoren + '/');
   const j = jazyk || 'cs';
   const t = TEXTY[j] || TEXTY.cs;
-  const { karty, fotky } = polozky({ zvire, assety, jazyk: j, url, majitel });
+  const { karty, fotky } = polozky({ zvire, assety, jazyk: j, url: (s) => url(s, relKoren), majitel });
 
   const prepinac = jazyky.length > 1
     ? `<p class="prepinac notranslate" translate="no">${jazyky.map((x) => {
@@ -156,7 +157,7 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
             targetLang = 'en/';
           }
         }
-        const parentUrl = `/kotata/${rok}/${slugJmena(r.jmeno)}/${targetLang}`;
+        const parentUrl = `${prefix}kotata/${rok}/${slugJmena(r.jmeno)}/${targetLang}`;
         return `${E(label)}: <a href="${E(parentUrl)}">${E(jmeno)}</a>`;
       }
     }
@@ -178,7 +179,7 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
   ].filter(Boolean).join(' · ');
 
   const artSlug = zvire.jmeno.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  const artPath = `/assets/images/${artSlug}-art.jpg`;
+  const artPath = `${prefix}assets/images/${artSlug}-art.jpg`;
 
   const vyznamRaw = T(zvire.vyznam, j)
     || (zvire.kmotr && T(zvire.kmotr.vyznam, j))
@@ -195,8 +196,8 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=Petrona:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styl.css?v=20260809b">
-<link rel="stylesheet" href="/hub.css?v=20260809b">
+<link rel="stylesheet" href="${prefix}styl.css?v=20260809b">
+<link rel="stylesheet" href="${prefix}hub.css?v=20260809b">
 ${scriptDetekce}
 </head>
 <body>
@@ -225,8 +226,8 @@ ${fotky.length ? `  <h2 class="hub-sekce-nadpis">${E(t.fotky)}</h2>
       ].filter(Boolean).join('');
       const figcaption = captionParts ? `<figcaption>${captionParts}</figcaption>` : '';
       return a.typ === 'video'
-        ? `<figure><video controls preload="metadata"><source src="${E(url(a.soubor))}" type="video/mp4"></video>${figcaption}</figure>`
-        : `<figure data-full="/assets/images/${E(a.soubor.split('/').pop())}"><img src="${E(url(a.soubor))}" alt="${E(p.text || zvire.jmeno)}" loading="lazy">${figcaption}</figure>`;
+        ? `<figure><video controls preload="metadata"><source src="${E(url(a.soubor, relKoren))}" type="video/mp4"></video>${figcaption}</figure>`
+        : `<figure data-full="${prefix}assets/images/${E(a.soubor.split('/').pop())}"><img src="${E(url(a.soubor, relKoren))}" alt="${E(p.text || zvire.jmeno)}" loading="lazy">${figcaption}</figure>`;
     }).join('\n    ')}
   </div>` : ''}
 
@@ -236,8 +237,8 @@ ${fotky.length ? `  <h2 class="hub-sekce-nadpis">${E(t.fotky)}</h2>
   </div>
 
   <div class="hub-dole-logo">
-    <a href="/">
-      <img src="/assets/images/logo-znacka.png" alt="Felis Noetica" class="hub-logo">
+    <a href="${prefix}index.html">
+      <img src="${prefix}assets/images/logo-znacka.png" alt="Felis Noetica" class="hub-logo">
       <p class="jmeno-stanice">Felis Noetica</p>
     </a>
     <p class="podtitul">INTELLIGENTIA ET CONCORDIA</p>
@@ -248,7 +249,7 @@ ${fotky.length ? `  <h2 class="hub-sekce-nadpis">${E(t.fotky)}</h2>
     <p class="poznamka">${E(majitel ? t.jenProVas : t.verejna)}</p>
   </footer>
 </div>
-<script src="/skript.js?v=20260809b"></script>
+<script src="${prefix}skript.js?v=20260809b"></script>
 </body>
 </html>`;
 }
