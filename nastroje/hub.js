@@ -248,7 +248,7 @@ ${fotky.length ? `  <h2 class="hub-sekce-nadpis">${E(t.fotky)}</h2>
       const figcaption = captionParts ? `<figcaption>${captionParts}</figcaption>` : '';
       return a.typ === 'video'
         ? `<figure><video controls preload="metadata"><source src="${E(url(a.soubor))}" type="video/mp4"></video>${figcaption}</figure>`
-        : `<figure><img src="${E(url(a.soubor))}" alt="${E(p.text || zvire.jmeno)}" loading="lazy">${figcaption}</figure>`;
+        : `<figure data-full="/assets/images/${E(a.soubor.split('/').pop())}"><img src="${E(url(a.soubor))}" alt="${E(p.text || zvire.jmeno)}" loading="lazy">${figcaption}</figure>`;
     }).join('\n    ')}
   </div>` : ''}
 

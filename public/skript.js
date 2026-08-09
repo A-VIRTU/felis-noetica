@@ -1,6 +1,12 @@
 // Felis Noetica — Skript pro zvětšování obrázků a videa (Lightbox & Galerie)
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Helper pro převod náhledu (-web.jpg) na plné rozlišení (.jpg)
+  function toFullUrl(urlStr) {
+    if (!urlStr) return '';
+    return urlStr.replace(/-web\.jpg$/i, '.jpg');
+  }
+
   // 1. Vytvoření modálního okna (Lightbox overlay) pro obrázky a galerie
   const overlay = document.createElement('div');
   overlay.className = 'lightbox-overlay';
@@ -42,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (oldPlaceholder) oldPlaceholder.remove();
     lightboxImg.style.display = 'block';
 
-    lightboxImg.src = item.src;
+    lightboxImg.src = toFullUrl(item.src);
     lightboxImg.alt = item.alt || '';
     lightboxCaption.innerHTML = item.captionHtml || '';
 
@@ -150,9 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
           const items = siblingFigures.map((f) => {
             const fImg = f.querySelector('img');
             const fCap = f.querySelector('figcaption');
+            const rawSrc = f.getAttribute('data-full') || (fImg ? fImg.src : '');
             return {
-              src: f.getAttribute('data-full') || fImg.src,
-              alt: fImg.alt,
+              src: toFullUrl(rawSrc),
+              alt: fImg ? fImg.alt : '',
               captionHtml: fCap ? fCap.innerHTML : '',
             };
           });
@@ -163,16 +170,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const items = [];
         const captionHtml = caption ? caption.innerHTML : '';
-        const fullSrc = fig.getAttribute('data-full') || img.src;
-        items.push({ src: fullSrc, alt: img.alt, captionHtml: captionHtml });
+        const rawSrc = fig.getAttribute('data-full') || (img ? img.src : '');
+        items.push({ src: toFullUrl(rawSrc), alt: img ? img.alt : '', captionHtml: captionHtml });
 
         const extraItems = fig.querySelectorAll('.galerie-polozky > div, .galerie-polozky > figure');
         extraItems.forEach((el) => {
-          const itemSrc = el.getAttribute('data-src') || (el.querySelector('img') ? el.querySelector('img').src : '');
+          const itemSrc = el.getAttribute('data-src') || el.getAttribute('data-full') || (el.querySelector('img') ? el.querySelector('img').src : '');
           const itemAlt = el.getAttribute('data-alt') || (el.querySelector('img') ? el.querySelector('img').alt : '');
           const itemCap = el.querySelector('figcaption') ? el.querySelector('figcaption').innerHTML : (el.getAttribute('data-caption') || '');
           if (itemSrc) {
-            items.push({ src: itemSrc, alt: itemAlt, captionHtml: itemCap });
+            items.push({ src: toFullUrl(itemSrc), alt: itemAlt, captionHtml: itemCap });
           }
         });
 
