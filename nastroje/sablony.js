@@ -1,16 +1,30 @@
-// Šablony. Bez závislostí, obyčejné template literals.
-// Třídy odpovídají stávajícímu styl.css, aby generované stránky vypadaly
-// jako zbytek webu a nemusel se psát nový styl.
+// Pomocné šablony pro sestavení webu.
+// Generují čisté HTML z datových objektů.
 
-const E = (s) =>
-  String(s == null ? '' : s).replace(/[&<>"']/g, (c) =>
-    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
-// text v daném jazyce s pádem zpět na češtinu
-const T = (preklad, jazyk) => {
-  if (!preklad) return '';
-  return preklad[jazyk] || preklad.cs || preklad.en || '';
+const SLOVNIK = {
+  cs: {
+    tvoje: 'Tvoje kočka z Felis Noetica',
+    dokumenty: 'Soubory a dokumenty',
+    fotky: 'Fotografie a video',
+    certifikat: 'Certifikát k nahlédnutí',
+    kontakt: 'Chovatel Viktor Lošťák',
+    soukrome: 'Stránka je přístupná přes vaše osobní UUID.',
+    narozen: 'Narozen', narozena: 'Narozena', matka: 'matka', otec: 'otec',
+    neuvedeno: 'neuvedeno',
+  },
+  en: {
+    tvoje: 'Your cat from Felis Noetica',
+    dokumenty: 'Files and documents',
+    fotky: 'Photographs and video',
+    certifikat: 'Certificate view',
+    kontakt: 'Breeder Viktor Lošťák',
+    soukrome: 'This page is accessible via your personal UUID.',
+    narozen: 'Born', narozena: 'Born', matka: 'dam', otec: 'sire',
+    neuvedeno: 'not specified',
+  },
 };
+
+const NAZVY_JAZYKU = { cs: 'Česky', en: 'English', fr: 'Français' };
 
 const MESICE = ['ledna', 'února', 'března', 'dubna', 'května', 'června', 'července', 'srpna', 'září', 'října', 'listopadu', 'prosince'];
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -33,72 +47,61 @@ function kotat(n) {
   return `${n} koťat`;
 }
 
-const SLOVNIK = {
-  cs: {
-    dokumenty: 'Dokumenty ke stažení', fotky: 'Fotografie a videa',
-    tvoje: 'Vaše zvíře', narozen: 'Narozen', narozena: 'Narozena',
-    matka: 'Matka', otec: 'Otec', vrh: 'Vrh', neuvedeno: 'neuvedeno',
-    soukrome: 'Tato stránka je jen pro vás. Odkaz nikam nesdílejte.',
-    kontakt: 'Kdykoli se ozvěte',
-  },
-  en: {
-    dokumenty: 'Documents', fotky: 'Photographs and video',
-    tvoje: 'Your animal', narozen: 'Born', narozena: 'Born',
-    matka: 'Dam', otec: 'Sire', vrh: 'Litter', neuvedeno: 'not given',
-    soukrome: 'This page is yours alone. Please do not share the link.',
-    kontakt: 'Get in touch any time', certifikat: 'Certificate of origin',
-  },
-  fr: {
-    dokumenty: 'Documents', fotky: 'Photographies et vidéo',
-    tvoje: 'Votre animal', narozen: 'Né le', narozena: 'Née le',
-    matka: 'Mère', otec: 'Père', vrh: 'Portée', neuvedeno: 'non indiqué',
-    soukrome: "Cette page vous est réservée. Merci de ne pas partager le lien.",
-    kontakt: 'Écrivez-nous quand vous voulez', certifikat: "Certificat d'origine",
-  },
-};
-SLOVNIK.cs.certifikat = 'Osvědčení o původu';
+function E(s) {
+  if (s == null) return '';
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
 
-const NAZVY_JAZYKU = { cs: 'Česky', en: 'English', fr: 'Français' };
+// Vrátí přeložený řetězec z objektu {cs, en, fr} nebo zadaný řetězec
+function T(obj, jazyk = 'cs') {
+  if (!obj) return '';
+  if (typeof obj === 'string') return obj;
+  return obj[jazyk] || obj.cs || obj.en || '';
+}
 
-function rozvrh({ titulek, jazyk = 'cs', telo, noindex = false, korenCss = '/' }) {
+// Základní obalová HTML stránka
+function rozvrh({ titulek, jazyk = 'cs', telo, meta = '', noindex = false }) {
+  const robots = noindex ? '\n<meta name="robots" content="noindex, nofollow">' : '';
   return `<!DOCTYPE html>
 <html lang="${jazyk}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-${noindex ? '<meta name="robots" content="noindex, nofollow, noarchive">' : ''}
-<title>${E(titulek)}</title>
+<title>${E(titulek)}</title>${robots}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&family=Petrona:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="${korenCss}styl.css">
-<link rel="icon" href="${korenCss}favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&family=Petrona:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styl.css?v=20260809b">${meta}
 </head>
 <body>
 ${telo}
-<script src="${korenCss}skript.js"></script>
+<script src="/skript.js?v=20260809b"></script>
 </body>
 </html>`;
 }
 
-// ---------- figura ----------
-
-function figura(a, jazyk, url) {
+// Vykreslí jeden asset (foto/video/dokument) v HTML
+function figura(a, jazyk = 'cs', url) {
   const p = (a.popisky || {})[jazyk] || (a.popisky || {}).cs || {};
-  const popis = p.navesti || p.text
-    ? `<figcaption>${p.navesti ? `<span class="datum">${E(p.navesti)}</span>` : ''}${p.text ? `<em>${E(p.text)}</em>` : ''}</figcaption>`
-    : '';
-  const alt = E(p.text || a.soubor);
+  const alt = E(p.text || a.soubor.split('/').pop());
+  const navesti = p.navesti || (a.datum ? datum(a.datum, jazyk) : '');
+  const captionParts = [
+    navesti ? `<span class="datum">${E(navesti)}</span>` : '',
+    p.text ? `<em>${E(p.text)}</em>` : '',
+  ].filter(Boolean).join('');
+  const popis = captionParts ? `<figcaption>${captionParts}</figcaption>` : '';
 
   if (a.typ === 'video') {
     return `<figure>
-  <video controls preload="metadata"${a.poster ? ` poster="${E(url(a.poster))}"` : ''}>
-    <source src="${E(url(a.soubor))}" type="video/mp4">
-  </video>${popis}
+  <video controls preload="metadata"><source src="${E(url(a.soubor))}" type="video/mp4"></video>${popis}
 </figure>`;
   }
   if (a.typ === 'dokument') {
-    return `<div class="polozka"><span><a href="${E(url(a.soubor))}">${E(p.navesti || a.soubor.split('/').pop())}</a>${p.text ? `<br><span style="font-size:.88rem;color:var(--text-tichy)">${E(p.text)}</span>` : ''}</span><span class="cena">PDF</span></div>`;
+    return `<div class="polozka"><span><a href="${E(url(a.soubor))}">${E(p.navesti || a.soubor.split('/').pop())}</a>${p.text ? `<br><span class="polozka-popis">${E(p.text)}</span>` : ''}</span><span class="cena">PDF</span></div>`;
   }
   return `<figure>
   <img src="${E(url(a.soubor))}" alt="${alt}" loading="lazy">${popis}
@@ -130,7 +133,7 @@ function stranakMajitele({ zvire, jazyk, assety, zvirata, url, kontakt, jazyky =
 
   const telo = `
 <header class="hlavicka">
-  <a href="/" style="text-decoration:none; color:inherit; display:inline-block;">
+  <a href="/" class="hlavicka-odkaz">
     <img class="znak" src="/assets/images/logo.png" alt="Felis Noetica">
     <h1 class="jmeno-stanice">Felis Noetica</h1>
   </a>
@@ -204,8 +207,8 @@ function fragmentKotata({ vrhy, zvirata, assety, jazyk, url }) {
       const p = (fotoVrhu.popisky || {})[jazyk] || (fotoVrhu.popisky || {}).cs || {};
       const navestiText = p.navesti || datum(fotoVrhu.datum || v.narozeni, jazyk);
       const emText = p.text || '';
-      vrhFotoHtml = `\n  <figure class="vrh-foto" data-full="${E(url(fotoVrhu.soubor))}" data-gallery="${E(v.__slug.toLowerCase())}-skupina" style="margin: 1.25rem 0 1.5rem 0;">
-    <img src="${E(url(fotoVrhu.soubor))}" alt="${E(v.id)}" style="width:100%; height:auto; border-radius:3px; display:block; cursor:pointer;">
+      vrhFotoHtml = `\n  <figure class="vrh-foto" data-full="${E(url(fotoVrhu.soubor))}" data-gallery="${E(v.__slug.toLowerCase())}-skupina">
+    <img src="${E(url(fotoVrhu.soubor))}" alt="${E(v.id)}">
     <figcaption><span class="datum">${E(navestiText)}</span><em>${E(emText)}</em></figcaption>
   </figure>`;
     }
@@ -225,11 +228,11 @@ ${kotata.map((z) => {
   const pohlaviText = z.pohlavi === 'M' ? (jazyk === 'en' ? 'male' : 'kocour') : (jazyk === 'en' ? 'female' : 'kočka');
 
   const figureHtml = src
-    ? `<figure class="kote-foto" data-full="${E(src)}" data-gallery="${E(slug)}" style="margin:0;">
-        <img src="${E(src)}" alt="Kotě ${E(z.jmeno)}" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:3px; cursor:pointer; display:block;">
+    ? `<figure class="kote-foto" data-full="${E(src)}" data-gallery="${E(slug)}">
+        <img src="${E(src)}" alt="Kotě ${E(z.jmeno)}">
         <figcaption><span class="datum">${E(datum(v.narozeni, jazyk))}</span><em>${E(z.jmeno)}, ${E(pohlaviText)} — ${E(captionText)}</em></figcaption>
       </figure>`
-    : `<figure class="kote-foto" style="margin:0;">
+    : `<figure class="kote-foto">
         <div class="misto"><span>FOTO</span></div>
       </figure>`;
 
@@ -254,7 +257,7 @@ ${kotata.map((z) => {
 
   const stavClass = z.stav === 'volne' ? 'stav-volne' : 'stav-jine';
   const stavHtml = verejnaUrl
-    ? `<a href="${E(verejnaUrl)}" class="stav ${stavClass}" style="text-decoration:none !important; border-bottom:none !important;">${E(textOdkazu)} &rarr;</a>`
+    ? `<a href="${E(verejnaUrl)}" class="stav ${stavClass}">${E(textOdkazu)} &rarr;</a>`
     : `<span class="stav ${stavClass}">${E(textOdkazu)}</span>`;
 
   return `  <div class="kote">
@@ -267,7 +270,7 @@ ${kotata.map((z) => {
   </div>`;
 }).join('\n')}
 </div>`;
-  }).join('\n');
+  }).join('\n\n');
 }
 
-module.exports = { rozvrh, figura, stranakMajitele, fragmentKotata, E, T, datum, kotat, SLOVNIK };
+module.exports = { E, T, datum, kotat, rozvrh, figura, stranakMajitele, fragmentKotata };

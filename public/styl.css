@@ -179,6 +179,21 @@ figure{margin:0 0 1.35rem;}
 
 figcaption{margin-top:.65rem;font-size:.9rem;line-height:1.55;color:var(--text-tichy);}
 
+.foto-siroka figcaption,
+.video-siroka figcaption {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 52rem) {
+  .obal .foto-siroka figcaption,
+  .obal .video-siroka figcaption {
+    padding-left: calc((100% - var(--sirka)) / 2);
+    padding-right: calc((100% - var(--sirka)) / 2);
+  }
+}
+
 figcaption .datum{
   font-family:"Newsreader",serif;font-size:.7rem;letter-spacing:.14em;
   text-transform:uppercase;color:var(--trava);display:block;margin-bottom:.15rem;
@@ -488,3 +503,57 @@ figcaption em{font-style:italic;}
   pointer-events: none !important;
   display: none;
 }
+
+/* ---------- Pomocné třídy pro čisté HTML bez inline stylů ---------- */
+
+.hlavicka-odkaz {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  border-bottom: none;
+}
+
+.polozka-popis {
+  font-size: .88rem;
+  color: var(--text-tichy);
+}
+
+.vrh-foto {
+  margin: 1.25rem 0 1.5rem 0;
+}
+
+.vrh-foto img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  display: block;
+  cursor: pointer;
+}
+
+.kote-foto {
+  margin: 0;
+}
+
+.kote-foto img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 3px;
+  cursor: pointer;
+  display: block;
+}
+
+.stav {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.video-siroka video {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  border-radius: 3px;
+  display: block;
+  background: #000;
+}
+

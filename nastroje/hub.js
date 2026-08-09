@@ -65,7 +65,7 @@ function karta({ ikona, nadpis, popis, odkaz, onclick }) {
       </div>
       <div class="ke-stazeni-ikona">${ikonaSvg}</div>`;
   return onclick
-    ? `<div class="ke-stazeni-polozka" style="cursor:pointer" onclick="${onclick}">${vnitrek}\n    </div>`
+    ? `<div class="ke-stazeni-polozka ke-stazeni-tlacitko" onclick="${onclick}">${vnitrek}\n    </div>`
     : `<a href="${E(odkaz)}"${odkaz.endsWith('.zip') ? ' download' : ' target="_blank" rel="noopener"'} class="ke-stazeni-polozka">${vnitrek}\n    </a>`;
 }
 
@@ -133,10 +133,10 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
   const { karty, fotky } = polozky({ zvire, assety, jazyk: j, url, majitel });
 
   const prepinac = jazyky.length > 1
-    ? `<p class="prepinac notranslate" translate="no" style="margin:0 0 15px 0; font-size:0.9rem; text-align:right; color:var(--text-tichy);">${jazyky.map((x) => {
+    ? `<p class="prepinac notranslate" translate="no">${jazyky.map((x) => {
         const linkRel = (x === j) ? null : (x === jazyky[0] ? '../' : (j === jazyky[0] ? `${x}/` : `../${x}/`));
         if (x === j) return `<strong>${E(NAZVY_JAZYKU[x] || x)}</strong>`;
-        return `<a href="${E(linkRel)}" onclick="sessionStorage.setItem('lang-selected','${x}')" style="color:var(--akcent); text-decoration:none;">${E(NAZVY_JAZYKU[x] || x)}</a>`;
+        return `<a href="${E(linkRel)}" onclick="sessionStorage.setItem('lang-selected','${x}')">${E(NAZVY_JAZYKU[x] || x)}</a>`;
       }).join(' · ')}</p>`
     : '';
 
@@ -188,7 +188,7 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
           }
         }
         const parentUrl = `/kotata/${rok}/${slugJmena(r.jmeno)}/${targetLang}`;
-        return `${E(label)}: <a href="${E(parentUrl)}" style="color:inherit; text-decoration:none;">${E(jmeno)}</a>`;
+        return `${E(label)}: <a href="${E(parentUrl)}">${E(jmeno)}</a>`;
       }
     }
     return `${E(label)}: ${E(jmeno)}`;
@@ -221,7 +221,7 @@ function hub({ zvire, jazyk, assety, url, majitel, jazyky = [], koren, jmenem, k
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-${majitel ? '<meta name="robots" content="noindex, nofollow, noarchive">' : ''}
+
 <title>${E(zvire.id)} ${E(zvire.jmeno)} — ${E(t.titulek)}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -233,14 +233,14 @@ ${scriptDetekce}
 <body>
 <div class="hub-container">
   ${prepinac}
-  <div class="hub-header" style="border-bottom:none; margin-bottom:15px; padding-bottom:0;">
-    <figure class="hub-art-figure" data-full="${E(artPath)}" style="margin:0 0 20px 0; cursor:pointer;">
-      <img src="${E(artPath)}" alt="${E(zvire.jmeno)}" class="hub-art-img" style="max-width:280px; width:100%; height:auto; display:block; margin:0 auto; border-radius:6px;">
+  <div class="hub-header">
+    <figure class="hub-art-figure" data-full="${E(artPath)}">
+      <img src="${E(artPath)}" alt="${E(zvire.jmeno)}" class="hub-art-img">
     </figure>
-    <div class="hub-karta" style="margin-top:0;">
+    <div class="hub-karta">
       <span class="hub-id">${E(zvire.id)}</span>
       <h1 class="hub-jmeno">${E(zvire.formalni_jmeno || zvire.jmeno)}</h1>
-      ${vyznamText ? `<p class="hub-vyznam" style="margin-top:6px; margin-bottom:12px; font-style:italic; color:var(--text-tichy); font-size:1.02rem; line-height:1.5;">${E(vyznamText)}</p>` : ''}
+      ${vyznamText ? `<p class="hub-vyznam">${E(vyznamText)}</p>` : ''}
       <p class="hub-detail">${zakladniUdaje}</p>
     </div>
   </div>
@@ -266,12 +266,12 @@ ${fotky.length ? `  <h2 class="hub-sekce-nadpis">${E(t.fotky)}</h2>
     ${karty.join('\n    ')}
   </div>
 
-  <div class="hub-dole-logo" style="text-align:center; border-top:1px solid var(--linka); margin-top:35px; padding-top:25px;">
-    <a href="/" style="text-decoration:none; border-bottom:none !important; color:inherit; display:inline-block;">
-      <img src="/assets/images/logo-znacka.png" alt="Felis Noetica" class="hub-logo" style="width:110px; opacity:.85; display:block; margin:0 auto 8px auto; border-bottom:none !important;">
-      <p class="jmeno-stanice" style="font-size:1.6rem; margin:0 0 2px 0;">Felis Noetica</p>
+  <div class="hub-dole-logo">
+    <a href="/">
+      <img src="/assets/images/logo-znacka.png" alt="Felis Noetica" class="hub-logo">
+      <p class="jmeno-stanice">Felis Noetica</p>
     </a>
-    <p class="podtitul" style="font-size:.95rem; margin:0;">INTELLIGENTIA ET CONCORDIA</p>
+    <p class="podtitul">INTELLIGENTIA ET CONCORDIA</p>
   </div>
 
   <footer class="hub-pata">
@@ -279,7 +279,6 @@ ${fotky.length ? `  <h2 class="hub-sekce-nadpis">${E(t.fotky)}</h2>
     <p class="poznamka">${E(majitel ? t.jenProVas : t.verejna)}</p>
   </footer>
 </div>
-<script src="/skript.js"></script>
 </body>
 </html>`;
 }
