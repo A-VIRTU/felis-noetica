@@ -460,3 +460,224 @@ a.stav:hover{opacity:.8;}
 
 
 
+
+
+/* Styl rozcestníku a certifikátu — vytažený z ručních stránek do jednoho souboru,
+   aby se neopisoval do každé vygenerované stránky. */
+
+:root {
+  --text-hlavni: #2E2B27;
+  --text-tichy: #6B655D;
+  --akcent: #8B7355;
+  --zlatavost: #B89768;
+  --bg-papir: #FFFFFF;
+  --linka: #E8E2D8;
+  --zelena-ok: #2E6B38;
+  --papir: #F7F6F3;
+}
+
+* { box-sizing: border-box; }
+@page { size: A4; margin: 0; }
+
+body {
+  margin: 0; padding: 0;
+  background-color: #EFECE6;
+  font-family: 'Newsreader', Georgia, serif;
+  color: var(--text-hlavni);
+  font-size: 11pt; line-height: 1.6;
+  -webkit-print-color-adjust: exact;
+}
+
+/* ---------- rozcestník ---------- */
+
+.hub-container {
+  max-width: 210mm; margin: 35px auto 25px;
+  background-color: #FDFBF7; padding: 35px 40px;
+  border-radius: 10px; box-shadow: 0 6px 25px rgba(0,0,0,.07);
+  border: 1px solid var(--zlatavost);
+}
+.hub-header { text-align: center; border-bottom: 1px solid var(--linka); padding-bottom: 25px; margin-bottom: 25px; }
+.hub-logo { width: 140px; opacity: .8; margin-bottom: 12px; }
+.jmeno-stanice { font-weight: 400; font-size: 2.1rem; letter-spacing: .07em; text-transform: uppercase; margin: 0 0 .2rem; }
+.podtitul { font-style: italic; font-weight: 300; font-size: 1.12rem; color: var(--text-tichy); margin: 0 0 15px; }
+.hub-karta { background-color: #F8F5EE; border: 1px solid var(--linka); padding: 16px 24px; border-radius: 6px; display: inline-block; margin-top: 10px; text-align: center; }
+.hub-id { font-size: 9.5pt; letter-spacing: .12em; text-transform: uppercase; color: var(--akcent); font-weight: 500; display: block; }
+.hub-jmeno { font-size: 22pt; font-weight: 500; margin: 3px 0 5px; }
+.hub-detail { font-size: 10.5pt; color: var(--text-tichy); margin: 0; }
+.hub-sekce-nadpis { font-size: 15pt; color: var(--akcent); margin: 25px 0 18px; font-weight: 400; text-align: center; }
+
+.ke-stazeni-seznam { margin: 10px 0 25px; }
+.ke-stazeni-polozka {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 0; border-bottom: 1px solid var(--linka);
+  text-decoration: none; color: var(--text-hlavni); transition: opacity .15s ease;
+}
+.ke-stazeni-polozka:last-child { border-bottom: none; }
+.ke-stazeni-polozka:hover { opacity: .75; }
+.ke-stazeni-text strong { display: block; font-size: 11pt; font-weight: 500; color: var(--text-hlavni); margin-bottom: 2px; }
+.ke-stazeni-text span { font-size: 9.2pt; color: var(--text-tichy); display: block; }
+.ke-stazeni-ikona { display: flex; align-items: center; justify-content: center; color: var(--akcent); padding-left: 15px; }
+
+.fotomriezka { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; align-items: start; }
+.fotomriezka figure { margin: 0; cursor: pointer; display: flex; flex-direction: column; }
+.fotomriezka img, .fotomriezka video {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+  border-radius: 6px; border: 1px solid var(--linka); display: block;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.fotomriezka figure:hover img, .fotomriezka figure:hover video {
+  transform: scale(1.02);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+.fotomriezka figcaption { display: none; }
+
+.hub-pata { border-top: 1px solid var(--linka); margin-top: 28px; padding-top: 18px; text-align: center; font-size: 10pt; color: var(--text-tichy); }
+.hub-pata a { color: var(--akcent); }
+.hub-pata .prepinac { font-size: 10pt; margin-bottom: 10px; }
+.hub-pata .poznamka { font-size: 8.5pt; font-style: italic; }
+
+@media print { .hub-container { display: none; } body { background: none; } }
+
+@media (max-width: 640px) {
+  .hub-container { margin: 0; border-radius: 0; padding: 22px 16px; border-left: none; border-right: none; }
+  .hub-jmeno { font-size: 17pt; }
+}
+
+/* ---------- Lightbox & Zvětšování na celou obrazovku ---------- */
+.lightbox-trigger {
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.lightbox-trigger:hover {
+  opacity: 0.95;
+}
+
+.lightbox-overlay {
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(18, 16, 14, 0.93);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 1.5rem; opacity: 0; visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.lightbox-overlay.active { opacity: 1; visibility: visible; }
+
+.lightbox-content {
+  position: relative; max-width: 90vw; max-height: 88vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+.lightbox-img-container {
+  max-width: 100%; max-height: 72vh;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%; max-height: 72vh;
+  object-fit: contain; border-radius: 3px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.lightbox-caption {
+  margin-top: 1.25rem; text-align: left; color: var(--papir);
+  width: 100%; max-width: 44rem; font-size: 1.05rem; line-height: 1.6;
+}
+
+.lightbox-caption .datum {
+  font-family: "Newsreader", serif; font-size: 0.82rem; letter-spacing: 0.16em;
+  text-transform: uppercase; color: #C8C197; display: block; margin-bottom: 0.35rem;
+}
+
+.lightbox-caption em { font-style: italic; }
+
+.lightbox-close {
+  position: fixed; top: 1.25rem; right: 1.75rem;
+  background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%; width: 44px; height: 44px; color: var(--papir);
+  font-size: 1.75rem; line-height: 40px; text-align: center; cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease; z-index: 10000;
+}
+
+.lightbox-close:hover { background: rgba(255, 255, 255, 0.25); transform: scale(1.08); }
+
+.lightbox-prev, .lightbox-next {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%; width: 52px; height: 52px; color: var(--papir);
+  font-size: 1.8rem; line-height: 48px; text-align: center; cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease; z-index: 10000;
+  user-select: none; display: flex; align-items: center; justify-content: center;
+}
+
+.lightbox-prev { left: 1.5rem; }
+.lightbox-next { right: 1.5rem; }
+
+.lightbox-prev:hover, .lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.3); transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-counter {
+  position: fixed; top: 1.4rem; left: 50%; transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.3rem 0.9rem; border-radius: 20px; color: var(--papir);
+  font-family: "Newsreader", serif; font-size: 0.85rem; letter-spacing: 0.1em; z-index: 10000;
+}
+
+/* ---------- tisková strana certifikátu ---------- */
+
+.strana {
+  width: 210mm; height: 297mm; margin: 20px auto;
+  background-color: var(--bg-papir); padding: 22mm 18mm 20mm;
+  box-shadow: 0 4px 15px rgba(0,0,0,.08); position: relative;
+  page-break-after: always; break-after: page;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+@media print { .strana { margin: 0; box-shadow: none; width: 100%; height: 297mm; } }
+
+.strana-titulni-grafika {
+  background-image: url('/assets/images/bg_certifikat.jpg');
+  background-size: contain; background-position: center; background-repeat: no-repeat;
+  background-color: #FFF; padding: 0;
+}
+
+#strana-certifikat { position: relative; overflow: hidden; background-color: var(--bg-papir); padding: 22mm 16mm; }
+
+.certifikat-overlay-img {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: contain; object-position: center;
+  mix-blend-mode: darken; opacity: .15; pointer-events: none; z-index: 10;
+}
+
+.certifikat-vnitrni-ram {
+  position: relative; z-index: 1; padding: 16px 20px; width: 100%; height: 100%; flex: 1;
+  display: flex; flex-direction: column; justify-content: space-between;
+  text-align: center; background-color: transparent; box-sizing: border-box;
+}
+
+.certifikat-titul { font-size: 15pt; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; margin: 4px 0 2px; }
+.certifikat-podtitul { font-size: 10pt; font-style: italic; color: var(--akcent); margin: 0 0 8px; }
+.certifikujese { font-size: 11.5pt; font-style: italic; color: var(--text-tichy); margin: 6px 0 4px; font-weight: 600; }
+.jmeno-zviratko { font-size: 28pt; font-weight: 800; color: var(--akcent); margin: 2px 0; letter-spacing: .02em; }
+.formalni-jmeno { font-size: 11.5pt; font-style: italic; margin-bottom: 12px; font-weight: 800; }
+
+.foto-kolecko { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--zlatavost); box-shadow: 0 4px 15px rgba(0,0,0,.12); overflow: hidden; display: inline-block; }
+.foto-kolecko img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.1); display: block; }
+
+.udaje-mriezk { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; text-align: left; padding: 12px 18px; border-radius: 4px; border: 1px solid var(--linka); font-size: 9.5pt; margin: 10px 0; }
+.udaj-polozka strong { color: var(--akcent); }
+
+.vyznam-box { margin: 10px 0; padding: 12px 16px; border-left: 3px solid var(--akcent); text-align: left; font-size: 9.2pt; line-height: 1.55; font-weight: 600; }
+.vyznam-nadpis { font-size: 10pt; font-weight: 600; color: var(--akcent); margin-bottom: 4px; }
+
+.certifikat-dole-obal { margin-top: 10px; padding-top: 8px; }
+.certifikat-datum { font-size: 9.5pt; font-style: italic; color: var(--text-tichy); margin-bottom: 6px; text-align: left; }
+.podpisy-mriezka { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 10px; }
+.podpis-line { position: relative; border-top: 1px dashed var(--text-tichy); width: 200px; text-align: center; padding-top: 5px; font-size: 9pt; }
+.podpis-grafika-img { position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%); height: 52px; width: auto; mix-blend-mode: multiply; pointer-events: none; z-index: 12; }
+.qr-blok-pravo { display: flex; align-items: center; gap: 10px; text-align: left; }
+.qr-img { width: 60px; height: 60px; border: 1px solid var(--zlatavost); border-radius: 4px; padding: 2px; background-color: #FFFDF9; }
+.qr-blok-pravo span { font-size: 8pt; color: var(--text-tichy); font-style: italic; max-width: 140px; line-height: 1.35; }
+.certifikat-registrace { border-top: 1px solid var(--linka); padding-top: 6px; font-size: 8.5pt; color: var(--text-tichy); letter-spacing: .05em; }
