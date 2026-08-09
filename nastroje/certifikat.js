@@ -2,6 +2,8 @@
 // i jejich genotypy (ty se berou z jejich vlastních záznamů, neopisují se).
 // QR kód je funkce adresy stránky, ne uložený obrázek.
 
+const fs = require('fs');
+const path = require('path');
 const QR = require('qrcode');
 const { E, T, datum } = require('./sablony');
 
@@ -83,6 +85,22 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
     ? `${E(t.vyznamNadpis)}: ${E(T(zvire.kmotr.osloveni, jazyk) || zvire.kmotr.jmeno)}`
     : (T(zvire.pojmenovan_po, jazyk) ? `${E(t.vyznamNadpis)}: ${E(T(zvire.pojmenovan_po, jazyk))}` : E(t.vyznamNadpis));
 
+  const bezDia = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const slugJmena = (s) => bezDia(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const slug = slugJmena(zvire.jmeno);
+
+  const { KOREN } = require('./data');
+  let artSoubor = `assets/images/${slug}-art.jpg`;
+  if (c.art && fs.existsSync(path.join(KOREN, 'assets', 'images', c.art))) {
+    artSoubor = `assets/images/${c.art}`;
+  } else if (fs.existsSync(path.join(KOREN, 'assets', 'images', `${slug}-art-novy.jpg`))) {
+    artSoubor = `assets/images/${slug}-art-novy.jpg`;
+  } else if (fs.existsSync(path.join(KOREN, 'assets', 'images', `${slug}-art.jpg`))) {
+    artSoubor = `assets/images/${slug}-art.jpg`;
+  } else if (fs.existsSync(path.join(KOREN, 'assets', 'images', 'bg_certifikat.jpg'))) {
+    artSoubor = 'assets/images/bg_certifikat.jpg';
+  }
+
   return `<!DOCTYPE html>
 <html lang="${jazyk}" class="notranslate" translate="no">
 <head>
@@ -98,10 +116,10 @@ function certifikat({ zvire, jazyk, zvirata, qr, adresa, url, relKoren = '' }) {
 </head>
 <body class="notranslate" translate="no">
 
-<div class="strana strana-titulni-grafika" style="background-image: url('${prefix}assets/images/bg_certifikat.jpg')"></div>
+<div class="strana strana-titulni-grafika" style="background-image: url('${prefix}${artSoubor}')"></div>
 
 <div id="strana-certifikat" class="strana notranslate" translate="no">
-  <img src="${prefix}assets/images/bg_certifikat.jpg" alt="" class="certifikat-overlay-img" onerror="this.style.display='none'">
+  <img src="${prefix}${artSoubor}" alt="" class="certifikat-overlay-img" onerror="this.style.display='none'">
   <div class="certifikat-vnitrni-ram">
     <div>
       <p class="jmeno-stanice">Felis Noetica</p>
