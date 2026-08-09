@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>FS01-G01-F003 Sofie — Dokumentační centrum jedince</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/hub.css">
+<script>
+  (function() {
+    if (sessionStorage.getItem('lang-selected')) return;
+    var urlParams = new URLSearchParams(window.location.search);
+    var langParam = urlParams.get('lang');
+    if (langParam) {
+      sessionStorage.setItem('lang-selected', langParam);
+      return;
+    }
+    if (document.referrer && document.referrer.indexOf(window.location.hostname) !== -1) {
+      sessionStorage.setItem('lang-selected', 'cs');
+      return;
+    }
+    var langs = navigator.languages || [navigator.language || navigator.userLanguage];
+    var isCzechOrSlovakOrPolish = false;
+    for (var i = 0; i < langs.length; i++) {
+      var l = langs[i].toLowerCase();
+      if (l.indexOf('cs') === 0 || l.indexOf('sk') === 0 || l.indexOf('pl') === 0) {
+        isCzechOrSlovakOrPolish = true;
+        break;
+      }
+    }
+    if (!isCzechOrSlovakOrPolish) {
+      window.location.replace('en/');
+    }
+  })();
+</script>
+</head>
+<body>
+<div class="hub-container">
+  <p class="prepinac" style="margin:0 0 15px 0; font-size:0.9rem; text-align:right; color:var(--text-tichy);"><strong>Česky</strong> · <a href="en/" onclick="sessionStorage.setItem('lang-selected','en')" style="color:var(--akcent); text-decoration:none;">English</a></p>
+  <div class="hub-header" style="border-bottom:none; margin-bottom:15px; padding-bottom:0;">
+    <figure class="hub-art-figure" data-full="/assets/images/sofie-art.jpg" style="margin:0 0 20px 0; cursor:pointer;">
+      <img src="/assets/images/sofie-art.jpg" alt="Sofie" class="hub-art-img" style="max-width:280px; width:100%; height:auto; display:block; margin:0 auto; border-radius:6px;">
+    </figure>
+    <div class="hub-karta" style="margin-top:0;">
+      <span class="hub-id">FS01-G01-F003</span>
+      <h1 class="hub-jmeno">Sofie of Felis Noetica</h1>
+      <p class="hub-vyznam" style="margin-top:6px; margin-bottom:12px; font-style:italic; color:var(--text-tichy); font-size:1.02rem; line-height:1.5;">Pojmenována na počest filosofického konceptu moudrosti (Sofia) — ztělesnění soustředěného pozorování, rozvahy, touhy po poznání a tichého porozumění okolnímu světu.</p>
+      <p class="hub-detail">Trikolóra · Kočka (♀) · Narozena 8. července 2025 · Matka: Šipka · Otec: Nepříbuzný kocour z Runářova, netestovaný.</p>
+    </div>
+  </div>
+
+  <h2 class="hub-sekce-nadpis">Fotografie a videa</h2>
+  <div class="fotomriezka">
+    <figure><img src="/media/foto/sofie-portret.jpg" alt="Portrét matky Sofie." loading="lazy"><figcaption><span class="datum">10. června 2025</span><em>Portrét matky Sofie.</em></figcaption></figure>
+    <figure><img src="/media/foto/sofie-odpocinek.jpg" alt="Sofie při odpočinku v křesle." loading="lazy"><figcaption><span class="datum">15. července 2025</span><em>Sofie při odpočinku v křesle.</em></figcaption></figure>
+    <figure><img src="/media/foto/sofie-u-notebooku.jpg" alt="Sofie zvědavě asistuje u notebooku." loading="lazy"><figcaption><span class="datum">5. října 2025</span><em>Sofie zvědavě asistuje u notebooku.</em></figcaption></figure>
+    <figure><img src="/media/foto/sofiin-vrh-siroka.jpg" alt="Sofie se svým novorozeným vrhem v pelíšku." loading="lazy"><figcaption><span class="datum">28. července 2026</span><em>Sofie se svým novorozeným vrhem v pelíšku.</em></figcaption></figure>
+    <figure><img src="/media/foto/2026-07-31_sofiin-vrh-skupina.jpg" alt="Sofie pečuje o novorozená koťata v pelíšku." loading="lazy"><figcaption><span class="datum">31. července 2026</span><em>Sofie pečuje o novorozená koťata v pelíšku.</em></figcaption></figure>
+    <figure><img src="/media/foto/sofiin-vrh-vaha.jpg" alt="Kotě Pafnuc na váze." loading="lazy"><figcaption><span class="datum">2. srpna 2026</span><em>Kotě Pafnuc na váze.</em></figcaption></figure>
+  </div>
+
+  <h2 class="hub-sekce-nadpis">Soubory ke stažení</h2>
+  <div class="ke-stazeni-seznam">
+    <a href="Sofie_Felis_Noetica.zip" download class="ke-stazeni-polozka">
+      <div class="ke-stazeni-text">
+        <strong>Stáhnout vše (ZIP)</strong>
+        <span>Všechny fotky, videa a dokumenty v jednom archivu</span>
+      </div>
+      <div class="ke-stazeni-ikona"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></div>
+    </a>
+    <a href="/media/dokumenty/Genomia_321880_Sofie.pdf" target="_blank" rel="noopener" class="ke-stazeni-polozka">
+      <div class="ke-stazeni-text">
+        <strong>Zpráva č. 321880</strong>
+        <span>Kompletní genetický panel, Genomia Plzeň. Krevní skupina A/A.</span>
+      </div>
+      <div class="ke-stazeni-ikona"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg></div>
+    </a>
+    <div class="ke-stazeni-polozka" style="cursor:pointer" onclick="window.print()">
+      <div class="ke-stazeni-text">
+        <strong>Vytisknout / Uložit PDF</strong>
+        <span>Vytisknout nebo uložit dokumentaci do PDF</span>
+      </div>
+      <div class="ke-stazeni-ikona"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></div>
+    </div>
+  </div>
+
+  <div class="hub-dole-logo" style="text-align:center; border-top:1px solid var(--linka); margin-top:35px; padding-top:25px;">
+    <a href="/" style="text-decoration:none; color:inherit; display:inline-block;">
+      <img src="/assets/images/logo-znacka.png" alt="Felis Noetica" class="hub-logo" style="width:110px; opacity:.85; margin-bottom:8px;">
+      <p class="jmeno-stanice" style="font-size:1.6rem; margin:0 0 2px 0;">Felis Noetica</p>
+    </a>
+    <p class="podtitul" style="font-size:.95rem; margin:0;">INTELLIGENTIA ET CONCORDIA</p>
+  </div>
+
+  <footer class="hub-pata">
+    <p><a href="mailto:info@felisnoetica.cz">info@felisnoetica.cz</a> · 604 761 154</p>
+    <p class="poznamka">Veřejná stránka. Majitel má vlastní adresu s další dokumentací.</p>
+  </footer>
+</div>
+<script src="/skript.js"></script>
+</body>
+</html>

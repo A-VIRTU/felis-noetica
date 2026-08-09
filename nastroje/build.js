@@ -260,6 +260,7 @@ async function main() {
   }
   copyRecursiveSync(DIST, PUBLIC);
   copyRecursiveSync(DIST, KOREN);
+  copyRecursiveSync(DIST, WEB);
 
   console.log(`✓ hotovo
   ${d.zvirata.length} zvířat, ${d.vrhy.length} vrhů, ${d.assety.length} assetů (${verejnych} veřejných, ${soukromych} pro majitele)

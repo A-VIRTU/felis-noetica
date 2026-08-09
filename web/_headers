@@ -1,0 +1,16 @@
+/soukrome/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: private, max-age=3600
+
+/interni/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
+/media/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/c91a797e-2714-4d50-a65a-893528b10469/*
+  X-Robots-Tag: noindex, nofollow
+
+/b8c9694e-91a9-4a5e-986b-add58cedd104/*
+  X-Robots-Tag: noindex, nofollow

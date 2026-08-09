@@ -1,0 +1,1455 @@
+{
+ "vygenerovano": "2026-08-09T11:25:19.845Z",
+ "zvirata": [
+  {
+   "id": "FS01-G00-F001",
+   "uuid": null,
+   "jmeno": "Šipka",
+   "pohlavi": "F",
+   "generace": 0,
+   "narozeni": "2024-05-01",
+   "stav": "chovna",
+   "matka": null,
+   "otec": null,
+   "verejne": false,
+   "stranka": null,
+   "pocet_assetu": 11
+  },
+  {
+   "id": "FS01-G00-M001",
+   "uuid": null,
+   "jmeno": "Kocour z Runářova",
+   "pohlavi": "M",
+   "generace": 0,
+   "narozeni": "2024-01-01",
+   "stav": "doma",
+   "matka": null,
+   "otec": null,
+   "verejne": false,
+   "stranka": null,
+   "pocet_assetu": 0
+  },
+  {
+   "id": "FS01-G01-F003",
+   "uuid": null,
+   "jmeno": "Sofie",
+   "pohlavi": "F",
+   "generace": 1,
+   "narozeni": "2025-07-08",
+   "stav": "chovna",
+   "vrh": "V2025-Sipka",
+   "matka": "FS01-G00-F001",
+   "otec": null,
+   "verejne": true,
+   "stranka": null,
+   "pocet_assetu": 7
+  },
+  {
+   "id": "FS01-G01-F004",
+   "uuid": "c7e3b1a5-d9f2-4c8e-9a1b-3f5e7d9c1b2a",
+   "jmeno": "Aténa",
+   "pohlavi": "F",
+   "generace": 1,
+   "narozeni": "2025-07-08",
+   "stav": "prodano",
+   "vrh": "V2025-Sipka",
+   "matka": "FS01-G00-F001",
+   "otec": null,
+   "verejne": true,
+   "stranka": null,
+   "pocet_assetu": 0
+  },
+  {
+   "id": "FS01-G01-F005",
+   "uuid": null,
+   "jmeno": "Sibyla",
+   "pohlavi": "F",
+   "generace": 1,
+   "narozeni": "2025-07-08",
+   "stav": "chovna",
+   "vrh": "V2025-Sipka",
+   "matka": "FS01-G00-F001",
+   "otec": null,
+   "verejne": true,
+   "stranka": null,
+   "pocet_assetu": 11
+  },
+  {
+   "id": "FS01-G01-M001",
+   "uuid": "a9d4f8e2-b1c3-4d5e-8f9a-7b6c5d4e3f2a",
+   "jmeno": "Zen",
+   "pohlavi": "M",
+   "generace": 1,
+   "narozeni": "2025-07-08",
+   "stav": "prodano",
+   "vrh": "V2025-Sipka",
+   "matka": "FS01-G00-F001",
+   "otec": null,
+   "verejne": true,
+   "stranka": null,
+   "pocet_assetu": 0
+  },
+  {
+   "id": "FS01-G01-M002",
+   "uuid": null,
+   "jmeno": "Sokrates",
+   "pohlavi": "M",
+   "generace": 1,
+   "narozeni": "2025-07-08",
+   "stav": "kastrovano",
+   "vrh": "V2025-Sipka",
+   "matka": "FS01-G00-F001",
+   "otec": null,
+   "verejne": true,
+   "stranka": null,
+   "pocet_assetu": 5
+  },
+  {
+   "id": "FS01-G02-F001",
+   "uuid": null,
+   "jmeno": "Amálie",
+   "pohlavi": "F",
+   "generace": 2,
+   "narozeni": "2026-07-14",
+   "stav": "volne",
+   "vrh": "V2026-Sibyla",
+   "matka": "FS01-G01-F005",
+   "otec": "FS01-G01-M002",
+   "verejne": true,
+   "stranka": null,
+   "pocet_assetu": 6
+  },
+  {
+   "id": "FS01-G02-F002",
+   "uuid": null,
+   "jmeno": "Angelina",
+   "pohlavi": "F",
+   "generace": 2,
+   "narozeni": "2026-07-14",
+   "stav": "volne",
+   "vrh": "V2026-Sibyla",
+   "matka": "FS01-G01-F005",
+   "otec": "FS01-G01-M002",
+   "verejne": true,
+   "stranka": null,
+   "pocet_assetu": 2
+  },
+  {
+   "id": "FS01-G02-F007",
+   "uuid": null,
+   "jmeno": "Priyamvada",
+   "pohlavi": "F",
+   "generace": 2,
+   "narozeni": "2026-07-27",
+   "stav": "volne",
+   "vrh": "V2026-Sofie",
+   "matka": "FS01-G01-F003",
+   "otec": "FS01-G00-M001",
+   "verejne": true,
+   "stranka": null,
+   "pocet_assetu": 3
+  },
+  {
+   "id": "FS01-G02-F008",
+   "uuid": null,
+   "jmeno": "Polly",
+   "pohlavi": "F",
+   "generace": 2,
+   "narozeni": "2026-07-27",
+   "stav": "volne",
+   "vrh": "V2026-Sofie",
+   "matka": "FS01-G01-F003",
+   "otec": "FS01-G00-M001",
+   "verejne": true,
+   "stranka": null,
+   "pocet_assetu": 3
+  },
+  {
+   "id": "FS01-G02-M003",
+   "uuid": "c91a797e-2714-4d50-a65a-893528b10469",
+   "jmeno": "Alain",
+   "pohlavi": "M",
+   "generace": 2,
+   "narozeni": "2026-07-14",
+   "stav": "volne",
+   "vrh": "V2026-Sibyla",
+   "matka": "FS01-G01-F005",
+   "otec": "FS01-G01-M002",
+   "verejne": true,
+   "stranka": "/c91a797e-2714-4d50-a65a-893528b10469/",
+   "pocet_assetu": 7
+  },
+  {
+   "id": "FS01-G02-M004",
+   "uuid": null,
+   "jmeno": "Andrew",
+   "pohlavi": "M",
+   "generace": 2,
+   "narozeni": "2026-07-14",
+   "stav": "volne",
+   "vrh": "V2026-Sibyla",
+   "matka": "FS01-G01-F005",
+   "otec": "FS01-G01-M002",
+   "verejne": true,
+   "stranka": null,
+   "pocet_assetu": 4
+  },
+  {
+   "id": "FS01-G02-M005",
+   "uuid": null,
+   "jmeno": "Pafnuc",
+   "pohlavi": "M",
+   "generace": 2,
+   "narozeni": "2026-07-27",
+   "stav": "volne",
+   "vrh": "V2026-Sofie",
+   "matka": "FS01-G01-F003",
+   "otec": "FS01-G00-M001",
+   "verejne": true,
+   "stranka": null,
+   "pocet_assetu": 4
+  },
+  {
+   "id": "FS01-G02-M006",
+   "uuid": "b8c9694e-91a9-4a5e-986b-add58cedd104",
+   "jmeno": "Penrose",
+   "pohlavi": "M",
+   "generace": 2,
+   "narozeni": "2026-07-27",
+   "stav": "volne",
+   "vrh": "V2026-Sofie",
+   "matka": "FS01-G01-F003",
+   "otec": "FS01-G00-M001",
+   "verejne": true,
+   "stranka": "/b8c9694e-91a9-4a5e-986b-add58cedd104/",
+   "pocet_assetu": 3
+  }
+ ],
+ "vrhy": [
+  {
+   "id": "V2025-Sipka",
+   "matka": "FS01-G00-F001",
+   "otec": null,
+   "narozeni": "2025-07-08",
+   "pocet": 5,
+   "verejne": false
+  },
+  {
+   "id": "V2026-Sibyla",
+   "matka": "FS01-G01-F005",
+   "otec": "FS01-G01-M002",
+   "narozeni": "2026-07-14",
+   "pocet": 4,
+   "verejne": true
+  },
+  {
+   "id": "V2026-Sofie",
+   "matka": "FS01-G01-F003",
+   "otec": "FS01-G00-M001",
+   "narozeni": "2026-07-27",
+   "pocet": 4,
+   "verejne": true
+  }
+ ],
+ "assety": [
+  {
+   "soubor": "foto/2026-07-31_sibylin-vrh-matka-a-kote.jpg",
+   "typ": "foto",
+   "datum": "2026-07-31",
+   "misto": null,
+   "zvirata": [
+    "FS01-G02-M003",
+    "FS01-G01-F005"
+   ],
+   "hlavni": null,
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/2026-07-31_sibylin-vrh-matka-a-kote.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "31. července 2026",
+     "text": "Sibyla pečuje o kotě ze svého vrhu."
+    },
+    "en": {
+     "navesti": "31 July 2026",
+     "text": "Sibyla caring for a kitten from her litter."
+    }
+   },
+   "zdroj": "data\\assety\\2026-07-31-sibylin-vrh-matka-a-kote.yaml"
+  },
+  {
+   "soubor": "foto/2026-07-31_sibylin-vrh-matka-objima-kote.jpg",
+   "typ": "foto",
+   "datum": "2026-07-31",
+   "misto": null,
+   "zvirata": [
+    "FS01-G02-M003",
+    "FS01-G02-F001",
+    "FS01-G01-F005"
+   ],
+   "hlavni": null,
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/2026-07-31_sibylin-vrh-matka-objima-kote.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "31. července 2026",
+     "text": "Sibyla objímá své kotě v pelíšku."
+    },
+    "en": {
+     "navesti": "31 July 2026",
+     "text": "Sibyla cuddling her kitten in the bed."
+    }
+   },
+   "zdroj": "data\\assety\\2026-07-31-sibylin-vrh-matka-objima-kote.yaml"
+  },
+  {
+   "soubor": "foto/2026-07-31_sofiin-vrh-skupina.jpg",
+   "typ": "foto",
+   "datum": "2026-07-31",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G02-M005",
+    "FS01-G02-M006",
+    "FS01-G02-F008",
+    "FS01-G02-F007",
+    "FS01-G01-F003"
+   ],
+   "hlavni": null,
+   "tagy": [
+    "skupina",
+    "vrh"
+   ],
+   "verejne": true,
+   "url": "/media/foto/2026-07-31_sofiin-vrh-skupina.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "31. července 2026",
+     "text": "Sofie pečuje o novorozená koťata v pelíšku."
+    },
+    "en": {
+     "navesti": "31 July 2026",
+     "text": "Sofie caring for her newborn kittens in their bed."
+    }
+   },
+   "zdroj": "data\\assety\\2026-07-31-sofiin-vrh-skupina.yaml"
+  },
+  {
+   "soubor": "foto/2026-08-01_alain.jpg",
+   "typ": "foto",
+   "datum": "2026-08-01",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G02-M003"
+   ],
+   "hlavni": "FS01-G02-M003",
+   "tagy": [
+    "kote"
+   ],
+   "verejne": false,
+   "url": "/soukrome/771383fd51f34374b68bb0f68d07921c/2026-08-01_alain.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "1. srpna 2026",
+     "text": "Alain v pelíšku."
+    },
+    "en": {
+     "navesti": "1 August 2026",
+     "text": "Alain in the bed."
+    }
+   },
+   "zdroj": "data\\assety\\2026-08-01-alain.yaml"
+  },
+  {
+   "soubor": "foto/2026-08-03_sibylin-vrh-detail-skupina.jpg",
+   "typ": "foto",
+   "datum": "2026-08-03",
+   "misto": null,
+   "zvirata": [
+    "FS01-G02-M003",
+    "FS01-G02-F001",
+    "FS01-G01-F005",
+    "FS01-G02-M004"
+   ],
+   "hlavni": null,
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/2026-08-03_sibylin-vrh-detail-skupina.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "3. srpna 2026",
+     "text": "Detailní pohled na spící koťata ze Sibylina vrhu."
+    },
+    "en": {
+     "navesti": "3 August 2026",
+     "text": "Close-up of sleeping kittens from Sibyla's litter."
+    }
+   },
+   "zdroj": "data\\assety\\2026-08-03-sibylin-vrh-detail-skupina.yaml"
+  },
+  {
+   "soubor": "foto/2026-08-03_sibylin-vrh-kojeni.jpg",
+   "typ": "foto",
+   "datum": "2026-08-03",
+   "misto": null,
+   "zvirata": [
+    "FS01-G02-M003",
+    "FS01-G02-F001",
+    "FS01-G01-F005",
+    "FS01-G02-M004"
+   ],
+   "hlavni": null,
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/2026-08-03_sibylin-vrh-kojeni.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "3. srpna 2026",
+     "text": "Sibyla kojí svá koťata."
+    },
+    "en": {
+     "navesti": "3 August 2026",
+     "text": "Sibyla nursing her kittens."
+    }
+   },
+   "zdroj": "data\\assety\\2026-08-03-sibylin-vrh-kojeni.yaml"
+  },
+  {
+   "soubor": "video/liska-a-kocka-runarov.mp4",
+   "typ": "video",
+   "datum": "2026-06-01",
+   "misto": "Runářov",
+   "zvirata": [],
+   "hlavni": null,
+   "tagy": [
+    "drevnik",
+    "liska",
+    "kamera"
+   ],
+   "verejne": true,
+   "url": "/media/video/liska-a-kocka-runarov.mp4",
+   "popisky": {
+    "cs": {
+     "navesti": "Runářov",
+     "text": "Liška se hádá, kočka se dívá."
+    },
+    "en": {
+     "navesti": "Runářov",
+     "text": "The fox argues, the cat watches."
+    }
+   },
+   "zdroj": "data\\assety\\2026-liska-a-kocka.yaml"
+  },
+  {
+   "soubor": "foto/alain-detail.jpg",
+   "typ": "foto",
+   "datum": "2026-08-01",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G02-M003"
+   ],
+   "hlavni": "FS01-G02-M003",
+   "tagy": [
+    "kote",
+    "detail"
+   ],
+   "verejne": true,
+   "url": "/media/foto/alain-detail.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "1. srpna 2026",
+     "text": "Alain se poprvé zvídavě rozhlíží po okolí."
+    },
+    "en": {
+     "navesti": "1 August 2026",
+     "text": "Alain looking around curiously for the first time."
+    }
+   },
+   "zdroj": "data\\assety\\alain-detail.yaml"
+  },
+  {
+   "soubor": "foto/amelie-detail.jpg",
+   "typ": "foto",
+   "datum": "2026-08-01",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G02-F001"
+   ],
+   "hlavni": "FS01-G02-F001",
+   "tagy": [
+    "kote",
+    "detail"
+   ],
+   "verejne": true,
+   "url": "/media/foto/amelie-detail.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "1. srpna 2026",
+     "text": "Detailní portrét kočičky Amálie."
+    },
+    "en": {
+     "navesti": "1 August 2026",
+     "text": "Detail portrait of female kitten Amálie."
+    }
+   },
+   "zdroj": "data\\assety\\amelie-detail.yaml"
+  },
+  {
+   "soubor": "foto/amelie-vaha.jpg",
+   "typ": "foto",
+   "datum": "2026-08-05",
+   "misto": null,
+   "zvirata": [
+    "FS01-G02-F001"
+   ],
+   "hlavni": null,
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/amelie-vaha.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "5. srpna 2026",
+     "text": "Amálie při pravidelném vážení na váze."
+    },
+    "en": {
+     "navesti": "5 August 2026",
+     "text": "Amálie during regular weighing on the scale."
+    }
+   },
+   "zdroj": "data\\assety\\amelie-vaha.yaml"
+  },
+  {
+   "soubor": "foto/andrew-detail.jpg",
+   "typ": "foto",
+   "datum": "2026-08-01",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G02-M004"
+   ],
+   "hlavni": "FS01-G02-M004",
+   "tagy": [
+    "kote",
+    "detail"
+   ],
+   "verejne": true,
+   "url": "/media/foto/andrew-detail.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "1. srpna 2026",
+     "text": "Andrew při prvních krůčkách v pelíšku."
+    },
+    "en": {
+     "navesti": "1 August 2026",
+     "text": "Andrew taking his first steps in the bed."
+    }
+   },
+   "zdroj": "data\\assety\\andrew-detail.yaml"
+  },
+  {
+   "soubor": "foto/angelina-detail.jpg",
+   "typ": "foto",
+   "datum": "2026-08-01",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G02-F002"
+   ],
+   "hlavni": "FS01-G02-F002",
+   "tagy": [
+    "kote",
+    "detail"
+   ],
+   "verejne": true,
+   "url": "/media/foto/angelina-detail.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "1. srpna 2026",
+     "text": "Detailní snímek kočičky Angeliny."
+    },
+    "en": {
+     "navesti": "1 August 2026",
+     "text": "Detail shot of female kitten Angelina."
+    }
+   },
+   "zdroj": "data\\assety\\angelina-detail.yaml"
+  },
+  {
+   "soubor": "dokumenty/Genomia_321880_Sofie.pdf",
+   "typ": "dokument",
+   "datum": "2026-03-11",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-F003"
+   ],
+   "hlavni": "FS01-G01-F003",
+   "tagy": [
+    "genomia",
+    "genetika",
+    "zprava"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/Genomia_321880_Sofie.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Zpráva č. 321880",
+     "text": "Kompletní genetický panel, Genomia Plzeň. Krevní skupina A/A."
+    },
+    "en": {
+     "navesti": "Report no. 321880",
+     "text": "Full genetic panel, Genomia Plzeň. Blood type A/A."
+    }
+   },
+   "zdroj": "data\\assety\\genomia-321880-sofie.yaml"
+  },
+  {
+   "soubor": "foto/IMG_20250805_091744.jpg",
+   "typ": "foto",
+   "datum": "2025-08-05",
+   "misto": null,
+   "zvirata": [],
+   "hlavni": null,
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/IMG_20250805_091744.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "5. srpna 2025",
+     "text": "Ranní zátiší v Runářově."
+    },
+    "en": {
+     "navesti": "5 August 2025",
+     "text": "Morning scene at Runářov."
+    }
+   },
+   "zdroj": "data\\assety\\img-20250805-091744.yaml"
+  },
+  {
+   "soubor": "foto/IMG_20250904_122454.jpg",
+   "typ": "foto",
+   "datum": "2025-09-04",
+   "misto": null,
+   "zvirata": [],
+   "hlavni": null,
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/IMG_20250904_122454.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "4. září 2025",
+     "text": "Odpolední snímek ze života v chovatelské stanici."
+    },
+    "en": {
+     "navesti": "4 September 2025",
+     "text": "Afternoon snapshot from cattery life."
+    }
+   },
+   "zdroj": "data\\assety\\img-20250904-122454.yaml"
+  },
+  {
+   "soubor": "foto/liska-nahled.jpg",
+   "typ": "foto",
+   "datum": null,
+   "misto": null,
+   "zvirata": [],
+   "hlavni": null,
+   "tagy": [],
+   "verejne": false,
+   "url": "/soukrome/1b4df7c9cc924d032d427c6b56674969/liska-nahled.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": null,
+     "text": null
+    },
+    "en": {
+     "navesti": null,
+     "text": null
+    }
+   },
+   "zdroj": "data\\assety\\liska-nahled.yaml"
+  },
+  {
+   "soubor": "foto/pafnuc-detail.jpg",
+   "typ": "foto",
+   "datum": "2026-08-08",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G02-M005"
+   ],
+   "hlavni": "FS01-G02-M005",
+   "tagy": [
+    "kote",
+    "detail"
+   ],
+   "verejne": true,
+   "url": "/media/foto/pafnuc-detail.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "8. srpna 2026",
+     "text": "Detailní portrét kocoura Pafnuce."
+    },
+    "en": {
+     "navesti": "8 August 2026",
+     "text": "Detail portrait of male kitten Pafnuc."
+    }
+   },
+   "zdroj": "data\\assety\\pafnuc-detail.yaml"
+  },
+  {
+   "soubor": "foto/penrose-detail.jpg",
+   "typ": "foto",
+   "datum": "2026-08-08",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G02-M006"
+   ],
+   "hlavni": "FS01-G02-M006",
+   "tagy": [
+    "kote",
+    "detail"
+   ],
+   "verejne": true,
+   "url": "/media/foto/penrose-detail.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "8. srpna 2026",
+     "text": "Detailní portrét kocoura Penrose."
+    },
+    "en": {
+     "navesti": "8 August 2026",
+     "text": "Detail portrait of male kitten Penrose."
+    }
+   },
+   "zdroj": "data\\assety\\penrose-detail.yaml"
+  },
+  {
+   "soubor": "foto/polly-detail.jpg",
+   "typ": "foto",
+   "datum": "2026-08-08",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G02-F008"
+   ],
+   "hlavni": "FS01-G02-F008",
+   "tagy": [
+    "kote",
+    "detail"
+   ],
+   "verejne": true,
+   "url": "/media/foto/polly-detail.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "8. srpna 2026",
+     "text": "Detailní portrét kočičky Polly."
+    },
+    "en": {
+     "navesti": "8 August 2026",
+     "text": "Detail portrait of female kitten Polly."
+    }
+   },
+   "zdroj": "data\\assety\\polly-detail.yaml"
+  },
+  {
+   "soubor": "foto/priyamvada-detail.jpg",
+   "typ": "foto",
+   "datum": "2026-08-08",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G02-F007"
+   ],
+   "hlavni": "FS01-G02-F007",
+   "tagy": [
+    "kote",
+    "detail"
+   ],
+   "verejne": true,
+   "url": "/media/foto/priyamvada-detail.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "8. srpna 2026",
+     "text": "Detailní portrét kočičky Priyamvady."
+    },
+    "en": {
+     "navesti": "8 August 2026",
+     "text": "Detail portrait of female kitten Priyamvada."
+    }
+   },
+   "zdroj": "data\\assety\\priyamvada-detail.yaml"
+  },
+  {
+   "soubor": "foto/sibyla-lovkyne.jpg",
+   "typ": "foto",
+   "datum": "2025-08-20",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-F005"
+   ],
+   "hlavni": "FS01-G01-F005",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sibyla-lovkyne.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "20. srpna 2025",
+     "text": "Sibyla na zahradě v Runářově."
+    },
+    "en": {
+     "navesti": "20 August 2025",
+     "text": "Sibyla in the garden at Runářov."
+    }
+   },
+   "zdroj": "data\\assety\\sibyla-lovkyne.yaml"
+  },
+  {
+   "soubor": "foto/sibyla-odpocinek.jpg",
+   "typ": "foto",
+   "datum": "2025-07-10",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-F005"
+   ],
+   "hlavni": "FS01-G01-F005",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sibyla-odpocinek.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "10. července 2025",
+     "text": "Sibyla při odpočinku."
+    },
+    "en": {
+     "navesti": "10 July 2025",
+     "text": "Sibyla resting."
+    }
+   },
+   "zdroj": "data\\assety\\sibyla-odpocinek.yaml"
+  },
+  {
+   "soubor": "foto/sibyla-portret.jpg",
+   "typ": "foto",
+   "datum": "2025-06-15",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-F005"
+   ],
+   "hlavni": "FS01-G01-F005",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sibyla-portret.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "15. června 2025",
+     "text": "Portrét matky Sibyly."
+    },
+    "en": {
+     "navesti": "15 June 2025",
+     "text": "Portrait of dam Sibyla."
+    }
+   },
+   "zdroj": "data\\assety\\sibyla-portret.yaml"
+  },
+  {
+   "soubor": "foto/sibyla-s-kotaty-2026.jpg",
+   "typ": "foto",
+   "datum": "2026-07-25",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-F005"
+   ],
+   "hlavni": "FS01-G01-F005",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sibyla-s-kotaty-2026.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "25. července 2026",
+     "text": "Sibyla odpočívá se svými koťaty."
+    },
+    "en": {
+     "navesti": "25 July 2026",
+     "text": "Sibyla resting with her kittens."
+    }
+   },
+   "zdroj": "data\\assety\\sibyla-s-kotaty-2026.yaml"
+  },
+  {
+   "soubor": "foto/sibyla-s-kotaty-detail.jpg",
+   "typ": "foto",
+   "datum": "2026-07-26",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-F005"
+   ],
+   "hlavni": "FS01-G01-F005",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sibyla-s-kotaty-detail.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "26. července 2026",
+     "text": "Detailní pohled na Sibylu s koťaty."
+    },
+    "en": {
+     "navesti": "26 July 2026",
+     "text": "Detail view of Sibyla with her kittens."
+    }
+   },
+   "zdroj": "data\\assety\\sibyla-s-kotaty-detail.yaml"
+  },
+  {
+   "soubor": "foto/sibyla-u-vody.jpg",
+   "typ": "foto",
+   "datum": "2025-09-01",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-F005"
+   ],
+   "hlavni": "FS01-G01-F005",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sibyla-u-vody.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "1. září 2025",
+     "text": "Sibyla u potoka v Runářově."
+    },
+    "en": {
+     "navesti": "1 September 2025",
+     "text": "Sibyla by the stream at Runářov."
+    }
+   },
+   "zdroj": "data\\assety\\sibyla-u-vody.yaml"
+  },
+  {
+   "soubor": "foto/sibylin-vrh-skupina.jpg",
+   "typ": "foto",
+   "datum": "2026-07-20",
+   "misto": "Runářov",
+   "zvirata": [
+    "FS01-G02-M003",
+    "FS01-G02-M004",
+    "FS01-G02-F001",
+    "FS01-G02-F002",
+    "FS01-G01-F005"
+   ],
+   "hlavni": null,
+   "tagy": [
+    "skupina",
+    "vrh"
+   ],
+   "verejne": true,
+   "url": "/media/foto/sibylin-vrh-skupina.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "20. července 2026",
+     "text": "Čtyři koťata ze Sibylina vrhu ve stáří šesti dnů, spí společně v pelíšku."
+    },
+    "en": {
+     "navesti": "20 July 2026",
+     "text": "Four kittens from Sibyla's litter at six days old, sleeping together in their bed."
+    }
+   },
+   "zdroj": "data\\assety\\sibylin-vrh-skupina.yaml"
+  },
+  {
+   "soubor": "foto/sipka-a-kotata-hra.jpg",
+   "typ": "foto",
+   "datum": "2025-08-10",
+   "misto": null,
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sipka-a-kotata-hra.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "10. srpna 2025",
+     "text": "Šipka při hře s koťaty."
+    },
+    "en": {
+     "navesti": "10 August 2025",
+     "text": "Šipka playing with her kittens."
+    }
+   },
+   "zdroj": "data\\assety\\sipka-a-kotata-hra.yaml"
+  },
+  {
+   "soubor": "foto/sipka-a-sokrates-u-misky.jpg",
+   "typ": "foto",
+   "datum": "2025-08-15",
+   "misto": null,
+   "zvirata": [
+    "FS01-G00-F001",
+    "FS01-G01-M002"
+   ],
+   "hlavni": null,
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sipka-a-sokrates-u-misky.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "15. srpna 2025",
+     "text": "Šipka a Sokrates společně u misky."
+    },
+    "en": {
+     "navesti": "15 August 2025",
+     "text": "Šipka and Sokrates together at the bowl."
+    }
+   },
+   "zdroj": "data\\assety\\sipka-a-sokrates-u-misky.yaml"
+  },
+  {
+   "soubor": "foto/sipka-na-cesticce.jpg",
+   "typ": "foto",
+   "datum": "2025-06-20",
+   "misto": null,
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sipka-na-cesticce.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "20. června 2025",
+     "text": "Šipka na zahradní cestičce v Runářově."
+    },
+    "en": {
+     "navesti": "20 June 2025",
+     "text": "Šipka on the garden path at Runářov."
+    }
+   },
+   "zdroj": "data\\assety\\sipka-na-cesticce.yaml"
+  },
+  {
+   "soubor": "foto/sipka-na-prahu-dilny.jpg",
+   "typ": "foto",
+   "datum": "2025-07-05",
+   "misto": null,
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sipka-na-prahu-dilny.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "5. července 2025",
+     "text": "Šipka na prahu dílny."
+    },
+    "en": {
+     "navesti": "5 July 2025",
+     "text": "Šipka at the workshop threshold."
+    }
+   },
+   "zdroj": "data\\assety\\sipka-na-prahu-dilny.yaml"
+  },
+  {
+   "soubor": "foto/sipka-nocni-prochazka.jpg",
+   "typ": "foto",
+   "datum": "2025-07-25",
+   "misto": null,
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sipka-nocni-prochazka.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "25. července 2025",
+     "text": "Šipka při noční procházce."
+    },
+    "en": {
+     "navesti": "25 July 2025",
+     "text": "Šipka on a night walk."
+    }
+   },
+   "zdroj": "data\\assety\\sipka-nocni-prochazka.yaml"
+  },
+  {
+   "soubor": "foto/sipka-portret-leto.jpg",
+   "typ": "foto",
+   "datum": "2025-07-01",
+   "misto": null,
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sipka-portret-leto.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "1. července 2025",
+     "text": "Letní portrét zakladatelky Šipky."
+    },
+    "en": {
+     "navesti": "1 July 2025",
+     "text": "Summer portrait of founder Šipka."
+    }
+   },
+   "zdroj": "data\\assety\\sipka-portret-leto.yaml"
+  },
+  {
+   "soubor": "foto/sipka-portret-zima.jpg",
+   "typ": "foto",
+   "datum": "2025-01-15",
+   "misto": null,
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sipka-portret-zima.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "15. ledna 2025",
+     "text": "Zimní portrét Šipky v zimní srsti."
+    },
+    "en": {
+     "navesti": "15 January 2025",
+     "text": "Winter portrait of Šipka in winter coat."
+    }
+   },
+   "zdroj": "data\\assety\\sipka-portret-zima.yaml"
+  },
+  {
+   "soubor": "foto/sipka-s-kotaty.jpg",
+   "typ": "foto",
+   "datum": "2025-08-01",
+   "misto": null,
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sipka-s-kotaty.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "1. srpna 2025",
+     "text": "Šipka se svými koťaty v pelíšku."
+    },
+    "en": {
+     "navesti": "1 August 2025",
+     "text": "Šipka with her kittens in the bed."
+    }
+   },
+   "zdroj": "data\\assety\\sipka-s-kotaty.yaml"
+  },
+  {
+   "soubor": "foto/sipka-u-klavesnice-crop.jpg",
+   "typ": "foto",
+   "datum": "2025-09-10",
+   "misto": null,
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sipka-u-klavesnice-crop.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "10. září 2025",
+     "text": "Detailní záběr Šipky u klávesnice."
+    },
+    "en": {
+     "navesti": "10 September 2025",
+     "text": "Close-up shot of Šipka at the keyboard."
+    }
+   },
+   "zdroj": "data\\assety\\sipka-u-klavesnice-crop.yaml"
+  },
+  {
+   "soubor": "foto/sipka-u-klavesnice.jpg",
+   "typ": "foto",
+   "datum": "2025-09-10",
+   "misto": null,
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sipka-u-klavesnice.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "10. září 2025",
+     "text": "Šipka zvědavě u klávesnice."
+    },
+    "en": {
+     "navesti": "10 September 2025",
+     "text": "Šipka curiously at the keyboard."
+    }
+   },
+   "zdroj": "data\\assety\\sipka-u-klavesnice.yaml"
+  },
+  {
+   "soubor": "foto/sipka-v-boudicce.jpg",
+   "typ": "foto",
+   "datum": "2025-10-15",
+   "misto": null,
+   "zvirata": [
+    "FS01-G00-F001"
+   ],
+   "hlavni": "FS01-G00-F001",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sipka-v-boudicce.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "15. října 2025",
+     "text": "Šipka v dřevěné boudičce."
+    },
+    "en": {
+     "navesti": "15 October 2025",
+     "text": "Šipka in a wooden box."
+    }
+   },
+   "zdroj": "data\\assety\\sipka-v-boudicce.yaml"
+  },
+  {
+   "soubor": "foto/sofie-odpocinek.jpg",
+   "typ": "foto",
+   "datum": "2025-07-15",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-F003"
+   ],
+   "hlavni": "FS01-G01-F003",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sofie-odpocinek.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "15. července 2025",
+     "text": "Sofie při odpočinku v křesle."
+    },
+    "en": {
+     "navesti": "15 July 2025",
+     "text": "Sofie resting in an armchair."
+    }
+   },
+   "zdroj": "data\\assety\\sofie-odpocinek.yaml"
+  },
+  {
+   "soubor": "foto/sofie-portret.jpg",
+   "typ": "foto",
+   "datum": "2025-06-10",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-F003"
+   ],
+   "hlavni": "FS01-G01-F003",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sofie-portret.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "10. června 2025",
+     "text": "Portrét matky Sofie."
+    },
+    "en": {
+     "navesti": "10 June 2025",
+     "text": "Portrait of dam Sofie."
+    }
+   },
+   "zdroj": "data\\assety\\sofie-portret.yaml"
+  },
+  {
+   "soubor": "foto/sofie-u-notebooku.jpg",
+   "typ": "foto",
+   "datum": "2025-10-05",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-F003"
+   ],
+   "hlavni": "FS01-G01-F003",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sofie-u-notebooku.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "5. října 2025",
+     "text": "Sofie zvědavě asistuje u notebooku."
+    },
+    "en": {
+     "navesti": "5 October 2025",
+     "text": "Sofie curiously assisting at the laptop."
+    }
+   },
+   "zdroj": "data\\assety\\sofie-u-notebooku.yaml"
+  },
+  {
+   "soubor": "foto/sofiin-vrh-siroka.jpg",
+   "typ": "foto",
+   "datum": "2026-07-28",
+   "misto": null,
+   "zvirata": [
+    "FS01-G02-M005",
+    "FS01-G02-M006",
+    "FS01-G02-F008",
+    "FS01-G02-F007",
+    "FS01-G01-F003"
+   ],
+   "hlavni": null,
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sofiin-vrh-siroka.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "28. července 2026",
+     "text": "Sofie se svým novorozeným vrhem v pelíšku."
+    },
+    "en": {
+     "navesti": "28 July 2026",
+     "text": "Sofie with her newborn litter in the bed."
+    }
+   },
+   "zdroj": "data\\assety\\sofiin-vrh-siroka.yaml"
+  },
+  {
+   "soubor": "foto/sofiin-vrh-vaha.jpg",
+   "typ": "foto",
+   "datum": "2026-08-02",
+   "misto": null,
+   "zvirata": [
+    "FS01-G02-M005",
+    "FS01-G01-F003"
+   ],
+   "hlavni": "FS01-G02-M005",
+   "tagy": [
+    "kote",
+    "vaha"
+   ],
+   "verejne": true,
+   "url": "/media/foto/sofiin-vrh-vaha.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "2. srpna 2026",
+     "text": "Kotě Pafnuc na váze."
+    },
+    "en": {
+     "navesti": "2 August 2026",
+     "text": "Kitten Pafnuc on the scale."
+    }
+   },
+   "zdroj": "data\\assety\\sofiin-vrh-vaha.yaml"
+  },
+  {
+   "soubor": "foto/sokrates-na-kameni.jpg",
+   "typ": "foto",
+   "datum": "2025-07-01",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-M002"
+   ],
+   "hlavni": "FS01-G01-M002",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sokrates-na-kameni.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "1. července 2025",
+     "text": "Otcovský kocour Sokrates na kameni na zahradě."
+    },
+    "en": {
+     "navesti": "1 July 2025",
+     "text": "Sire Sokrates on a stone in the garden."
+    }
+   },
+   "zdroj": "data\\assety\\sokrates-na-kameni.yaml"
+  },
+  {
+   "soubor": "foto/sokrates-na-plotu.jpg",
+   "typ": "foto",
+   "datum": "2025-07-20",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-M002"
+   ],
+   "hlavni": "FS01-G01-M002",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sokrates-na-plotu.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "20. července 2025",
+     "text": "Sokrates pozoruje okolí z plotu."
+    },
+    "en": {
+     "navesti": "20 July 2025",
+     "text": "Sokrates observing surroundings from a fence."
+    }
+   },
+   "zdroj": "data\\assety\\sokrates-na-plotu.yaml"
+  },
+  {
+   "soubor": "foto/sokrates-na-prochazce.jpg",
+   "typ": "foto",
+   "datum": "2025-08-12",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-M002"
+   ],
+   "hlavni": "FS01-G01-M002",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sokrates-na-prochazce.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "12. srpna 2025",
+     "text": "Sokrates na letní procházce v Runářově."
+    },
+    "en": {
+     "navesti": "12 August 2025",
+     "text": "Sokrates on a summer walk at Runářov."
+    }
+   },
+   "zdroj": "data\\assety\\sokrates-na-prochazce.yaml"
+  },
+  {
+   "soubor": "foto/sokrates-na-traverze.jpg",
+   "typ": "foto",
+   "datum": "2025-09-15",
+   "misto": null,
+   "zvirata": [
+    "FS01-G01-M002"
+   ],
+   "hlavni": "FS01-G01-M002",
+   "tagy": [],
+   "verejne": true,
+   "url": "/media/foto/sokrates-na-traverze.jpg",
+   "popisky": {
+    "cs": {
+     "navesti": "15. září 2025",
+     "text": "Sokrates na dřevěné traverze."
+    },
+    "en": {
+     "navesti": "15 September 2025",
+     "text": "Sokrates on a wooden beam."
+    }
+   },
+   "zdroj": "data\\assety\\sokrates-na-traverze.yaml"
+  }
+ ],
+ "tagy": [
+  "detail",
+  "drevnik",
+  "genetika",
+  "genomia",
+  "kamera",
+  "kote",
+  "liska",
+  "skupina",
+  "vaha",
+  "vrh",
+  "zprava"
+ ]
+}
