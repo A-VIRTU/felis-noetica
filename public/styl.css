@@ -226,12 +226,11 @@ figcaption em{font-style:italic;}
 
 /* ---------- aktuální koťata ---------- */
 
-.vrh{margin:0 0 2.5rem;}
 .vrh-hlava{
   font-family:"Newsreader",serif;font-size:1.15rem;
-  padding-bottom:.5rem;border-bottom:1px solid var(--linka);margin:0 0 .35rem;
+  padding-bottom:.5rem;border-bottom:1px solid var(--linka);margin:0 0 1rem;
 }
-.vrh-info{font-size:.9rem;color:var(--text-tichy);margin:0 0 1.5rem;}
+.vrh-datum{color:var(--text-tichy);font-weight:300;}
 
 .kote{display:flex;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid var(--linka);align-items:flex-start;}
 .kote:last-child{border-bottom:none;}
@@ -246,12 +245,14 @@ figcaption em{font-style:italic;}
 .kote-jmeno{font-family:"Newsreader",serif;font-size:1.2rem;line-height:1.3;margin:0 0 .1rem;}
 .kote-po{font-size:.9rem;line-height:1.5;color:var(--text-tichy);margin:0 0 .4rem;}
 
-.stav{
+.stav, a.stav, a.stav:hover, a.stav:visited, a.stav:focus {
   font-family:"Newsreader",serif;font-size:.68rem;letter-spacing:.16em;
-  text-transform:uppercase;
+  text-transform:uppercase;text-decoration:none !important;border-bottom:none !important;
+  display:inline-block;margin-top:.4rem;
 }
-.stav-volne{color:var(--trava);}
-.stav-jine{color:var(--text-tichy);}
+a.stav:hover{opacity:.8;}
+.stav-volne, a.stav-volne{color:var(--trava) !important;}
+.stav-jine, a.stav-jine{color:var(--text-tichy) !important;}
 
 @media (max-width:34rem){
   .kote{gap:.85rem;}

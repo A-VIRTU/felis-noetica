@@ -142,15 +142,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (img) {
       fig.classList.add('lightbox-trigger');
+      fig.style.cursor = 'pointer';
       fig.addEventListener('click', () => {
+        const container = fig.closest('.fotomriezka');
+        if (container) {
+          const siblingFigures = Array.from(container.querySelectorAll('figure')).filter((f) => f.querySelector('img'));
+          const items = siblingFigures.map((f) => {
+            const fImg = f.querySelector('img');
+            const fCap = f.querySelector('figcaption');
+            return {
+              src: f.getAttribute('data-full') || fImg.src,
+              alt: fImg.alt,
+              captionHtml: fCap ? fCap.innerHTML : '',
+            };
+          });
+          const clickedIndex = siblingFigures.indexOf(fig);
+          openGallery(items, clickedIndex >= 0 ? clickedIndex : 0);
+          return;
+        }
+
         const items = [];
-        
-        // 1. Základní fotka figurky
         const captionHtml = caption ? caption.innerHTML : '';
         const fullSrc = fig.getAttribute('data-full') || img.src;
         items.push({ src: fullSrc, alt: img.alt, captionHtml: captionHtml });
 
-        // 2. Další položky galérie definované v dětském elementu .galerie-polozky
         const extraItems = fig.querySelectorAll('.galerie-polozky > div, .galerie-polozky > figure');
         extraItems.forEach((el) => {
           const itemSrc = el.getAttribute('data-src') || (el.querySelector('img') ? el.querySelector('img').src : '');

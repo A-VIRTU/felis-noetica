@@ -243,6 +243,23 @@ async function main() {
 
   const smazano = uklidDist();
 
+  // Sync built dist files into public directory for Cloudflare Pages
+  const PUBLIC = path.join(KOREN, 'public');
+  function copyRecursiveSync(src, dest) {
+    if (!fs.existsSync(src)) return;
+    fs.mkdirSync(dest, { recursive: true });
+    for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+      const srcPath = path.join(src, entry.name);
+      const destPath = path.join(dest, entry.name);
+      if (entry.isDirectory()) {
+        copyRecursiveSync(srcPath, destPath);
+      } else {
+        fs.copyFileSync(srcPath, destPath);
+      }
+    }
+  }
+  copyRecursiveSync(DIST, PUBLIC);
+
   console.log(`✓ hotovo
   ${d.zvirata.length} zvířat, ${d.vrhy.length} vrhů, ${d.assety.length} assetů (${verejnych} veřejných, ${soukromych} pro majitele)
   ${verejnychStranek} veřejných stránek, ${soukromychStranek} majitelských, ${certifikatu} certifikátů, ${zipu} ZIPů
