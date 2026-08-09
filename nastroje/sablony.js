@@ -221,20 +221,33 @@ function fragmentKotata({ vrhy, zvirata, assety, jazyk, url, relKoren = '' }) {
     return `<div class="vrh">
   <p class="vrh-hlava">${jazyk === 'en' ? `${E(jm(v.matka))}'s litter` : `Vrh ${E(jm(v.matka))}`} <span class="vrh-datum">· ${E(datum(v.narozeni, jazyk))}</span></p>${vrhFotoHtml}
 ${kotata.map((z) => {
-  // Preferovat explicitní hlavní fotku kotěte, jinak fotku obsahující 'detail', jinak jakoukoliv jeho fotku
+  const vsechnyFotky = assety.filter((x) => x.zvirata && x.zvirata.includes(z.id) && x.typ === 'foto' && x.viditelnost === 'verejne');
   const a = assety.find((x) => x.hlavni === z.id && x.typ === 'foto' && x.viditelnost === 'verejne')
          || assety.find((x) => x.zvirata && x.zvirata.includes(z.id) && x.typ === 'foto' && x.viditelnost === 'verejne' && x.soubor.includes('detail'))
-         || assety.find((x) => x.zvirata && x.zvirata.includes(z.id) && x.typ === 'foto' && x.viditelnost === 'verejne');
+         || vsechnyFotky[0];
 
   const src = a ? url(a.soubor) : null;
   const slug = z.jmeno.toLowerCase();
   const captionText = T(z.pojmenovan_po, jazyk) || z.jmeno;
   const pohlaviText = z.pohlavi === 'M' ? (jazyk === 'en' ? 'male' : 'kocour') : (jazyk === 'en' ? 'female' : 'kočka');
 
+  const fotkaDalsi = vsechnyFotky.filter((x) => x !== a);
+  let galerieHtml = '';
+  if (fotkaDalsi.length) {
+    galerieHtml = `\n        <div class="galerie-polozky" hidden>\n` +
+      fotkaDalsi.map((f) => {
+        const p = (f.popisky || {})[jazyk] || (f.popisky || {}).cs || {};
+        const navestiText = p.navesti || (f.datum ? datum(f.datum, jazyk) : '');
+        const emText = p.text || '';
+        const cap = [navestiText ? `<span class="datum">${E(navestiText)}</span>` : '', emText ? `<em>${E(emText)}</em>` : ''].filter(Boolean).join('');
+        return `          <div data-src="${E(url(f.soubor))}" data-alt="${E(p.text || z.jmeno)}">${cap ? `<figcaption>${cap}</figcaption>` : ''}</div>`;
+      }).join('\n') + `\n        </div>`;
+  }
+
   const figureHtml = src
     ? `<figure class="kote-foto" data-full="${E(src)}" data-gallery="${E(slug)}">
         <img src="${E(src)}" alt="Kotě ${E(z.jmeno)}">
-        <figcaption><span class="datum">${E(datum(v.narozeni, jazyk))}</span><em>${E(z.jmeno)}, ${E(pohlaviText)} — ${E(captionText)}</em></figcaption>
+        <figcaption><span class="datum">${E(datum(v.narozeni, jazyk))}</span><em>${E(z.jmeno)}, ${E(pohlaviText)} — ${E(captionText)}</em></figcaption>${galerieHtml}
       </figure>`
     : `<figure class="kote-foto">
         <div class="misto"><span>FOTO</span></div>
