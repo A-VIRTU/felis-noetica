@@ -254,6 +254,7 @@ async function main() {
     '/soukrome/*\n  X-Robots-Tag: noindex, nofollow\n  Cache-Control: private, max-age=3600',
     '/interni/*\n  X-Robots-Tag: noindex, nofollow\n  Cache-Control: no-store',
     '/media/*\n  Cache-Control: public, max-age=31536000, immutable',
+    '/kotata/*\n  Cache-Control: no-cache, no-store, must-revalidate',
     ...uuidCesty,
   ].join('\n\n') + '\n');
 
