@@ -41,7 +41,8 @@ body {
 .hub-jmeno { font-size: 22pt; font-weight: 500; margin: 3px 0 5px; }
 .hub-vyznam { margin-top: 6px; margin-bottom: 12px; font-style: italic; color: var(--text-tichy); font-size: 1.02rem; line-height: 1.5; }
 .hub-detail { font-size: 10.5pt; color: var(--text-tichy); margin: 0; }
-.hub-detail a { color: inherit; text-decoration: none; border-bottom: none; }
+.hub-detail a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--trava); transition: color .15s ease, border-color .15s ease; }
+.hub-detail a:hover { color: var(--trava); }
 .hub-sekce-nadpis { font-size: 15pt; color: var(--akcent); margin: 25px 0 18px; font-weight: 400; text-align: center; }
 
 .prepinac { margin: 0 0 15px 0; font-size: 0.9rem; text-align: right; color: var(--text-tichy); }
