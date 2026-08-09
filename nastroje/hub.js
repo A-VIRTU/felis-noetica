@@ -80,35 +80,7 @@ function polozky({ zvire, assety, jazyk, url, majitel }) {
     odkaz: `${zvire.jmeno.normalize('NFD').replace(/[̀-ͯ]/g, '')}_Felis_Noetica.zip`,
   }));
 
-  // 2. certifikáty
-  const c = zvire.certifikat;
-  if (c && (majitel || (c.viditelnost || 'verejne') === 'verejne')) {
-    const certTyp = c.typ === 'kmotrovsky' ? 'kmotrovsky' : 'puvod';
-    const nadpisyMap = {
-      puvod: {
-        cs: 'Osvědčení o původu a jménu',
-        en: 'Certificate of Origin and Name',
-        fr: "Certificat d'origine et de nom",
-      },
-      kmotrovsky: {
-        cs: 'Certifikát čestného kmotrovství',
-        en: 'Certificate of Honorary Godparenthood',
-        fr: "Certificat de parrainage d'honneur",
-      },
-    };
-    for (const j of c.jazyky || [jazyk]) {
-      const nadpisCert = (nadpisyMap[certTyp] || {})[j] || (nadpisyMap[certTyp] || {}).cs;
-      const targetUrl = c.soubor ? url(c.soubor) : `certifikat-${j}.html`;
-      ven.push(karta({
-        ikona: 'certifikat',
-        nadpis: nadpisCert,
-        popis: zvire.kmotr ? `${(zvire.kmotr.osloveni || {})[j] || zvire.kmotr.jmeno}` : null,
-        odkaz: targetUrl,
-      }));
-    }
-  }
-
-  // 3. assety — filtr rozhoduje o všem
+  // 2. assety — filtr rozhoduje o všem
   const viditelne = assety.filter((a) =>
     a.viditelnost === 'verejne' || (majitel && a.viditelnost === 'majitel'));
 

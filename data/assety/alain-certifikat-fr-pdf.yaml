@@ -1,0 +1,22 @@
+soubor: dokumenty/FS01-G02-M003_Alain_Certificat_de_parrainage_d_honneur_FR.pdf
+typ: dokument
+datum: '2026-08-08'
+misto: Brno
+pomer: null
+zvirata:
+  - FS01-G02-M003 Alain
+hlavni: FS01-G02-M003 Alain
+tagy:
+  - certifikat
+viditelnost: verejne
+token: cert-alain-fr-pdf-2026
+popisky:
+  cs:
+    navesti: Certifikát čestného kmotrovství — FR (PDF)
+    text: Oficiální tiskový certifikát ve francouzštině pro prof. Alaina Aspecta
+  en:
+    navesti: Certificate of Honorary Godparenthood — FR (PDF)
+    text: Official PDF certificate in French for Prof. Alain Aspect
+  fr:
+    navesti: Certificat de parrainage d'honneur — FR (PDF)
+    text: Certificat PDF officiel en français pour le Prof. Alain Aspect

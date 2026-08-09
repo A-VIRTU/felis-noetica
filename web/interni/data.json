@@ -1,5 +1,5 @@
 {
- "vygenerovano": "2026-08-09T14:03:13.365Z",
+ "vygenerovano": "2026-08-09T17:48:00.453Z",
  "zvirata": [
   {
    "id": "FS01-G00-F001",
@@ -177,7 +177,7 @@
    "otec": "FS01-G01-M002",
    "verejne": true,
    "stranka": "/c91a797e-2714-4d50-a65a-893528b10469/",
-   "pocet_assetu": 8
+   "pocet_assetu": 11
   },
   {
    "id": "FS01-G02-M004",
@@ -439,6 +439,96 @@
     }
    },
    "zdroj": "data\\assety\\2026-liska-a-kocka.yaml"
+  },
+  {
+   "soubor": "dokumenty/FS01-G02-M003_Alain_Certifikat_cestneho_kmotrovstvi_CS.pdf",
+   "typ": "dokument",
+   "datum": "2026-08-08",
+   "misto": "Brno",
+   "zvirata": [
+    "FS01-G02-M003"
+   ],
+   "hlavni": "FS01-G02-M003",
+   "tagy": [
+    "certifikat"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/FS01-G02-M003_Alain_Certifikat_cestneho_kmotrovstvi_CS.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Certifikát čestného kmotrovství — CZ (PDF)",
+     "text": "Oficiální tiskový certifikát v češtině pro prof. Alaina Aspecta"
+    },
+    "en": {
+     "navesti": "Certificate of Honorary Godparenthood — CZ (PDF)",
+     "text": "Official PDF certificate in Czech for Prof. Alain Aspect"
+    },
+    "fr": {
+     "navesti": "Certificat de parrainage d'honneur — CZ (PDF)",
+     "text": "Certificat PDF officiel en tchèque pour le Prof. Alain Aspect"
+    }
+   },
+   "zdroj": "data\\assety\\alain-certifikat-cs-pdf.yaml"
+  },
+  {
+   "soubor": "dokumenty/FS01-G02-M003_Alain_Certificate_of_Honorary_Godparenthood_EN.pdf",
+   "typ": "dokument",
+   "datum": "2026-08-08",
+   "misto": "Brno",
+   "zvirata": [
+    "FS01-G02-M003"
+   ],
+   "hlavni": "FS01-G02-M003",
+   "tagy": [
+    "certifikat"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/FS01-G02-M003_Alain_Certificate_of_Honorary_Godparenthood_EN.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Certifikát čestného kmotrovství — EN (PDF)",
+     "text": "Oficiální tiskový certifikát v angličtině pro prof. Alaina Aspecta"
+    },
+    "en": {
+     "navesti": "Certificate of Honorary Godparenthood — EN (PDF)",
+     "text": "Official PDF certificate in English for Prof. Alain Aspect"
+    },
+    "fr": {
+     "navesti": "Certificat de parrainage d'honneur — EN (PDF)",
+     "text": "Certificat PDF officiel en anglais pour le Prof. Alain Aspect"
+    }
+   },
+   "zdroj": "data\\assety\\alain-certifikat-en-pdf.yaml"
+  },
+  {
+   "soubor": "dokumenty/FS01-G02-M003_Alain_Certificat_de_parrainage_d_honneur_FR.pdf",
+   "typ": "dokument",
+   "datum": "2026-08-08",
+   "misto": "Brno",
+   "zvirata": [
+    "FS01-G02-M003"
+   ],
+   "hlavni": "FS01-G02-M003",
+   "tagy": [
+    "certifikat"
+   ],
+   "verejne": true,
+   "url": "/media/dokumenty/FS01-G02-M003_Alain_Certificat_de_parrainage_d_honneur_FR.pdf",
+   "popisky": {
+    "cs": {
+     "navesti": "Certifikát čestného kmotrovství — FR (PDF)",
+     "text": "Oficiální tiskový certifikát ve francouzštině pro prof. Alaina Aspecta"
+    },
+    "en": {
+     "navesti": "Certificate of Honorary Godparenthood — FR (PDF)",
+     "text": "Official PDF certificate in French for Prof. Alain Aspect"
+    },
+    "fr": {
+     "navesti": "Certificat de parrainage d'honneur — FR (PDF)",
+     "text": "Certificat PDF officiel en français pour le Prof. Alain Aspect"
+    }
+   },
+   "zdroj": "data\\assety\\alain-certifikat-fr-pdf.yaml"
   },
   {
    "soubor": "foto/alain-detail.jpg",
