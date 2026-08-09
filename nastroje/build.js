@@ -265,10 +265,10 @@ async function main() {
       const rok = (datumNar || '').slice(0, 4);
       if (rok) {
         const slug = slugJmena(z.jmeno);
-        redirects.push(`/kotata/${rok}/${slug}/ /${z.uuid}/ 200`);
-        redirects.push(`/kotata/${rok}/${slug}/en/ /${z.uuid}/en/ 200`);
-        redirects.push(`/kotata/${rok}/${slug}/fr/ /${z.uuid}/fr/ 200`);
-        redirects.push(`/kotata/${rok}/${slug} /${z.uuid}/ 200`);
+        redirects.push(`/kotata/${rok}/${slug}/ /${z.uuid}/ 301`);
+        redirects.push(`/kotata/${rok}/${slug}/en/ /${z.uuid}/en/ 301`);
+        redirects.push(`/kotata/${rok}/${slug}/fr/ /${z.uuid}/fr/ 301`);
+        redirects.push(`/kotata/${rok}/${slug} /${z.uuid}/ 301`);
       }
     }
   }
