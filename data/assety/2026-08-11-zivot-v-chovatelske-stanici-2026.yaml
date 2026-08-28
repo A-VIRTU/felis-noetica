@@ -1,0 +1,26 @@
+soubor: videos/zivot-v-chovatelske-stanici-2026.mp4
+typ: video
+datum: '2026-08-11'
+misto: Brno
+pomer: null
+zvirata:
+  - FS01-G01-F005 Sibyla
+  - FS01-G01-F003 Sofie
+  - FS01-G02-F001 Amálie
+  - FS01-G02-F002 Angelina
+  - FS01-G02-M003 Alain
+  - FS01-G02-M004 Andrew
+hlavni: FS01-G01-F005 Sibyla
+tagy:
+  - video
+  - stripy-z-chovatelske-stanice
+  - kotata
+viditelnost: verejne
+token: zivot-v-chovatelske-stanici-2026-token
+popisky:
+  cs:
+    navesti: "11. srpna 2026"
+    text: "Život v chovatelské stanici Felis Noetica — péče matky Sibyly, hry a společné chvíle koťátek."
+  en:
+    navesti: "11 August 2026"
+    text: "Life at Felis Noetica cattery — mother Sibyla's care, kitten playfulness, and family moments."
