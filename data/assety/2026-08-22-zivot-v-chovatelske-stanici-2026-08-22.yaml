@@ -1,0 +1,30 @@
+soubor: videos/zivot-v-chovatelske-stanici-2026-08-22.mp4
+typ: video
+datum: '2026-08-22'
+misto: Brno
+pomer: null
+zvirata:
+  - FS01-G01-F005 Sibyla
+  - FS01-G01-F003 Sofie
+  - FS01-G02-F001 Amálie
+  - FS01-G02-F002 Angelina
+  - FS01-G02-M003 Alain
+  - FS01-G02-M004 Andrew
+  - FS01-G02-M005 Pafnuc
+  - FS01-G02-M006 Penrose
+  - FS01-G02-F007 Priyamvada
+  - FS01-G02-F008 Polly
+hlavni: null
+tagy:
+  - video
+  - stripy-z-chovatelske-stanice
+  - kotata
+viditelnost: verejne
+token: zivot-v-chovatelske-stanici-20260822-token
+popisky:
+  cs:
+    navesti: "22. srpna 2026"
+    text: "Průzkum teritoria, odvaha a první maso v misce — 39 dní vrhu Sibyly a 26 dní vrhu Sofie."
+  en:
+    navesti: "22 August 2026"
+    text: "Territory exploration, courage, and first meat in the bowl — 39 days of Sibyla's litter and 26 days of Sofie's litter."
