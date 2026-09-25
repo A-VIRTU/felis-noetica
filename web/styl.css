@@ -739,4 +739,244 @@ figcaption em{font-style:italic;}
   scroll-margin-top: 1.5rem;
 }
 
+/* ---- Sekce / Předběžná rezervace na rok 2027 ------ */
+.fn-rez-wrap {
+  margin: 3.5rem 0 2.5rem;
+}
+
+.fn-rez-toggle {
+  cursor: pointer;
+  border: none;
+}
+
+.fn-rez-drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s ease,
+              margin-top 0.35s ease,
+              padding-top 0.35s ease;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 1px solid transparent;
+  width: 100%;
+}
+
+.fn-rez-drawer.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: clamp(24px, 3cqw, 36px);
+  border-top-color: rgba(255, 255, 255, 0.16);
+  padding-top: clamp(24px, 3cqw, 32px);
+}
+
+.fn-rez-drawer-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.fn-rez-intro {
+  margin-bottom: 1.5rem;
+}
+
+.fn-rez-intro p {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: clamp(13px, 1.05cqw, 15px);
+  color: #b8b8b4;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.fn-rez-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.fn-rez-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fn-rez-field-full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 48rem) {
+  .fn-rez-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fn-rez-field label {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #a8a8a4;
+}
+
+.fn-rez-field label .fn-rez-req {
+  color: #e07a5f;
+}
+
+.fn-rez-field label .fn-rez-opt {
+  color: #777;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 0.75rem;
+}
+
+.fn-rez-field input,
+.fn-rez-field select,
+.fn-rez-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.fn-rez-field input:focus,
+.fn-rez-field select:focus,
+.fn-rez-field textarea:focus {
+  outline: none;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.fn-rez-field input.is-invalid,
+.fn-rez-field select.is-invalid {
+  border-color: #e07a5f;
+  background: rgba(224, 122, 95, 0.08);
+}
+
+.fn-rez-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ffffff' d='M1.41 0L6 4.58L10.59 0L12 1.41l-6 6l-6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.fn-rez-field select option {
+  background: #111;
+  color: #fff;
+}
+
+.fn-rez-field textarea {
+  resize: vertical;
+  min-height: 85px;
+  line-height: 1.5;
+}
+
+.fn-rez-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.fn-rez-submit {
+  cursor: pointer;
+  border: none;
+}
+
+.fn-rez-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.fn-rez-privacy {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.78rem;
+  color: #777;
+  line-height: 1.5;
+}
+
+.fn-rez-error {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(224, 122, 95, 0.15);
+  border-left: 3px solid #e07a5f;
+  color: #fca5a5;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.85rem;
+}
+
+.fn-rez-success {
+  text-align: center;
+  padding: clamp(24px, 3cqw, 40px) clamp(16px, 2cqw, 32px);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  animation: fnRezPop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fnRezPop {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.fn-rez-success-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+}
+
+.fn-rez-success h3 {
+  color: #fff;
+  font-family: "Newsreader", serif;
+  font-size: clamp(1.4rem, 2cqw, 1.8rem);
+  font-weight: 400;
+  margin: 0 0 0.75rem;
+}
+
+.fn-rez-success p {
+  color: #d8d8d6;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: clamp(13px, 1.05cqw, 15px);
+  line-height: 1.65;
+  max-width: 44em;
+  margin: 0 auto 1.5rem;
+}
+
+.fn-rez-close-btn {
+  background: transparent;
+  color: #d8d8d6;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.4rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.fn-rez-close-btn:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+
 
