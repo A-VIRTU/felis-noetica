@@ -567,13 +567,116 @@ figcaption em{font-style:italic;}
   background: #000;
 }
 
-/* ---- Záhlaví / Reklama Felis Noetica --------------------------------- */
+/* ---- Záhlaví Felis Noetica · výstava (odvozeno z billboardu 9b) -------
+   Blok se řídí vlastní šířkou (container query jednotky cqw), ne oknem.
+   Desktop: obsah drží střed pásu (max. 1180 px), okraje rostou.
+   Tablet na výšku a širší: text vlevo, kočka vpravo.
+   Mobil: kočka nahoře, text pod ní.
+------------------------------------------------------------------------ */
+.fnx { container-type: inline-size; }
+.fnx-band {
+  background: #f1d08c;
+  color: #14110c;
+  overflow: hidden;
+  padding: 0 clamp(20px, 5cqw, 64px);
+}
+.fnx-stage {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.fnx-text {
+  position: relative;
+  max-width: max(52%, 300px);
+  padding: clamp(28px, 5cqw, 72px) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(12px, 1.4cqw, 20px);
+}
+.fnx-kicker {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: clamp(11px, 1.1cqw, 14px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #7a4712;
+}
+.fnx-title {
+  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(40px, 6.4cqw, 88px);
+  line-height: 0.88;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.fnx-date {
+  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(26px, 3.6cqw, 52px);
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+.fnx-place {
+  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  font-size: clamp(15px, 1.7cqw, 24px);
+  line-height: 1.2;
+  margin-top: -0.4em;
+}
+.fnx-seals {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: clamp(12px, 1.4cqw, 18px) clamp(18px, 2.4cqw, 32px);
+  margin-top: clamp(8px, 1.4cqw, 20px);
+}
+.fnx-seal { display: flex; align-items: center; gap: 10px; }
+.fnx-seal img { display: block; height: clamp(30px, 3cqw, 44px); width: auto; }
+.fnx-seal span {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: clamp(10px, 0.8cqw, 11px);
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3a2f22;
+}
+/* kočka jako na billboardu: velká, ukotvená ke scéně, přiléhá k textu,
+   dolů a doleva se ztrácí do zlaté */
+.fnx-cat {
+  position: absolute;
+  top: clamp(8px, 1.2cqw, 16px);
+  right: -4%;
+  width: min(84%, 980px);
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent 30%, #000 50%);
+          mask-image: linear-gradient(90deg, transparent 30%, #000 50%);
+  mix-blend-mode: multiply;     /* bílé pozadí kresby zmizí ve zlaté */
+}
+.fnx-cat img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* úzký displej (mobil na výšku): kočka nad textem, dolů se ztrácí */
+@container (max-width: 620px) {
+  .fnx-text { max-width: none; padding-top: 0; }
+  .fnx-cat {
+    position: relative;
+    top: auto; right: auto;
+    width: 118%;
+    margin: 0 -9% -34% -9%;
+    -webkit-mask-image: linear-gradient(#000 55%, transparent 80%);
+            mask-image: linear-gradient(#000 55%, transparent 80%);
+  }
+}
+
+/* ---- Lišta / Oznámení o koťatech (navazující na záhlaví výstavy) ------ */
 .fn-hd-wrap { container-type: inline-size; }
 
 .fn-hd {
   background: #000;
   color: #fff;
-  padding: clamp(36px, 4.4cqw, 76px) clamp(24px, 5cqw, 80px);
+  padding: clamp(24px, 2.8cqw, 40px) clamp(24px, 5cqw, 80px);
   overflow: hidden;
 }
 
@@ -583,44 +686,25 @@ figcaption em{font-style:italic;}
   margin: 0 auto;
 }
 
-.fn-hd-cat {
-  position: absolute;
-  right: -12%;
-  top: 0;
-  width: clamp(130px, 46cqw, 620px);
-  height: auto;
-  mix-blend-mode: screen;
-}
-
 .fn-hd-col {
   position: relative;
-  max-width: max(52%, 190px);
+  max-width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: clamp(20px, 2.2cqw, 34px);
-  align-items: flex-start;
-}
-
-.fn-hd-title {
-  font-family: Archivo, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: clamp(40px, 6.4cqw, 88px);
-  line-height: 0.88;
-  letter-spacing: -0.028em;
-  text-wrap: balance;
-  color: #fff;
-  margin: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(18px, 2.2cqw, 32px);
 }
 
 .fn-hd-text {
   display: flex;
   flex-direction: column;
-  gap: 0.85em;
+  gap: 0.6em;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: clamp(14px, 1.15cqw, 18px);
-  line-height: 1.65;
-  max-width: 34em;
+  font-size: clamp(14px, 1.15cqw, 17px);
+  line-height: 1.6;
+  max-width: 52em;
   color: #d8d8d6;
 }
 
@@ -639,7 +723,9 @@ figcaption em{font-style:italic;}
   text-transform: uppercase;
   padding: 1.05em 1.6em;
   display: inline-block;
+  white-space: nowrap;
   transition: background 0.15s ease;
+  flex-shrink: 0;
 }
 
 .fn-hd-btn:hover {
