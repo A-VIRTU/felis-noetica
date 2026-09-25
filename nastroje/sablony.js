@@ -194,7 +194,7 @@ function fragmentKotata({ vrhy, zvirata, assety, jazyk, url, relKoren = '' }) {
 
   const pohlaviOrder = { M: 1, F: 2 };
 
-  return vrhy.filter((v) => v.verejne && (podleVrhu[v.__slug] || []).some((z) => z.verejne && z.stav === 'volne')).map((v) => {
+  return vrhy.filter((v) => v.verejne && (podleVrhu[v.__slug] || []).some((z) => z.verejne && (z.stav === 'volne' || z.stav === 'rezervovano'))).map((v) => {
     const kotata = (podleVrhu[v.__slug] || []).filter((z) => z.verejne);
     kotata.sort((a, b) => {
       const pA = pohlaviOrder[a.pohlavi] || 9;
@@ -270,6 +270,11 @@ ${kotata.map((z) => {
       ? 'AVAILABLE'
       : (z.pohlavi === 'M' ? 'VOLNÝ' : 'VOLNÁ');
     textOdkazu += ` · ${volneSlovo}`;
+  } else if (z.stav === 'rezervovano') {
+    const rezSlovo = jazyk === 'en'
+      ? 'RESERVED'
+      : (z.pohlavi === 'M' ? 'REZERVOVANÝ' : 'REZERVOVANÁ');
+    textOdkazu += ` · ${rezSlovo}`;
   }
 
   const stavClass = z.stav === 'volne' ? 'stav-volne' : 'stav-jine';
