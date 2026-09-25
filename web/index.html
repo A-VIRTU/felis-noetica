@@ -227,6 +227,70 @@
   <p class="duraz">Mám doma čtyři kočky a ani jeden škrábanec. U předchozích koček jsem býval rozdrásaný pořád.</p>
 </section>
 
+<div class="fn-hd-wrap fn-rez-wrap">
+  <div class="fn-hd">
+    <div class="fn-hd-stage">
+      <div class="fn-hd-col">
+        <div class="fn-hd-text">
+          <p>Předběžný zájem o koťata na rok 2027.</p>
+          <p>Nezávazná rezervace. Až se koťata narodí, ozveme se vám podle pořadí rezervací. Vyberete si, nebo ne — k ničemu vás to nezavazuje.</p>
+        </div>
+        <button type="button" class="fn-hd-btn fn-rez-toggle" aria-expanded="false">Rezervace na rok 2027 ↓</button>
+      </div>
+
+      <div class="fn-rez-drawer" aria-hidden="true">
+        <div class="fn-rez-drawer-inner">
+          <form class="fn-rez-form" novalidate>
+            <div class="fn-rez-intro">
+              <p>Zanechte nám kontakt. Jakmile budou koťata na světě, ozveme se vám podle pořadí rezervací s nabídkou a fotografiemi.</p>
+            </div>
+            <div class="fn-rez-grid">
+              <div class="fn-rez-field">
+                <label>Jméno a příjmení <span class="fn-rez-req">*</span></label>
+                <input type="text" name="jmeno" required autocomplete="name" placeholder="např. Viktor Lošťák">
+              </div>
+              <div class="fn-rez-field">
+                <label>E-mail <span class="fn-rez-req">*</span></label>
+                <input type="email" name="email" required autocomplete="email" placeholder="např. jmeno@domena.cz">
+              </div>
+              <div class="fn-rez-field">
+                <label>Telefon <span class="fn-rez-req">*</span></label>
+                <input type="tel" name="telefon" required autocomplete="tel" placeholder="např. +420 604 761 154">
+              </div>
+              <div class="fn-rez-field">
+                <label>Představa o kotěti</label>
+                <select name="preference">
+                  <option value="Nerozhoduje / poradím se">Nerozhoduje / nechám si poradit</option>
+                  <option value="Kastrovaný společník">Kastrovaný společník</option>
+                  <option value="Kotě do dalšího chovu">Kotě do dalšího chovu</option>
+                  <option value="Chovný pár / linie">Chovný pár nebo víc zvířat</option>
+                </select>
+              </div>
+              <div class="fn-rez-field fn-rez-field-full">
+                <label>Poznámka nebo přání <span class="fn-rez-opt">(volitelné)</span></label>
+                <textarea name="poznamka" rows="3" placeholder="Cokoli, co byste nám chtěli ještě sdělit ke své rezervaci..."></textarea>
+              </div>
+            </div>
+
+            <div class="fn-rez-actions">
+              <button type="submit" class="fn-hd-btn fn-rez-submit">Odeslat nezávaznou rezervaci</button>
+              <span class="fn-rez-privacy">Údaje slouží pouze k oslovení s nabídkou vrhů 2027.</span>
+            </div>
+            <div class="fn-rez-error" hidden role="alert"></div>
+          </form>
+
+          <div class="fn-rez-success" hidden role="status">
+            <div class="fn-rez-success-badge">✓</div>
+            <h3>Děkujeme za rezervaci</h3>
+            <p>Váš předběžný zájem jsme v pořádku zapsali do pořadníku pro vrhy v roce 2027. Jakmile budou koťata na světě, ozveme se vám podle pořadí rezervací. Výběr kotěte bude čistě na vás — k ničemu vás to nezavazuje.</p>
+            <button type="button" class="fn-rez-close-btn">Zavřít</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section class="blok obal">
   <span class="navesti jev">Kočky</span>
   <h2 class="jev">První vrh</h2>
@@ -550,57 +614,57 @@
       <div class="fn-hd-col">
         <div class="fn-hd-text">
           <p>Předběžný zájem o koťata na rok 2027.</p>
-          <p>Nezávazná registrace. Až se koťata narodí, ozveme se vám podle pořadí přihlášek. Vyberete si, nebo ne — k ničemu vás to nezavazuje. Cena je pevná a transparentní, žádné licitace.</p>
+          <p>Nezávazná rezervace. Až se koťata narodí, ozveme se vám podle pořadí rezervací. Vyberete si, nebo ne — k ničemu vás to nezavazuje.</p>
         </div>
-        <button type="button" class="fn-hd-btn fn-rez-toggle" id="fn-rez-toggle-btn" aria-expanded="false" aria-controls="fn-rez-drawer">Rezervace na rok 2027 ↓</button>
+        <button type="button" class="fn-hd-btn fn-rez-toggle" aria-expanded="false">Rezervace na rok 2027 ↓</button>
       </div>
 
-      <div class="fn-rez-drawer" id="fn-rez-drawer" aria-hidden="true">
+      <div class="fn-rez-drawer" aria-hidden="true">
         <div class="fn-rez-drawer-inner">
-          <form class="fn-rez-form" id="fn-rez-form" novalidate>
+          <form class="fn-rez-form" novalidate>
             <div class="fn-rez-intro">
-              <p>Zanechte nám kontakt. Jakmile budou koťata na světě, ozveme se vám v pořadí přihlášek s nabídkou a fotografiemi.</p>
+              <p>Zanechte nám kontakt. Jakmile budou koťata na světě, ozveme se vám podle pořadí rezervací s nabídkou a fotografiemi.</p>
             </div>
             <div class="fn-rez-grid">
               <div class="fn-rez-field">
-                <label for="rez-jmeno">Jméno a příjmení <span class="fn-rez-req">*</span></label>
-                <input type="text" id="rez-jmeno" name="jmeno" required autocomplete="name" placeholder="např. Viktor Lošťák">
+                <label>Jméno a příjmení <span class="fn-rez-req">*</span></label>
+                <input type="text" name="jmeno" required autocomplete="name" placeholder="např. Viktor Lošťák">
               </div>
               <div class="fn-rez-field">
-                <label for="rez-email">E-mail <span class="fn-rez-req">*</span></label>
-                <input type="email" id="rez-email" name="email" required autocomplete="email" placeholder="např. jmeno@domena.cz">
+                <label>E-mail <span class="fn-rez-req">*</span></label>
+                <input type="email" name="email" required autocomplete="email" placeholder="např. jmeno@domena.cz">
               </div>
               <div class="fn-rez-field">
-                <label for="rez-telefon">Telefon <span class="fn-rez-req">*</span></label>
-                <input type="tel" id="rez-telefon" name="telefon" required autocomplete="tel" placeholder="např. +420 604 761 154">
+                <label>Telefon <span class="fn-rez-req">*</span></label>
+                <input type="tel" name="telefon" required autocomplete="tel" placeholder="např. +420 604 761 154">
               </div>
               <div class="fn-rez-field">
-                <label for="rez-preference">Představa o kotěti</label>
-                <select id="rez-preference" name="preference">
+                <label>Představa o kotěti</label>
+                <select name="preference">
                   <option value="Nerozhoduje / poradím se">Nerozhoduje / nechám si poradit</option>
-                  <option value="Kastrovaný společník">Kastrovaný společník (18 000 Kč)</option>
-                  <option value="Kotě do dalšího chovu">Kotě do dalšího chovu (38 000 Kč)</option>
-                  <option value="Chovný pár / linie">Chovný pár nebo víc zvířat (dohodou)</option>
+                  <option value="Kastrovaný společník">Kastrovaný společník</option>
+                  <option value="Kotě do dalšího chovu">Kotě do dalšího chovu</option>
+                  <option value="Chovný pár / linie">Chovný pár nebo víc zvířat</option>
                 </select>
               </div>
               <div class="fn-rez-field fn-rez-field-full">
-                <label for="rez-poznamka">Poznámka nebo přání <span class="fn-rez-opt">(volitelné)</span></label>
-                <textarea id="rez-poznamka" name="poznamka" rows="3" placeholder="Kde bude kotě žít, zda už máte zkušenost s kočkami, nebo jakékoliv vaše přání či dotaz..."></textarea>
+                <label>Poznámka nebo přání <span class="fn-rez-opt">(volitelné)</span></label>
+                <textarea name="poznamka" rows="3" placeholder="Cokoli, co byste nám chtěli ještě sdělit ke své rezervaci..."></textarea>
               </div>
             </div>
 
             <div class="fn-rez-actions">
-              <button type="submit" class="fn-hd-btn fn-rez-submit" id="fn-rez-submit-btn">Odeslat nezávaznou registraci</button>
+              <button type="submit" class="fn-hd-btn fn-rez-submit">Odeslat nezávaznou rezervaci</button>
               <span class="fn-rez-privacy">Údaje slouží pouze k oslovení s nabídkou vrhů 2027.</span>
             </div>
-            <div class="fn-rez-error" id="fn-rez-error" hidden role="alert"></div>
+            <div class="fn-rez-error" hidden role="alert"></div>
           </form>
 
-          <div class="fn-rez-success" id="fn-rez-success" hidden role="status">
+          <div class="fn-rez-success" hidden role="status">
             <div class="fn-rez-success-badge">✓</div>
-            <h3>Děkujeme za registraci</h3>
-            <p>Váš předběžný zájem jsme v pořádku zapsali do pořadníku pro vrhy v roce 2027. Jakmile budou koťata na světě, ozveme se vám podle pořadí přihlášek. Výběr kotěte bude čistě na vás — k ničemu vás to nezavazuje.</p>
-            <button type="button" class="fn-rez-close-btn" id="fn-rez-close-btn">Zavřít</button>
+            <h3>Děkujeme za rezervaci</h3>
+            <p>Váš předběžný zájem jsme v pořádku zapsali do pořadníku pro vrhy v roce 2027. Jakmile budou koťata na světě, ozveme se vám podle pořadí rezervací. Výběr kotěte bude čistě na vás — k ničemu vás to nezavazuje.</p>
+            <button type="button" class="fn-rez-close-btn">Zavřít</button>
           </div>
         </div>
       </div>

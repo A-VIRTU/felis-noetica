@@ -212,139 +212,141 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 3. Obsluha vysouvacího formuláře pro rezervaci na rok 2027
-  const rezToggleBtn = document.getElementById('fn-rez-toggle-btn');
-  const rezDrawer = document.getElementById('fn-rez-drawer');
-  const rezForm = document.getElementById('fn-rez-form');
-  const rezSuccess = document.getElementById('fn-rez-success');
-  const rezCloseBtn = document.getElementById('fn-rez-close-btn');
-  const rezError = document.getElementById('fn-rez-error');
-  const rezSubmitBtn = document.getElementById('fn-rez-submit-btn');
+  // 3. Obsluha vysouvacích formulářů pro rezervaci na rok 2027 (podporuje vícenásobný výskyt na stránce)
+  document.querySelectorAll('.fn-rez-wrap').forEach((wrap) => {
+    const rezToggleBtn = wrap.querySelector('.fn-rez-toggle');
+    const rezDrawer = wrap.querySelector('.fn-rez-drawer');
+    const rezForm = wrap.querySelector('.fn-rez-form');
+    const rezSuccess = wrap.querySelector('.fn-rez-success');
+    const rezCloseBtn = wrap.querySelector('.fn-rez-close-btn');
+    const rezError = wrap.querySelector('.fn-rez-error');
+    const rezSubmitBtn = wrap.querySelector('.fn-rez-submit');
 
-  if (rezToggleBtn && rezDrawer) {
-    function toggleDrawer(open) {
-      const willOpen = typeof open === 'boolean' ? open : !rezDrawer.classList.contains('is-open');
-      if (willOpen) {
-        rezDrawer.classList.add('is-open');
-        rezDrawer.setAttribute('aria-hidden', 'false');
-        rezToggleBtn.setAttribute('aria-expanded', 'true');
-        rezToggleBtn.textContent = 'Zavřít formulář ↑';
-      } else {
-        rezDrawer.classList.remove('is-open');
-        rezDrawer.setAttribute('aria-hidden', 'true');
-        rezToggleBtn.setAttribute('aria-expanded', 'false');
-        rezToggleBtn.textContent = 'Rezervace na rok 2027 ↓';
+    if (rezToggleBtn && rezDrawer) {
+      function toggleDrawer(open) {
+        const willOpen = typeof open === 'boolean' ? open : !rezDrawer.classList.contains('is-open');
+        if (willOpen) {
+          rezDrawer.classList.add('is-open');
+          rezDrawer.setAttribute('aria-hidden', 'false');
+          rezToggleBtn.setAttribute('aria-expanded', 'true');
+          rezToggleBtn.textContent = 'Zavřít formulář ↑';
+        } else {
+          rezDrawer.classList.remove('is-open');
+          rezDrawer.setAttribute('aria-hidden', 'true');
+          rezToggleBtn.setAttribute('aria-expanded', 'false');
+          rezToggleBtn.textContent = 'Rezervace na rok 2027 ↓';
+        }
+      }
+
+      rezToggleBtn.addEventListener('click', () => {
+        toggleDrawer();
+      });
+
+      if (rezCloseBtn) {
+        rezCloseBtn.addEventListener('click', () => {
+          toggleDrawer(false);
+          setTimeout(() => {
+            if (rezSuccess && rezForm) {
+              rezSuccess.hidden = true;
+              rezForm.style.display = '';
+            }
+          }, 450);
+        });
+      }
+
+      if (window.location.hash === '#rezervace-2027' && wrap.id === 'rezervace-2027') {
+        toggleDrawer(true);
       }
     }
 
-    rezToggleBtn.addEventListener('click', () => {
-      toggleDrawer();
-    });
+    if (rezForm) {
+      const rezInputs = rezForm.querySelectorAll('input, select, textarea');
+      rezInputs.forEach((inp) => {
+        inp.addEventListener('input', () => inp.classList.remove('is-invalid'));
+      });
 
-    if (rezCloseBtn) {
-      rezCloseBtn.addEventListener('click', () => {
-        toggleDrawer(false);
-        setTimeout(() => {
-          if (rezSuccess && rezForm) {
-            rezSuccess.hidden = true;
-            rezForm.style.display = '';
+      rezForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        if (rezError) {
+          rezError.hidden = true;
+          rezError.textContent = '';
+        }
+
+        const jmenoInput = rezForm.querySelector('[name="jmeno"]');
+        const emailInput = rezForm.querySelector('[name="email"]');
+        const telefonInput = rezForm.querySelector('[name="telefon"]');
+        const preferenceInput = rezForm.querySelector('[name="preference"]');
+        const poznamkaInput = rezForm.querySelector('[name="poznamka"]');
+
+        const inputs = [jmenoInput, emailInput, telefonInput];
+        inputs.forEach((inp) => inp && inp.classList.remove('is-invalid'));
+
+        const jmeno = jmenoInput ? jmenoInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+        const telefon = telefonInput ? telefonInput.value.trim() : '';
+        const preference = preferenceInput ? preferenceInput.value : '';
+        const poznamka = poznamkaInput ? poznamkaInput.value.trim() : '';
+
+        let hasError = false;
+        if (!jmeno) {
+          jmenoInput && jmenoInput.classList.add('is-invalid');
+          hasError = true;
+        }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          emailInput && emailInput.classList.add('is-invalid');
+          hasError = true;
+        }
+        if (!telefon) {
+          telefonInput && telefonInput.classList.add('is-invalid');
+          hasError = true;
+        }
+
+        if (hasError) {
+          if (rezError) {
+            rezError.textContent = 'Vyplňte prosím vaše jméno, platný e-mail a telefon.';
+            rezError.hidden = false;
           }
-        }, 450);
+          return;
+        }
+
+        const originalBtnText = rezSubmitBtn ? rezSubmitBtn.textContent : 'Odeslat nezávaznou rezervaci';
+        if (rezSubmitBtn) {
+          rezSubmitBtn.disabled = true;
+          rezSubmitBtn.textContent = 'Ukládám rezervaci…';
+        }
+
+        try {
+          const response = await fetch('/api/rezervace', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ jmeno, email, telefon, preference, poznamka })
+          });
+
+          const result = await response.json().catch(() => ({}));
+
+          if (response.ok && result.ok) {
+            rezForm.reset();
+            rezForm.style.display = 'none';
+            if (rezSuccess) {
+              rezSuccess.hidden = false;
+            }
+          } else {
+            throw new Error(result.error || 'Uložení se nezdařilo.');
+          }
+        } catch (err) {
+          console.error('Chyba odeslání rezervace:', err);
+          if (rezError) {
+            rezError.textContent = 'Omlouváme se, rezervaci se nepodařilo odeslat. Napište nám prosím na info@felisnoetica.cz nebo zavolejte na 604 761 154.';
+            rezError.hidden = false;
+          }
+        } finally {
+          if (rezSubmitBtn) {
+            rezSubmitBtn.disabled = false;
+            rezSubmitBtn.textContent = originalBtnText;
+          }
+        }
       });
     }
-
-    if (window.location.hash === '#rezervace-2027') {
-      toggleDrawer(true);
-    }
-  }
-
-  if (rezForm) {
-    const rezInputs = rezForm.querySelectorAll('input, select, textarea');
-    rezInputs.forEach((inp) => {
-      inp.addEventListener('input', () => inp.classList.remove('is-invalid'));
-    });
-
-    rezForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      if (rezError) {
-        rezError.hidden = true;
-        rezError.textContent = '';
-      }
-
-      const jmenoInput = rezForm.querySelector('#rez-jmeno');
-      const emailInput = rezForm.querySelector('#rez-email');
-      const telefonInput = rezForm.querySelector('#rez-telefon');
-      const preferenceInput = rezForm.querySelector('#rez-preference');
-      const poznamkaInput = rezForm.querySelector('#rez-poznamka');
-
-      const inputs = [jmenoInput, emailInput, telefonInput];
-      inputs.forEach((inp) => inp && inp.classList.remove('is-invalid'));
-
-      const jmeno = jmenoInput ? jmenoInput.value.trim() : '';
-      const email = emailInput ? emailInput.value.trim() : '';
-      const telefon = telefonInput ? telefonInput.value.trim() : '';
-      const preference = preferenceInput ? preferenceInput.value : '';
-      const poznamka = poznamkaInput ? poznamkaInput.value.trim() : '';
-
-      let hasError = false;
-      if (!jmeno) {
-        jmenoInput && jmenoInput.classList.add('is-invalid');
-        hasError = true;
-      }
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        emailInput && emailInput.classList.add('is-invalid');
-        hasError = true;
-      }
-      if (!telefon) {
-        telefonInput && telefonInput.classList.add('is-invalid');
-        hasError = true;
-      }
-
-      if (hasError) {
-        if (rezError) {
-          rezError.textContent = 'Vyplňte prosím vaše jméno, platný e-mail a telefon.';
-          rezError.hidden = false;
-        }
-        return;
-      }
-
-      const originalBtnText = rezSubmitBtn ? rezSubmitBtn.textContent : 'Odeslat nezávaznou registraci';
-      if (rezSubmitBtn) {
-        rezSubmitBtn.disabled = true;
-        rezSubmitBtn.textContent = 'Ukládám registraci…';
-      }
-
-      try {
-        const response = await fetch('/api/rezervace', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ jmeno, email, telefon, preference, poznamka })
-        });
-
-        const result = await response.json().catch(() => ({}));
-
-        if (response.ok && result.ok) {
-          rezForm.reset();
-          rezForm.style.display = 'none';
-          if (rezSuccess) {
-            rezSuccess.hidden = false;
-          }
-        } else {
-          throw new Error(result.error || 'Uložení se nezdařilo.');
-        }
-      } catch (err) {
-        console.error('Chyba odeslání rezervace:', err);
-        if (rezError) {
-          rezError.textContent = 'Omlouváme se, registraci se nepodařilo odeslat. Napište nám prosím na info@felisnoetica.cz nebo zavolejte na 604 761 154.';
-          rezError.hidden = false;
-        }
-      } finally {
-        if (rezSubmitBtn) {
-          rezSubmitBtn.disabled = false;
-          rezSubmitBtn.textContent = originalBtnText;
-        }
-      }
-    });
-  }
+  });
 });

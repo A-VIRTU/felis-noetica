@@ -88,6 +88,7 @@ export default {
               post: wpPostId,
               author_name: jmeno,
               author_email: email,
+              status: 'approved',
               content: commentContent
             })
           });
