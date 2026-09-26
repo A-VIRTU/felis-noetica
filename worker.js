@@ -6,6 +6,12 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
+    // Automatické přesměrování z www.felisnoetica.cz na felisnoetica.cz (301)
+    if (url.hostname === 'www.felisnoetica.cz') {
+      url.hostname = 'felisnoetica.cz';
+      return Response.redirect(url.toString(), 301);
+    }
+
     if (url.pathname === '/api/rezervace') {
       if (request.method === 'OPTIONS') {
         return new Response(null, {

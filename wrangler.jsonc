@@ -3,6 +3,16 @@
   "name": "felis-noetica",
   "main": "worker.js",
   "compatibility_date": "2026-08-08",
+  "routes": [
+    {
+      "pattern": "felisnoetica.cz",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.felisnoetica.cz",
+      "custom_domain": true
+    }
+  ],
   "build": {
     "command": "node nastroje/build.js"
   },
