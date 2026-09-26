@@ -6,9 +6,10 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // Automatické přesměrování z www.felisnoetica.cz na felisnoetica.cz (301)
+    // Automatické přesměrování z www.felisnoetica.cz na https://felisnoetica.cz (301)
     if (url.hostname === 'www.felisnoetica.cz') {
       url.hostname = 'felisnoetica.cz';
+      url.protocol = 'https:';
       return Response.redirect(url.toString(), 301);
     }
 
